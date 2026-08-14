@@ -655,7 +655,7 @@ ul.plain .sub {
   }
 }
 
-/* Wide screens — keep the reading column comfortable */
+/* Wide screens: keep the reading column comfortable */
 @media (min-width: 1200px) {
   .page {
     max-width: 960px;

@@ -7,7 +7,7 @@ const PROJECTS = {
       cover: null,
       status: "Oral Presentation",
       date: "August 12, 2026 · Seoul, Korea",
-      venueLine: "4th Korea Haptics Conference — Session O1, “On-Body Haptic Interfaces and Tactile Information Delivery”",
+      venueLine: "4th Korea Haptics Conference, Session O1, “On-Body Haptic Interfaces and Tactile Information Delivery”",
       authors: ["Junghyeon Kim", "Mohammad Shadman Hashem", "Mudassir Ibrahim Awan", "Seokhee Jeon"],
       affiliation: "Kyung Hee University",
       role: "First author, oral presentation",
@@ -16,7 +16,7 @@ const PROJECTS = {
     }
 
     // ------------------------------------------------------------------
-    // TEMPLATE — copy this block, fill it in, and remove the /* */ to add
+    // TEMPLATE: copy this block, fill it in, and remove the /* */ to add
     // a publication. Every field is optional except id / kind / name:
     // any field left out simply doesn't render.
     //
@@ -38,7 +38,7 @@ const PROJECTS = {
     //     "What was measured or characterized",
     //     "What the study design tests"
     //   ],
-    //   method: "How it was built and evaluated — apparatus, conditions, participants.",
+    //   method: "How it was built and evaluated: apparatus, conditions, participants.",
     //   findings: [                     // only once you actually have results
     //     "Result 1",
     //     "Result 2"
@@ -61,7 +61,7 @@ const PROJECTS = {
     //     { label: "Code",    href: "https://github.com/HIBAR97/..." },
     //     { label: "Video",   href: "https://youtu.be/..." }
     //   ],
-    //   note: "Any honest caveat — draft status, preliminary data, etc."
+    //   note: "Any honest caveat such as draft status, preliminary data, etc."
     // }
     // ------------------------------------------------------------------
     //
@@ -81,8 +81,8 @@ const PROJECTS = {
       role: "First author",
       abstract: "A major factor that reduces immersion in Virtual Reality (VR) is the absence of physically perceivable weight when users lift or manipulate virtual objects. We present a lightweight, ungrounded wearable haptic interface based on shape memory alloy (SMA) actuators that applies directional force cues to the wrist and fingers. Using this device, we investigate whether resistance (gravity-direction force) and assistance (anti-gravity force) can intentionally modulate perceived object weight. We further examine how these physical cues interact with visual density cues (e.g., metal vs. wood appearance) that shape users' weight expectations.",
       keyPoints: [
-        "Wrist/finger-worn SMA actuator that applies brief directional cues — resistance (gravity-direction) to feel heavier, assistance (anti-gravity) to feel lighter — timed to grasp and lift onset",
-        "Characterized SMA coil force–power tradeoffs across coil diameter and coil count to pick a configuration that hits the target cue force within a wearable power budget",
+        "Wrist/finger-worn SMA actuator that applies brief directional cues, resistance (gravity-direction) to feel heavier and assistance (anti-gravity) to feel lighter, timed to grasp and lift onset",
+        "Characterized SMA coil force to power tradeoffs across coil diameter and coil count to pick a configuration that hits the target cue force within a wearable power budget",
         "Measured wrist range of motion (flexion/extension ~70 deg, ulnar/radial deviation ~40/30 deg) to place strap anchors and route tension without restricting natural movement",
         "3x2 within-subject factorial design (haptic cue: off/resistance/assistance x visual density: metal-like/wood-like)"
       ],
@@ -101,7 +101,7 @@ const PROJECTS = {
       status: "Live",
       url: { label: "apps.apple.com", href: "https://apps.apple.com/kr/app/일상-도전으로-하루를-특별하게/id6504427618" },
       appBlurb: {
-        title: "Ilsang — Make Every Day Special Through Challenges",
+        title: "Ilsang: Make Every Day Special Through Challenges",
         body: "‘Ilsang’ gives you a variety of quests that turn your repetitive daily routine into something new. New quests are added regularly, and completing them builds up your experience points. Share your progress with others and show off how much you're leveling up your life!"
       },
       topic: ["Offers a variety of quests, giving users a way to turn their repetitive daily routine into something fresh."],
@@ -132,7 +132,7 @@ const PROJECTS = {
       url: { label: "apps.apple.com", href: "https://apps.apple.com/kr/app/포스트킷-postkit/id6470146461" },
       appBlurb: {
         title: "PostKit",
-        body: "The latest GPT-4 model, free. Focus on running your café — leave the marketing copy to PostKit. Pick keywords tailored to your café and let AI write a custom Instagram post for you, complete with curated, high-visibility hashtags. Every generated post is saved so you can pull it up anytime."
+        body: "The latest GPT-4 model, free. Focus on running your café and leave the marketing copy to PostKit. Pick keywords tailored to your café and let AI write a custom Instagram post for you, complete with curated, high-visibility hashtags. Every generated post is saved so you can pull it up anytime."
       },
       topic: [
         "A solution for small café owners who want to promote on social media but don't know what to write or lack ideas.",
@@ -174,7 +174,7 @@ const PROJECTS = {
       status: "Discontinued",
       url: { label: "Private", href: null },
       appBlurb: {
-        title: "MatQ — Earn Discount Coupons Through Quests",
+        title: "MatQ: Earn Discount Coupons Through Quests",
         body: "‘MatQ’ is a game-like platform where you can earn discount coupons by completing fun quests posted by shop owners nationwide. Currently the service operates only in the Seoul area, with expansion planned."
       },
       topic: ["A game-like platform where users complete quests posted by shop owners nationwide to earn discount coupons."],
@@ -199,7 +199,7 @@ const PROJECTS = {
       id: "dots",
       name: "Dots",
       cover: "assets/proj-dots.png",
-      created: "June 19 – August 3, 2023",
+      created: "June 19 to August 3, 2023",
       tags: ["iOS", "SwiftUI", "CoreData", "UserDefault"],
       status: "Discontinued",
       url: { label: "apps.apple.com", href: "https://apps.apple.com/kr/app/dots/id6455836458" },
@@ -211,7 +211,7 @@ const PROJECTS = {
         "A solution that helps people with social anxiety build metacognitive awareness and organize their contacts.",
         "Encourages a positive self-view and reinforces metacognition for people who feel hesitant to reach out after a bad experience."
       ],
-      summary: "Users log their own strengths/weaknesses and their perception of others' strengths/weaknesses in a simple journal format. Logged strengths appear animated on the home screen. If a user wants to work on a weakness, the app can surface contacts who are strong in that area — building metacognition and easing anxiety around reaching out.",
+      summary: "Users log their own strengths/weaknesses and their perception of others' strengths/weaknesses in a simple journal format. Logged strengths appear animated on the home screen. If a user wants to work on a weakness, the app can surface contacts who are strong in that area, building metacognition and easing anxiety around reaching out.",
       keyFunction: [
         "Journal-style logging of strengths and weaknesses",
         "Import contacts",
@@ -234,7 +234,7 @@ const PROJECTS = {
       id: "discoverme",
       name: "DiscoverMe",
       cover: "assets/proj-discoverme.png",
-      created: "April 10 – May 19, 2023",
+      created: "April 10 to May 19, 2023",
       tags: ["iOS", "SwiftUI", "CoreData", "UserDefault"],
       status: "Not in service",
       url: { label: "GitHub", href: "https://github.com/HIBAR97" },
@@ -250,7 +250,7 @@ const PROJECTS = {
       ],
       techStack: "Canvas, Photos, CoreData, UserDefault",
       team: ["4 iOS developers", "2 UI designers"],
-      part: ["Concept planning", "UI/UX planning and development", "CTO — set up and managed the dev environment", "Canvas drawing feature, notifications"],
+      part: ["Concept planning", "UI/UX planning and development", "CTO, set up and managed the dev environment", "Canvas drawing feature, notifications"],
       learned: [
         "As CTO, learned leadership by managing the project and guiding teammates",
         "Learned that referencing Apple's HIG helps when building UI/UX",
@@ -263,7 +263,7 @@ const PROJECTS = {
       id: "whoyak",
       name: "who?Yak (who?약)",
       cover: "assets/proj-whoyak.png",
-      created: "June 3, 2021 – November 1, 2022",
+      created: "June 3, 2021 to November 1, 2022",
       tags: ["Android Studio", "JAVA", "MySQL"],
       status: "Not in service",
       url: { label: "GitHub", href: "https://github.com/HIBAR97" },
@@ -272,7 +272,7 @@ const PROJECTS = {
         "A medication-management platform for elderly or visually impaired users who aren't comfortable with smartphones.",
         "Family or acquaintances act as “managers” for the person being cared for."
       ],
-      summary: "The person being cared for can photograph and save prescriptions, turning what's written on them into structured records. They can also save hospital appointments to a calendar and get reminders. On the manager's side, caregivers can view and edit the cared-for person's prescriptions, appointments, and schedule at any time — giving both sides more peace of mind.",
+      summary: "The person being cared for can photograph and save prescriptions, turning what's written on them into structured records. They can also save hospital appointments to a calendar and get reminders. On the manager's side, caregivers can view and edit the cared-for person's prescriptions, appointments, and schedule at any time, giving both sides more peace of mind.",
       keyFunction: [
         "Prescription scanning: photograph or select a prescription photo and scan the medicine name; if it matches the DB, show the medicine's info",
         "Medicine search: search by name and show info if it matches the DB",
@@ -294,7 +294,7 @@ const PROJECTS = {
       id: "dumchoe",
       name: "DumChoeMyeot? (덤최몇?)",
       cover: "assets/proj-dumchoe.png",
-      created: "March 10 – December 27, 2021",
+      created: "March 10 to December 27, 2021",
       tags: ["JAVA", "MySQL", "Android Studio"],
       status: "Not in service",
       url: { label: null, href: null },
@@ -324,7 +324,7 @@ const PROJECTS = {
       id: "healthkeeper",
       name: "Health Keeper",
       cover: "assets/proj-healthkeeper.png",
-      created: "July 6 – December 21, 2020",
+      created: "July 6 to December 21, 2020",
       tags: ["JAVA", "MySQL"],
       status: "Not in service",
       url: { label: null, href: null },
@@ -361,21 +361,21 @@ const PROJECTS = {
       status: "Prototype",
       url: { label: "GitHub", href: "https://github.com/HIBAR97" },
       topic: [
-        "Built for the WWDC Swift Student Challenge — a single-screen app that lets you feel a place through your fingertip.",
+        "Built for the WWDC Swift Student Challenge, a single-screen app that lets you feel a place through your fingertip.",
         "Explores whether a photograph of a place can be conveyed as touch rather than only as an image."
       ],
       summary: "Pick a photo of a place from your library and the app classifies the scene on-device with a bundled Core ML model, then plays a continuous haptic texture matched to that scene. Drag a finger across the photo and the vibration changes with your speed and position, so a coastline and a city street feel physically different under the same fingertip.",
       keyFunction: [
-        "On-device scene classification into six place categories — buildings, forest, glacier, mountain, sea, street — with no network access",
+        "On-device scene classification into six place categories (buildings, forest, glacier, mountain, sea, street) with no network access",
         "Six hand-tuned haptic personalities, each with its own base intensity, sharpness, attack/release envelope, and speed-response curve",
         "Continuous haptic playback modulated in real time by finger speed and touch position rather than discrete taps",
-        "Procedural spatial patterns per scene — a grid for buildings, crack-and-seam noise for glacier, travelling waves for sea, ridge bands for mountain",
+        "Procedural spatial patterns per scene: a grid for buildings, crack-and-seam noise for glacier, travelling waves for sea, ridge bands for mountain",
         "Speed threshold so a stationary finger produces no feedback, matching how real texture perception works",
         "Graceful degradation when the device has no haptic engine or the model fails to load"
       ],
-      techStack: "SwiftUI, PhotosUI, Core ML, Vision, Core Haptics, UIKit — plus PyTorch, torchvision, and Core ML Tools for model conversion",
+      techStack: "SwiftUI, PhotosUI, Core ML, Vision, Core Haptics, UIKit, plus PyTorch, torchvision, and Core ML Tools for model conversion",
       part: [
-        "Full app — concept, model selection, and implementation",
+        "Full app: concept, model selection, and implementation",
         "Converted a ResNet-18 scene classifier from PyTorch to Core ML with Core ML Tools, folding ImageNet normalization into the image input",
         "Compared MobileNetV2, EfficientNet-B0, and ResNet-18 before settling on the scene-classification model",
         "Designed and hand-tuned the haptic profile for each of the six classes",
@@ -384,7 +384,7 @@ const PROJECTS = {
       learned: [
         "Streaming dynamic parameters into one long-lived Core Haptics player is far smoother than restarting a pattern every gesture frame",
         "Normalizing finger speed by the screen diagonal keeps the same stroke feeling identical on iPhone and iPad",
-        "Perceptually, materials need different response curves — soft ones should swell slowly, brittle ones should snap",
+        "Perceptually, materials need different response curves: soft ones should swell slowly, brittle ones should snap",
         "Running Vision off the main thread while keeping Swift 6 strict concurrency happy takes deliberate actor handling",
         "Converting a PyTorch model to Core ML is mostly about getting the preprocessing contract exactly right"
       ],
@@ -404,7 +404,7 @@ const PROJECTS = {
       ],
       summary: "A macOS Safari extension that makes images on any web page feel textured. A content script analyzes each image's pixels to derive brightness, contrast, edge density, and roughness, then maps the cursor's position over the image to that texture. Hovering, pressing, or scrolling over an image sends the texture data to a native handler, which drives the Mac trackpad's haptic engine.",
       keyFunction: [
-        "Per-image texture analysis via an offscreen canvas — average brightness, local contrast, edge density, and derived roughness",
+        "Per-image texture analysis via an offscreen canvas: average brightness, local contrast, edge density, and derived roughness",
         "Per-region profiles: each image is sampled on a 2×2 to 4×4 grid, so different parts of one image feel different",
         "Trackpad Force Touch pressure and scroll velocity both modulate the feedback",
         "Scroll-driven haptics whose repeat rate tracks scroll speed, from roughly 5 Hz up to 50 Hz",
@@ -412,16 +412,16 @@ const PROJECTS = {
         "Throttling plus a change-threshold gate to keep the native message rate manageable",
         "Automatic pickup of images added to the page later via a MutationObserver"
       ],
-      techStack: "Swift, AppKit, SafariServices, WebKit, NSHapticFeedbackManager — JavaScript with Manifest V3, Canvas 2D, Pointer Events, MutationObserver",
+      techStack: "Swift, AppKit, SafariServices, WebKit, NSHapticFeedbackManager, plus JavaScript with Manifest V3, Canvas 2D, Pointer Events, MutationObserver",
       part: [
-        "Whole project — extension, native handler, and host app",
+        "Whole project: extension, native handler, and host app",
         "Wrote the image texture-analysis pipeline in JavaScript",
         "Built the native messaging bridge from the extension through to the trackpad haptic engine",
         "Designed the mapping from texture and pressure onto discrete macOS feedback patterns"
       ],
       learned: [
         "macOS exposes only a few discrete trackpad feedback patterns, so continuous texture has to be approximated by choosing patterns and varying their timing",
-        "Analyzing pixels on every pointer move is far too slow — caching and idle-time pre-analysis are what make it usable",
+        "Analyzing pixels on every pointer move is far too slow, so caching and idle-time pre-analysis are what make it usable",
         "Cross-origin images taint the canvas, which quietly limits pixel analysis on most real-world pages",
         "Safari's native messaging path behaves differently from other browsers and needed careful debugging",
         "Throttling alone is not enough; gating on how much the signal actually changed matters more"
@@ -440,19 +440,19 @@ const PROJECTS = {
         "A research tool for studying how physical controls can be simulated purely through haptic feedback.",
         "Also measures how much latency is added when the haptic is played on a paired Apple Watch instead of the phone."
       ],
-      summary: "An iPhone app with a companion Apple Watch app that recreates physical control affordances — a detented rotary knob, a slider, and a button — using programmable haptic feedback. Each control can play its haptic on the phone or on the watch over Bluetooth LE, and the app measures the round-trip latency of both paths, aggregates it per control, and exports the samples as CSV.",
+      summary: "An iPhone app with a companion Apple Watch app that recreates physical control affordances (a detented rotary knob, a slider, and a button) using programmable haptic feedback. Each control can play its haptic on the phone or on the watch over Bluetooth LE, and the app measures the round-trip latency of both paths, aggregates it per control, and exports the samples as CSV.",
       keyFunction: [
         "Detented knob driven by touch or by gyroscope, with configurable detent size and hysteresis",
         "Slider and button with independent haptic settings, each switchable between phone and watch playback",
         "Round-trip latency measurement over BLE, aggregated per control and exportable to CSV",
-        "Ten procedurally synthesized surface textures — asphalt, gravel, sand, water, metal, wood, fabric, rubber, glass, smooth",
+        "Ten procedurally synthesized surface textures: asphalt, gravel, sand, water, metal, wood, fabric, rubber, glass, smooth",
         "A custom waveform generator: pick sine, square, triangle, or sawtooth, set amplitude and frequency, and feel it through the Taptic Engine",
         "Full watch haptic editor covering preset type, intensity, sharpness, duration, envelope, pattern, and repeat count",
         "Watch app streaming its own gyroscope angle back to the phone to drive the knob"
       ],
       techStack: "SwiftUI, Core Haptics, Core Bluetooth, Core Motion, WatchKit, Combine, UIKit",
       part: [
-        "Whole project — iOS app, watchOS app, and the BLE protocol between them",
+        "Whole project: iOS app, watchOS app, and the BLE protocol between them",
         "Designed compact binary BLE packets to keep transport latency low",
         "Built the latency measurement scheme and the CSV export",
         "Wrote the procedural texture and waveform haptic synthesizers"
@@ -527,11 +527,11 @@ const PROJECTS = {
       id: "instagramclone",
       name: "Instagram Clone Coding",
       cover: "assets/proj-instagramclone.png",
-      created: "January 8 – January 24, 2022",
+      created: "January 8 to January 24, 2022",
       tags: ["Android Studio", "Kotlin", "Firebase"],
       url: { label: "GitHub", href: "https://github.com/HIBAR97" },
       topic: [
-        "Built to get comfortable with Kotlin — the goal was to learn the language's syntax and build a database.",
+        "Built to get comfortable with Kotlin, where the goal was to learn the language's syntax and build a database.",
         "Recreates Instagram's core features."
       ],
       summary: "A Kotlin + Firebase Instagram clone built to learn how to set up a database and use authentication and storage, and to practice UI development in Kotlin.",
@@ -558,7 +558,7 @@ const PROJECTS = {
       tags: ["Android Studio", "JAVA"],
       url: { label: "GitHub", href: "https://github.com/HIBAR97" },
       topic: [
-        "Analyzing the UI of assistive apps available on the app stores — how they're structured, how they help, and how they're activated.",
+        "Analyzing the UI of assistive apps available on the app stores: how they're structured, how they help, and how they're activated.",
         "Rebuilding what was analyzed."
       ],
       summary: "Analyzed and rebuilt the UI of the most-downloaded assistive apps on the market.",
