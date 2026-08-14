@@ -1,4 +1,42 @@
 const PROJECTS = {
+  publications: [
+    {
+      id: "khc2026-imu",
+      kind: "publication",
+      name: "IMU-Based Real-Time Body-Part Classification for Adaptive On-Body Haptic Feedback",
+      cover: null,
+      status: "Oral Presentation",
+      date: "August 12, 2026 · Seoul, Korea",
+      venueLine: "4th Korea Haptics Conference — Session O1, “On-Body Haptic Interfaces and Tactile Information Delivery”",
+      authors: ["Junghyeon Kim", "Mohammad Shadman Hashem", "Mudassir Ibrahim Awan", "Seokhee Jeon"],
+      affiliation: "Kyung Hee University",
+      role: "First author, oral presentation",
+      note: "Listed as paper O1.6 in the conference's officially published program. The program lists the title, author order, and affiliation shown here; it does not publish an abstract, so none is reproduced here.",
+      screenshotFiles: []
+    },
+    {
+      id: "sma-weight-vr",
+      kind: "publication",
+      name: "Modulating Weight Perception in Virtual Reality using SMA Actuators: The Interplay of Haptic Feedback and Visual Density",
+      cover: "assets/pub-sma-cover.png",
+      status: "Course research paper — draft, unpublished",
+      date: "Fall 2025",
+      venueLine: "IEEE conference-format paper written for an HCI course project",
+      authors: ["Junghyeon Kim", "Cheolsu", "Younghee"],
+      affiliation: "Haptics & VR Lab, Kyung Hee University",
+      role: "First author",
+      abstract: "A major factor that reduces immersion in Virtual Reality (VR) is the absence of physically perceivable weight when users lift or manipulate virtual objects. We present a lightweight, ungrounded wearable haptic interface based on shape memory alloy (SMA) actuators that applies directional force cues to the wrist and fingers. Using this device, we investigate whether resistance (gravity-direction force) and assistance (anti-gravity force) can intentionally modulate perceived object weight. We further examine how these physical cues interact with visual density cues (e.g., metal vs. wood appearance) that shape users' weight expectations. We outline a factorial user study design with synchronized real and virtual object interactions to quantify changes in perceived weight under different haptic and visual conditions.",
+      keyPoints: [
+        "Wrist/finger-worn SMA actuator that applies brief directional cues — resistance (gravity-direction) to feel heavier, assistance (anti-gravity) to feel lighter — timed to grasp and lift onset",
+        "Characterized SMA coil force–power tradeoffs across coil diameter and coil count to pick a configuration that hits the target cue force within a wearable power budget",
+        "Measured wrist range of motion (flexion/extension ≈ 70°, ulnar/radial deviation ≈ 40°/30°) to place strap anchors and route tension without restricting natural movement",
+        "Proposed a 3×2 within-subject factorial study (haptic cue: off/resistance/assistance × visual density: metal-like/wood-like) to test whether physical and visual weight cues combine"
+      ],
+      keywords: ["Virtual Reality", "Haptics", "Shape Memory Alloy (SMA)", "Weight Perception", "Multimodal Interaction", "Pseudo-haptics"],
+      note: "This is a course research paper draft, not a peer-reviewed publication. Its Results section (quoted honestly here) describes expected outcome patterns the study is designed to test, not measured findings.",
+      screenshotFiles: ["assets/pub-sma-fig-prototype.png", "assets/pub-sma-fig-wristrom.png", "assets/pub-sma-fig-forcepower.png"]
+    }
+  ],
   team: [
     {
       id: "ilsang",

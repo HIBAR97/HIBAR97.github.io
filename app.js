@@ -15,7 +15,9 @@ function renderCards(list, containerId) {
 }
 
 function findProject(id) {
-  return PROJECTS.team.find(p => p.id === id) || PROJECTS.personal.find(p => p.id === id);
+  return (PROJECTS.publications || []).find(p => p.id === id)
+    || PROJECTS.team.find(p => p.id === id)
+    || PROJECTS.personal.find(p => p.id === id);
 }
 
 function section(title, contentHtml) {
@@ -33,9 +35,41 @@ function screenshots(files) {
   return `<div class="shot-row">${files.map(f => `<img class="shot" src="${f}" alt="App screenshot" loading="lazy">`).join("")}</div>`;
 }
 
+function openPublicationModal(p) {
+  const metaRows = [];
+  if (p.date) metaRows.push(`<div class="meta-row"><span class="meta-label">📅 Date</span><span>${p.date}</span></div>`);
+  if (p.venueLine) metaRows.push(`<div class="meta-row"><span class="meta-label">🏛 Venue</span><span>${p.venueLine}</span></div>`);
+  if (p.status) metaRows.push(`<div class="meta-row"><span class="meta-label">⚙️ Status</span><span class="status-pill">${p.status}</span></div>`);
+  if (p.authors && p.authors.length) metaRows.push(`<div class="meta-row"><span class="meta-label">🧑🏻‍💻 Authors</span><span>${p.authors.join(", ")}</span></div>`);
+  if (p.affiliation) metaRows.push(`<div class="meta-row"><span class="meta-label">🏫 Affiliation</span><span>${p.affiliation}</span></div>`);
+  if (p.role) metaRows.push(`<div class="meta-row"><span class="meta-label">🤚🏻 Role</span><span>${p.role}</span></div>`);
+
+  const html = `
+    <div class="modal-cover" style="${p.cover ? `background-image:url('${p.cover}')` : ""}"></div>
+    <div class="modal-body">
+      <h2>${p.name}</h2>
+      <div class="meta-block">${metaRows.join("")}</div>
+      ${section("📝 Abstract", p.abstract ? `<p>${p.abstract}</p>` : "")}
+      ${section("⭐️ Key Points", list(p.keyPoints))}
+      ${section("🏷 Keywords", p.keywords && p.keywords.length ? `<p>${p.keywords.join(" · ")}</p>` : "")}
+      ${section("📷 Figures", screenshots(p.screenshotFiles))}
+      ${p.note ? `<div class="pub-note">ℹ️ ${p.note}</div>` : ""}
+    </div>
+  `;
+
+  document.getElementById("modal-inner").innerHTML = html;
+  document.getElementById("modal-overlay").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
 function openModal(id) {
   const p = findProject(id);
   if (!p) return;
+
+  if (p.kind === "publication") {
+    openPublicationModal(p);
+    return;
+  }
 
   const metaRows = [];
   if (p.created) metaRows.push(`<div class="meta-row"><span class="meta-label">📅 Created</span><span>${p.created}</span></div>`);
@@ -83,5 +117,6 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeModal();
 });
 
+renderCards(PROJECTS.publications || [], "publications");
 renderCards(PROJECTS.team, "team-projects");
 renderCards(PROJECTS.personal, "personal-projects");

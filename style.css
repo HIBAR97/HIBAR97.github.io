@@ -402,6 +402,16 @@ ul.plain .sub {
   margin-bottom: 3px;
 }
 
+.pub-note {
+  font-size: 13px;
+  color: var(--text-light);
+  background: #f7f6f3;
+  border-radius: 6px;
+  padding: 10px 12px;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
 .shot-row {
   display: flex;
   gap: 12px;
