@@ -161,6 +161,13 @@ ul.plain li {
   margin-bottom: 4px;
 }
 
+ul.plain .sub {
+  display: block;
+  font-size: 13px;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+
 .github-card {
   display: flex;
   flex-direction: column;
