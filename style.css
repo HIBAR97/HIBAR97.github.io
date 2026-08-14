@@ -394,3 +394,18 @@ ul.plain .sub {
   font-size: 14px;
   margin-bottom: 3px;
 }
+
+.shot-row {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.shot {
+  height: 420px;
+  width: auto;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}

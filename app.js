@@ -28,6 +28,11 @@ function list(items) {
   return `<ul>${items.map(i => `<li>${i}</li>`).join("")}</ul>`;
 }
 
+function screenshots(files) {
+  if (!files || !files.length) return "";
+  return `<div class="shot-row">${files.map(f => `<img class="shot" src="${f}" alt="App screenshot" loading="lazy">`).join("")}</div>`;
+}
+
 function openModal(id) {
   const p = findProject(id);
   if (!p) return;
@@ -57,6 +62,7 @@ function openModal(id) {
       ${section("🧑🏻‍💻 Team", list(p.team))}
       ${section("🤚🏻 My Role", list(p.part))}
       ${section("🤔 Learned", list(p.learned))}
+      ${section("📷 Screenshots", screenshots(p.screenshotFiles))}
     </div>
   `;
 

@@ -31,36 +31,6 @@ const PROJECTS = {
       screenshots: 3
     },
     {
-      id: "matq",
-      name: "MatQ (맛Q)",
-      cover: "assets/proj-matq.png",
-      created: "July 11, 2023",
-      tags: ["iOS", "SwiftUI", "Swift Concurrency", "AWS", "SPM"],
-      status: "Discontinued",
-      url: { label: "Private", href: null },
-      appBlurb: {
-        title: "MatQ — Earn Discount Coupons Through Quests",
-        body: "‘MatQ’ is a game-like platform where you can earn discount coupons by completing fun quests posted by shop owners nationwide. Currently the service operates only in the Seoul area, with expansion planned."
-      },
-      topic: ["A game-like platform where users complete quests posted by shop owners nationwide to earn discount coupons."],
-      summary: "Lets shop owners create quests, and rewards the customers who complete them with discount coupons.",
-      keyFunction: [
-        "Integration via AWS and Swift Concurrency",
-        "Camera capture",
-        "Kakao / Google / Apple login"
-      ],
-      techStack: "Swift Concurrency, Alamofire, Camera, Haptics",
-      team: ["2 iOS developers", "2 Android developers", "1 Flutter developer", "1 backend developer", "1 UI designer", "3 PM/PO"],
-      part: ["UI/UX development", "AWS integration via Concurrency and Alamofire", "DB schema design", "Google sign-in/sign-out", "Coupon view development"],
-      learned: [
-        "Studied integrating an external DB with Concurrency and Alamofire",
-        "Judging business viability and shaping a business model",
-        "Fixing usability issues and bugs via QA",
-        "Took part in large-scale team development"
-      ],
-      screenshots: 3
-    },
-    {
       id: "postkit",
       name: "PostKit",
       cover: "assets/proj-postkit.png",
@@ -102,6 +72,36 @@ const PROJECTS = {
         "Applied a design system"
       ],
       screenshots: 5
+    },
+    {
+      id: "matq",
+      name: "MatQ (맛Q)",
+      cover: "assets/proj-matq.png",
+      created: "July 11, 2023",
+      tags: ["iOS", "SwiftUI", "Swift Concurrency", "AWS", "SPM"],
+      status: "Discontinued",
+      url: { label: "Private", href: null },
+      appBlurb: {
+        title: "MatQ — Earn Discount Coupons Through Quests",
+        body: "‘MatQ’ is a game-like platform where you can earn discount coupons by completing fun quests posted by shop owners nationwide. Currently the service operates only in the Seoul area, with expansion planned."
+      },
+      topic: ["A game-like platform where users complete quests posted by shop owners nationwide to earn discount coupons."],
+      summary: "Lets shop owners create quests, and rewards the customers who complete them with discount coupons.",
+      keyFunction: [
+        "Integration via AWS and Swift Concurrency",
+        "Camera capture",
+        "Kakao / Google / Apple login"
+      ],
+      techStack: "Swift Concurrency, Alamofire, Camera, Haptics",
+      team: ["2 iOS developers", "2 Android developers", "1 Flutter developer", "1 backend developer", "1 UI designer", "3 PM/PO"],
+      part: ["UI/UX development", "AWS integration via Concurrency and Alamofire", "DB schema design", "Google sign-in/sign-out", "Coupon view development"],
+      learned: [
+        "Studied integrating an external DB with Concurrency and Alamofire",
+        "Judging business viability and shaping a business model",
+        "Fixing usability issues and bugs via QA",
+        "Took part in large-scale team development"
+      ],
+      screenshots: 3
     },
     {
       id: "dots",
@@ -260,6 +260,120 @@ const PROJECTS = {
     }
   ],
   personal: [
+    {
+      id: "wwdc2026",
+      name: "Feel the Place (WWDC 2026)",
+      cover: "assets/proj-wwdc2026.png",
+      created: "February 2026",
+      tags: ["SwiftUI", "Core ML", "Vision", "Core Haptics", "PhotosUI", "PyTorch", "Core ML Tools", "Swift 6"],
+      status: "Prototype",
+      url: { label: "GitHub", href: "https://github.com/HIBAR97" },
+      topic: [
+        "Built for the WWDC Swift Student Challenge — a single-screen app that lets you feel a place through your fingertip.",
+        "Explores whether a photograph of a place can be conveyed as touch rather than only as an image."
+      ],
+      summary: "Pick a photo of a place from your library and the app classifies the scene on-device with a bundled Core ML model, then plays a continuous haptic texture matched to that scene. Drag a finger across the photo and the vibration changes with your speed and position, so a coastline and a city street feel physically different under the same fingertip.",
+      keyFunction: [
+        "On-device scene classification into six place categories — buildings, forest, glacier, mountain, sea, street — with no network access",
+        "Six hand-tuned haptic personalities, each with its own base intensity, sharpness, attack/release envelope, and speed-response curve",
+        "Continuous haptic playback modulated in real time by finger speed and touch position rather than discrete taps",
+        "Procedural spatial patterns per scene — a grid for buildings, crack-and-seam noise for glacier, travelling waves for sea, ridge bands for mountain",
+        "Speed threshold so a stationary finger produces no feedback, matching how real texture perception works",
+        "Graceful degradation when the device has no haptic engine or the model fails to load"
+      ],
+      techStack: "SwiftUI, PhotosUI, Core ML, Vision, Core Haptics, UIKit — plus PyTorch, torchvision, and Core ML Tools for model conversion",
+      part: [
+        "Full app — concept, model selection, and implementation",
+        "Converted a ResNet-18 scene classifier from PyTorch to Core ML with Core ML Tools, folding ImageNet normalization into the image input",
+        "Compared MobileNetV2, EfficientNet-B0, and ResNet-18 before settling on the scene-classification model",
+        "Designed and hand-tuned the haptic profile for each of the six classes",
+        "Built the Core Haptics playback layer and the speed/position modulation"
+      ],
+      learned: [
+        "Streaming dynamic parameters into one long-lived Core Haptics player is far smoother than restarting a pattern every gesture frame",
+        "Normalizing finger speed by the screen diagonal keeps the same stroke feeling identical on iPhone and iPad",
+        "Perceptually, materials need different response curves — soft ones should swell slowly, brittle ones should snap",
+        "Running Vision off the main thread while keeping Swift 6 strict concurrency happy takes deliberate actor handling",
+        "Converting a PyTorch model to Core ML is mostly about getting the preprocessing contract exactly right"
+      ],
+      screenshotFiles: ["assets/shot-wwdc2026-1.png"]
+    },
+    {
+      id: "surfacehaptic",
+      name: "Surface Haptic",
+      cover: "assets/proj-surfacehaptic.png",
+      created: "January 2026",
+      tags: ["Safari Web Extension", "Swift", "AppKit", "JavaScript", "Canvas", "Manifest V3"],
+      status: "Prototype",
+      url: { label: "GitHub", href: "https://github.com/HIBAR97" },
+      topic: [
+        "Asks whether images on a web page can be given a physical surface you can feel.",
+        "Extends haptic texture research from a controlled app into the open web."
+      ],
+      summary: "A macOS Safari extension that makes images on any web page feel textured. A content script analyzes each image's pixels to derive brightness, contrast, edge density, and roughness, then maps the cursor's position over the image to that texture. Hovering, pressing, or scrolling over an image sends the texture data to a native handler, which drives the Mac trackpad's haptic engine.",
+      keyFunction: [
+        "Per-image texture analysis via an offscreen canvas — average brightness, local contrast, edge density, and derived roughness",
+        "Per-region profiles: each image is sampled on a 2×2 to 4×4 grid, so different parts of one image feel different",
+        "Trackpad Force Touch pressure and scroll velocity both modulate the feedback",
+        "Scroll-driven haptics whose repeat rate tracks scroll speed, from roughly 5 Hz up to 50 Hz",
+        "Idle-time pre-analysis queue with per-element caching, so images are ready before the cursor reaches them",
+        "Throttling plus a change-threshold gate to keep the native message rate manageable",
+        "Automatic pickup of images added to the page later via a MutationObserver"
+      ],
+      techStack: "Swift, AppKit, SafariServices, WebKit, NSHapticFeedbackManager — JavaScript with Manifest V3, Canvas 2D, Pointer Events, MutationObserver",
+      part: [
+        "Whole project — extension, native handler, and host app",
+        "Wrote the image texture-analysis pipeline in JavaScript",
+        "Built the native messaging bridge from the extension through to the trackpad haptic engine",
+        "Designed the mapping from texture and pressure onto discrete macOS feedback patterns"
+      ],
+      learned: [
+        "macOS exposes only a few discrete trackpad feedback patterns, so continuous texture has to be approximated by choosing patterns and varying their timing",
+        "Analyzing pixels on every pointer move is far too slow — caching and idle-time pre-analysis are what make it usable",
+        "Cross-origin images taint the canvas, which quietly limits pixel analysis on most real-world pages",
+        "Safari's native messaging path behaves differently from other browsers and needed careful debugging",
+        "Throttling alone is not enough; gating on how much the signal actually changed matters more"
+      ],
+      screenshotFiles: []
+    },
+    {
+      id: "arknob",
+      name: "AR Knob",
+      cover: "assets/proj-arknob.png",
+      created: "December 2025",
+      tags: ["SwiftUI", "Core Haptics", "Core Bluetooth", "Core Motion", "WatchKit", "Combine"],
+      status: "Research prototype",
+      url: { label: "GitHub", href: "https://github.com/HIBAR97" },
+      topic: [
+        "A research tool for studying how physical controls can be simulated purely through haptic feedback.",
+        "Also measures how much latency is added when the haptic is played on a paired Apple Watch instead of the phone."
+      ],
+      summary: "An iPhone app with a companion Apple Watch app that recreates physical control affordances — a detented rotary knob, a slider, and a button — using programmable haptic feedback. Each control can play its haptic on the phone or on the watch over Bluetooth LE, and the app measures the round-trip latency of both paths, aggregates it per control, and exports the samples as CSV.",
+      keyFunction: [
+        "Detented knob driven by touch or by gyroscope, with configurable detent size and hysteresis",
+        "Slider and button with independent haptic settings, each switchable between phone and watch playback",
+        "Round-trip latency measurement over BLE, aggregated per control and exportable to CSV",
+        "Ten procedurally synthesized surface textures — asphalt, gravel, sand, water, metal, wood, fabric, rubber, glass, smooth",
+        "A custom waveform generator: pick sine, square, triangle, or sawtooth, set amplitude and frequency, and feel it through the Taptic Engine",
+        "Full watch haptic editor covering preset type, intensity, sharpness, duration, envelope, pattern, and repeat count",
+        "Watch app streaming its own gyroscope angle back to the phone to drive the knob"
+      ],
+      techStack: "SwiftUI, Core Haptics, Core Bluetooth, Core Motion, WatchKit, Combine, UIKit",
+      part: [
+        "Whole project — iOS app, watchOS app, and the BLE protocol between them",
+        "Designed compact binary BLE packets to keep transport latency low",
+        "Built the latency measurement scheme and the CSV export",
+        "Wrote the procedural texture and waveform haptic synthesizers"
+      ],
+      learned: [
+        "Measuring cross-device latency without synchronized clocks is possible if the receiver only echoes an id and the sender times the round trip itself",
+        "Acknowledging just before playback, rather than after, keeps playback duration out of the transport measurement",
+        "watchOS has no Core Haptics, so intensity and sharpness have to be approximated by choosing among a handful of preset types",
+        "Compact binary packets beat JSON when every millisecond of transport latency is part of the measurement",
+        "Layering two closely spaced transients produces a perceptually stronger click than a single stock impact feedback"
+      ],
+      screenshotFiles: []
+    },
     {
       id: "dalttajo",
       name: "Dalttajo",
