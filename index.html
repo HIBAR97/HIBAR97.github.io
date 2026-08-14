@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeonghyun Kim (Andy) — Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="hero" style="background-image:url('assets/hero.jpg')"></div>
+
+  <main class="page">
+
+    <div class="icon">📱</div>
+    <h1>Jeonghyun Kim (Andy)</h1>
+
+    <section class="intro">
+      <p>👋🏻 Hi! I'm Jeonghyun Kim (Andy), an aspiring developer who wants to connect with users through apps.</p>
+
+      <pre class="code-block"><span class="kw">var</span> jungHyeon = IosDeveloper(
+    nickname: <span class="str">"Andy"</span>,
+    birthDate: <span class="str">"1997-10-10"</span>,
+    mbti: <span class="str">"ENFJ"</span>,
+    phoneNumber: <span class="str">"+82-10-9914-6470"</span>,
+    emailAddress: <span class="str">"andykimiosdev@gmail.com"</span>
+)</pre>
+
+      <p>I'm deeply interested in the latest IT technologies and the services built on them. Through the CBL (Challenge Based Learning) program, I want to develop apps that offer sustainable solutions and an equally accessible UI experience for every user.</p>
+      <p>To meet the needs of many users with diverse requirements, I believe it's essential to incorporate a wide range of opinions during development in order to build genuinely useful apps. I've collaborated with many different people across numerous projects, and contributed to project success through smooth communication between designers, planners, and developers.</p>
+      <p>Lately I've been interested in applying the latest technologies to live, in-service projects. I believe my strengths are a passion for continuously learning new things and the persistence to keep at it until I reach the result I'm after.</p>
+    </section>
+
+    <hr>
+
+    <div class="two-col">
+      <section>
+        <h2>✏️ Education</h2>
+        <ul class="timeline">
+          <li>
+            <span class="title">Kyung Hee University — M.S. in Metaverse Studies</span>
+            <span class="date">2025.03 ~</span>
+          </li>
+          <li>
+            <span class="title">Apple Developer Academy — Completed</span>
+            <span class="date">2023.03 ~ 2023.12</span>
+          </li>
+          <li>
+            <span class="title">Sungkyul University — Graduated</span>
+            <span class="date">2017.03 ~ 2025.02</span>
+          </li>
+          <li>
+            <span class="title">Seoul Gangseo High School — Graduated</span>
+            <span class="date">2014.03 ~ 2017.02</span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>🏆 Awards</h2>
+        <ul class="plain">
+          <li>Grand Prize, In-house (JAVA) Competition — Health Keeper</li>
+        </ul>
+      </section>
+    </div>
+
+    <hr>
+
+    <section>
+      <h2>👨🏻‍💻 GitHub</h2>
+      <p>I'm studying with a goal of one commit a day, covering ongoing projects and algorithm practice.</p>
+      <a class="github-card" href="https://github.com/HIBAR97" target="_blank" rel="noopener">
+        <span class="gh-name">HIBAR97</span>
+        <span class="gh-link">github.com/HIBAR97</span>
+      </a>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>💻 Tech Stack</h2>
+
+      <div class="stack-item">
+        <h3>iOS (SwiftUI, UIKit)</h3>
+        <p>I can implement views and features to spec. I stay interested in the latest iOS technologies and regularly watch WWDC sessions.</p>
+        <p>I've shipped a live service using Swift Concurrency and Alamofire, and I'm studying how to bring newer technologies like SwiftData and AR/VR into real-world use.</p>
+      </div>
+
+      <div class="stack-item">
+        <h3>Android</h3>
+        <p>I can build features to a given spec, and have studied how to design user-friendly app UIs.</p>
+      </div>
+
+      <div class="stack-item">
+        <h3>Kotlin</h3>
+        <p>I can write program code to meet given requirements.</p>
+      </div>
+
+      <div class="stack-item">
+        <h3>Java</h3>
+        <p>I can write code proficiently, following object-oriented design principles.</p>
+      </div>
+
+      <div class="stack-item">
+        <h3>C++</h3>
+        <p>I can write algorithms to meet given requirements.</p>
+      </div>
+
+      <div class="stack-item">
+        <h3>Python</h3>
+        <p>I can do object-oriented programming as well as machine learning programming using big data.</p>
+      </div>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Team Projects</h2>
+      <p class="hint">Click a card for details.</p>
+      <div class="project-grid" id="team-projects"></div>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Personal Projects</h2>
+      <p class="hint">Click a card for details.</p>
+      <div class="project-grid" id="personal-projects"></div>
+    </section>
+
+  </main>
+
+  <div id="modal-overlay" class="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div id="modal-inner"></div>
+    </div>
+  </div>
+
+  <script src="projects.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
