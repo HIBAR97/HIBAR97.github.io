@@ -124,37 +124,84 @@
     <hr>
 
     <section>
-      <h2>💻 Tech Stack</h2>
+      <h2>🔬 Research — Haptics &amp; Tactile Interfaces</h2>
+      <p class="section-lead">My graduate work is on on-body haptic interfaces: building the hardware, collecting the signals, working out what they mean, and rendering the result as touch.</p>
+
+      <div class="stack-item">
+        <h3>Sensing hardware &amp; prototyping</h3>
+        <p>I build sensing prototypes on Arduino Uno and Teensy 4.1 — designing the analog front end, wiring voltage-divider circuits, and reading them over ADC with serial logging.</p>
+        <p>I work with force-sensitive resistors (FSR), IMUs, and capacitive and optical proximity sensors, and I select components against manufacturer application notes rather than by spec-sheet headline: comparing capacitive skin-proximity parts against optical IR reflectance for wear detection, and accounting for the practical failure modes — temperature drift, sweat and water ingress, loose fit, and the shielding and substrate choices that decide whether a design survives them.</p>
+      </div>
+
+      <div class="stack-item">
+        <h3>Data collection &amp; analysis</h3>
+        <p>I set up the measurement path end to end: instrument the sensor, log the raw stream, then calibrate it into physical units instead of trusting the vendor's example code.</p>
+        <p>For an FSR, that meant reverse-engineering resistance from the divider output across three different load resistors, confirming the recovered sensor resistance agreed between them, then fitting a log–log regression to recover the resistance–force power law and inverting it to read out grams-force — including characterizing where the fit breaks down at very low and saturating loads.</p>
+      </div>
+
+      <div class="stack-item">
+        <h3>Algorithms &amp; modeling</h3>
+        <p>Real-time classification of sensor streams — most recently IMU-based body-part classification, so an on-body device can adapt its feedback to where it is worn. Presented as a first-author oral paper at the 4th Korea Haptics Conference (2026).</p>
+        <p>Also geometric and geospatial estimation: fitting circumradius over road geometry to recover curvature, and deriving cross-slope from it against the governing design standard.</p>
+      </div>
+
+      <div class="stack-item">
+        <h3>Haptic rendering &amp; implementation</h3>
+        <p>Turning signals into felt sensation. I design haptic waveforms and event trains with Core Haptics, synthesize surface textures procedurally, and drive actuators from live input so intensity and sharpness track what the user is doing.</p>
+        <p>I also measure the system honestly — including round-trip haptic latency across paired devices, which is easy to hand-wave and hard to actually quantify.</p>
+      </div>
+
+      <div class="stack-item">
+        <h3>Fabrication</h3>
+        <p>3D printing and prototype fabrication for enclosures, sensor mounts, and wearable form factors — keeping the device small, quiet, and light enough to actually be worn, which usually constrains the design more than the electronics do.</p>
+      </div>
+
+      <div class="stack-item">
+        <h3>XR</h3>
+        <p>Multi-projection XR environments and spatial interaction, including LiDAR- and tracker-based sensor fusion for tracking a user and objects in a room-scale CAVE setup — the subject of a filed patent application.</p>
+      </div>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>💻 Development</h2>
+      <p class="section-lead">Shipping the software side — apps in the App Store, on-device ML, and the tooling around them.</p>
 
       <div class="stack-item">
         <h3>iOS (SwiftUI, UIKit)</h3>
-        <p>I can implement views and features to spec. I stay interested in the latest iOS technologies and regularly watch WWDC sessions.</p>
-        <p>I've shipped a live service using Swift Concurrency and Alamofire, and I'm studying how to bring newer technologies like SwiftData and AR/VR into real-world use.</p>
+        <p>My main platform. I build views and features to spec, and I've shipped and maintained live App Store services using Swift Concurrency and Alamofire.</p>
+        <p>Beyond UI, I work with the frameworks that make devices feel physical: Core Haptics for haptic design, Core Bluetooth for device-to-device links, Core Motion for gyroscope and device-motion input, and WatchKit for companion Apple Watch apps. I follow WWDC closely and pick up new APIs as they land.</p>
       </div>
 
       <div class="stack-item">
-        <h3>Android</h3>
-        <p>I can build features to a given spec, and have studied how to design user-friendly app UIs.</p>
+        <h3>On-device machine learning</h3>
+        <p>Core ML and Vision for inference that runs entirely on the device, with no network round trip. I've converted PyTorch models to Core ML with Core ML Tools — including folding preprocessing into the model's image input — and compared candidate architectures before committing to one.</p>
       </div>
 
       <div class="stack-item">
-        <h3>Kotlin</h3>
-        <p>I can write program code to meet given requirements.</p>
-      </div>
-
-      <div class="stack-item">
-        <h3>Java</h3>
-        <p>I can write code proficiently, following object-oriented design principles.</p>
-      </div>
-
-      <div class="stack-item">
-        <h3>C++</h3>
-        <p>I can write algorithms to meet given requirements.</p>
+        <h3>AR / VR (RealityKit, ARKit, visionOS)</h3>
+        <p>Spatial apps and interaction: placing and animating objects in space, anchors, hand tracking, and Reality Composer Pro. I've built visionOS projects and tested AR features on iOS devices with the camera and LiDAR scanner.</p>
       </div>
 
       <div class="stack-item">
         <h3>Python</h3>
-        <p>I can do object-oriented programming as well as machine learning programming using big data.</p>
+        <p>My tool of choice for data and modeling work — sensor data processing, regression and calibration, PyTorch, and model conversion pipelines.</p>
+      </div>
+
+      <div class="stack-item">
+        <h3>Android (Kotlin, Java)</h3>
+        <p>I build features to a given spec on Android, and have shipped apps backed by MySQL and Firebase. I studied user-friendly app UI design here before moving to iOS.</p>
+      </div>
+
+      <div class="stack-item">
+        <h3>C / C++</h3>
+        <p>Embedded firmware for microcontrollers, and algorithm work where I need to be close to the hardware.</p>
+      </div>
+
+      <div class="stack-item">
+        <h3>Web</h3>
+        <p>HTML, CSS, and JavaScript — including building and maintaining my research lab's website, and a Safari Web Extension that analyzes page images in the browser.</p>
       </div>
     </section>
 

@@ -195,6 +195,12 @@ ul.plain .sub {
   color: var(--text-light);
 }
 
+.section-lead {
+  font-size: 15px;
+  color: var(--text-light);
+  margin: -4px 0 18px;
+}
+
 .stack-item {
   margin-bottom: 20px;
 }
@@ -202,6 +208,7 @@ ul.plain .sub {
 .stack-item p {
   color: var(--text-light);
   font-size: 15px;
+  margin-bottom: 6px;
 }
 
 .project-grid {
