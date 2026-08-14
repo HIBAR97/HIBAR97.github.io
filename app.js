@@ -43,6 +43,7 @@ function openPublicationModal(p) {
   if (p.authors && p.authors.length) metaRows.push(`<div class="meta-row"><span class="meta-label">🧑🏻‍💻 Authors</span><span>${p.authors.join(", ")}</span></div>`);
   if (p.affiliation) metaRows.push(`<div class="meta-row"><span class="meta-label">🏫 Affiliation</span><span>${p.affiliation}</span></div>`);
   if (p.role) metaRows.push(`<div class="meta-row"><span class="meta-label">🤚🏻 Role</span><span>${p.role}</span></div>`);
+  if (p.doi) metaRows.push(`<div class="meta-row"><span class="meta-label">🔗 DOI</span><span>${p.doi.href ? `<a href="${p.doi.href}" target="_blank" rel="noopener">${p.doi.label}</a>` : p.doi.label}</span></div>`);
 
   const html = `
     <div class="modal-cover" style="${p.cover ? `background-image:url('${p.cover}')` : ""}"></div>
@@ -50,7 +51,10 @@ function openPublicationModal(p) {
       <h2>${p.name}</h2>
       <div class="meta-block">${metaRows.join("")}</div>
       ${section("📝 Abstract", p.abstract ? `<p>${p.abstract}</p>` : "")}
-      ${section("⭐️ Key Points", list(p.keyPoints))}
+      ${section("⭐️ Contributions", list(p.keyPoints))}
+      ${section("🔧 Method", p.method ? `<p>${p.method}</p>` : "")}
+      ${section("📊 Findings", list(p.findings))}
+      ${section("🤔 Learned", list(p.learned))}
       ${section("🏷 Keywords", p.keywords && p.keywords.length ? `<p>${p.keywords.join(" · ")}</p>` : "")}
       ${section("📷 Figures", screenshots(p.screenshotFiles))}
       ${p.note ? `<div class="pub-note">ℹ️ ${p.note}</div>` : ""}
