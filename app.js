@@ -30,6 +30,14 @@ function list(items) {
   return `<ul>${items.map(i => `<li>${i}</li>`).join("")}</ul>`;
 }
 
+function pubLinks(links) {
+  if (!links || !links.length) return "";
+  return `<div class="pub-links">${links
+    .filter(l => l && l.label && l.href)
+    .map(l => `<a class="pub-link" href="${l.href}" target="_blank" rel="noopener">${l.label}</a>`)
+    .join("")}</div>`;
+}
+
 function screenshots(files) {
   if (!files || !files.length) return "";
   return `<div class="shot-row">${files.map(f => `<img class="shot" src="${f}" alt="App screenshot" loading="lazy">`).join("")}</div>`;
@@ -57,6 +65,7 @@ function openPublicationModal(p) {
       ${section("🤔 Learned", list(p.learned))}
       ${section("🏷 Keywords", p.keywords && p.keywords.length ? `<p>${p.keywords.join(" · ")}</p>` : "")}
       ${section("📷 Figures", screenshots(p.screenshotFiles))}
+      ${section("🔗 Links", pubLinks(p.links))}
       ${p.note ? `<div class="pub-note">ℹ️ ${p.note}</div>` : ""}
     </div>
   `;

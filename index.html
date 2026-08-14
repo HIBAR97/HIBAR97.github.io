@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Junghyeon Kim (Andy) — Portfolio</title>
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -15,8 +15,20 @@
     <div class="icon">📱</div>
     <h1>Junghyeon Kim (Andy)</h1>
 
+    <div class="link-row">
+      <a class="icon-link" href="mailto:andykimiosdev@gmail.com" aria-label="Email" title="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v11A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5v-11Zm2.2-.5a.5.5 0 0 0-.32.88l6.8 5.66a.5.5 0 0 0 .64 0l6.8-5.66A.5.5 0 0 0 18.8 6H5.2Zm13.8 2.66-5.86 4.88a2.5 2.5 0 0 1-3.2 0L4.08 8.66V17.5a1.5 1.5 0 0 0 1.5 1.5h13a1.5 1.5 0 0 0 1.5-1.5V8.66Z"/></svg>
+      </a>
+      <a class="icon-link" href="https://github.com/HIBAR97" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.71.5.09.68-.22.68-.49v-1.72c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.92-2.34 4.79-4.57 5.04.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.1 10.1 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>
+      </a>
+      <a class="icon-link" href="https://www.linkedin.com/in/andykim1010/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM3 9.5h4v11H3v-11Zm6.5 0h3.8v1.5h.05a4.2 4.2 0 0 1 3.75-2.06c4 0 4.75 2.5 4.75 5.75v5.81h-4v-5.15c0-1.23-.02-2.81-1.72-2.81-1.72 0-1.98 1.34-1.98 2.72v5.24h-4v-11Z"/></svg>
+      </a>
+    </div>
+
     <section class="intro">
-      <p>👋🏻 Hi! I'm Junghyeon Kim (Andy), an aspiring developer who wants to connect with users through apps.</p>
+      <p class="lede">👋🏻 Hi — I'm Junghyeon Kim (Andy). I'm an iOS and XR developer turned haptics researcher, working on interfaces you can feel and not just look at.</p>
 
       <pre class="code-block"><span class="kw">var</span> jungHyeon = IosDeveloper(
     nickname: <span class="str">"Andy"</span>,
@@ -24,9 +36,63 @@
     emailAddress: <span class="str">"andykimiosdev@gmail.com"</span>
 )</pre>
 
-      <p>I'm deeply interested in the latest IT technologies and the services built on them. Through the CBL (Challenge Based Learning) program, I want to develop apps that offer sustainable solutions and an equally accessible UI experience for every user.</p>
-      <p>To meet the needs of many users with diverse requirements, I believe it's essential to incorporate a wide range of opinions during development in order to build genuinely useful apps. I've collaborated with many different people across numerous projects, and contributed to project success through smooth communication between designers, planners, and developers.</p>
-      <p>Lately I've been interested in applying the latest technologies to live, in-service projects. I believe my strengths are a passion for continuously learning new things and the persistence to keep at it until I reach the result I'm after.</p>
+      <p>I started out as an app developer. At the Apple Developer Academy I learned to build through Challenge Based Learning — starting from someone's actual problem rather than from a feature list — and shipped several apps to the App Store with teams of designers, planners, and engineers.</p>
+      <p>From there I moved toward XR. I built visionOS and ARKit projects, put objects into space, and made them respond to hands. But the more spatial apps I made, the more one gap stood out: everything I built could be seen and heard, and almost nothing could be <em>felt</em>. A virtual object you can pick up but not feel is still a picture. That gap is what pulled me into HCI — if I wanted interfaces that genuinely connect with people, I had to understand how people perceive, not just how devices render.</p>
+      <p>So I came to the Haptics and VR Lab at Kyung Hee University to study it properly. My research is on on-body haptic interfaces: instrumenting sensors and calibrating them into real physical units, collecting and analyzing the signals, classifying them in real time, and rendering the result back as touch. Recently that meant using IMU data to work out where on the body a device is worn so it can adapt its feedback, and building wearable actuators that can nudge how heavy a virtual object feels.</p>
+      <p>I like working in both directions at once. Research keeps me honest about whether an interaction actually works for a person, and development means I can build the apparatus, ship the thing, and measure it myself instead of stopping at a diagram. My strength is sticking with a problem — through the calibration curve that doesn't fit and the prototype that needs rebuilding — until it holds up.</p>
+    </section>
+
+    <hr>
+
+    <section class="keyword-block">
+      <h3 class="kw-heading">Research Interests</h3>
+      <p class="kw-line">Haptics · On-Body Haptic Interfaces · Wearable Haptic Devices · Tactile Perception · Virtual &amp; Extended Reality · Multimodal Interaction · Human-Computer Interaction</p>
+
+      <h3 class="kw-heading">Expertise</h3>
+      <p class="kw-line">Haptic Rendering &amp; Actuator Control · Sensor Instrumentation &amp; Calibration · Sensor Data Collection and Analysis · Real-Time Signal Classification · Embedded Prototyping (Arduino, Teensy) · On-Device Machine Learning · iOS Application Development · Rapid Prototyping &amp; 3D Printing</p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>News</h2>
+      <ul class="news-list">
+        <li>
+          <span class="news-date">AUG 2026</span>
+          <span class="news-body">
+            <strong>Oral presentation at the 4th Korea Haptics Conference</strong>
+            Presented “IMU-Based Real-Time Body-Part Classification for Adaptive On-Body Haptic Feedback” as first author — Seoul, Korea
+          </span>
+        </li>
+        <li>
+          <span class="news-date">2026</span>
+          <span class="news-body">
+            <strong>Patent application filed</strong>
+            Escape-room content in a CAVE-based multi-projection XR environment (KR 10-2026-0024399)
+          </span>
+        </li>
+        <li>
+          <span class="news-date">JUN 2025</span>
+          <span class="news-body">
+            <strong>3rd Place, Student Innovation Challenge — IEEE World Haptics Conference 2025</strong>
+            “Haptic Latch: Enhancing Passenger Safety with Haptic Feedback in Vehicle Door Mechanisms”
+          </span>
+        </li>
+        <li>
+          <span class="news-date">MAR 2025</span>
+          <span class="news-body">
+            <strong>Started M.S. in Metaverse Studies at Kyung Hee University</strong>
+            Joined the Haptics and VR Lab under Prof. Seokhee Jeon
+          </span>
+        </li>
+        <li>
+          <span class="news-date">DEC 2023</span>
+          <span class="news-body">
+            <strong>Completed the Apple Developer Academy</strong>
+            Nine-month Challenge Based Learning program; shipped several apps to the App Store
+          </span>
+        </li>
+      </ul>
     </section>
 
     <hr>
@@ -238,7 +304,7 @@
     </div>
   </div>
 
-  <script src="projects.js?v=5"></script>
-  <script src="app.js?v=5"></script>
+  <script src="projects.js?v=6"></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>

@@ -49,11 +49,19 @@ const PROJECTS = {
     //     "What you would do differently next time"
     //   ],
     //   keywords: ["Haptics", "Virtual Reality"],
-    //   note: "Any honest caveat — draft status, preliminary data, etc.",
     //   screenshotFiles: [              // figures and photos, shown in a scrolling row
     //     "assets/pub-xxx-fig1.png",
     //     "assets/pub-xxx-fig2.png"
-    //   ]
+    //   ],
+    //   links: [                        // rendered as buttons at the bottom of the modal
+    //     { label: "PDF",     href: "assets/pub-xxx.pdf" },
+    //     { label: "IEEE",    href: "https://ieeexplore.ieee.org/document/..." },
+    //     { label: "DOI",     href: "https://doi.org/10.xxxx/xxxxx" },
+    //     { label: "BibTeX",  href: "assets/pub-xxx.bib" },
+    //     { label: "Code",    href: "https://github.com/HIBAR97/..." },
+    //     { label: "Video",   href: "https://youtu.be/..." }
+    //   ],
+    //   note: "Any honest caveat — draft status, preliminary data, etc."
     // }
     // ------------------------------------------------------------------
     //
