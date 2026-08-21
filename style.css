@@ -658,25 +658,21 @@ ul.plain .sub {
   }
 }
 
-/* Wide screens: keep the reading column comfortable */
-@media (min-width: 1200px) {
-  .page {
-    max-width: 960px;
-  }
-}
-
-/* Ultrawide: reflow the text-heavy sections into two columns so a 21:9
-   (or wider) monitor doesn't leave most of the screen empty and force a
-   very long single-column scroll. Project grids stay full-width outside
-   this wrapper since their own auto-fill grid already uses extra width
-   by fitting more cards per row. */
+/* Any regular desktop/laptop screen (not just ultrawide): reflow the
+   text-heavy sections into two columns so a long page doesn't force a
+   single tall column of scrolling when there's clearly room beside it.
+   Keyed on width alone, not aspect ratio, so a normal 16:9 monitor
+   qualifies as soon as it's wide enough; ultrawide just inherits the
+   same rule. Project grids stay full-width outside this wrapper since
+   their own auto-fill grid already uses extra width by fitting more
+   cards per row. */
 .wide-columns > section,
 .wide-columns > .two-col {
   break-inside: avoid;
   -webkit-column-break-inside: avoid;
 }
 
-@media (min-width: 1400px) and (min-aspect-ratio: 2/1) {
+@media (min-width: 1200px) {
   .page {
     max-width: 1600px;
   }
