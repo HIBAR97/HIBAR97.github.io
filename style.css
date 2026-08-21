@@ -659,3 +659,38 @@ ul.plain .sub {
     max-width: 960px;
   }
 }
+
+/* Ultrawide: reflow the text-heavy sections into two columns so a 21:9
+   (or wider) monitor doesn't leave most of the screen empty and force a
+   very long single-column scroll. Project grids stay full-width outside
+   this wrapper since their own auto-fill grid already uses extra width
+   by fitting more cards per row. */
+.wide-columns > section,
+.wide-columns > .two-col {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+}
+
+@media (min-width: 1400px) and (min-aspect-ratio: 2/1) {
+  .page {
+    max-width: 1600px;
+  }
+
+  .wide-columns {
+    column-count: 2;
+    column-gap: 72px;
+  }
+
+  .wide-columns > hr {
+    break-inside: avoid;
+    break-after: avoid;
+    margin: 20px 0;
+  }
+
+  /* Avoid a 2x2 nested grid: let Education/Awards and Patents/Languages
+     each stack within their own text column instead of splitting again. */
+  .wide-columns .two-col {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
