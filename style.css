@@ -27,7 +27,12 @@ body {
      shrink a vh-based height into a sliver too thin to hold a face. */
   height: clamp(180px, 26vw, 300px);
   background-size: cover;
-  background-position: 32% 33%;
+  /* Y=23% puts the subject's hair top (at 21.3% of the source image) about
+     18% of the way down the visible band on every size, instead of flush
+     against its top edge. X is a no-op here: the box is always wider than
+     the image's 3:2 ratio, so cover scales to width and never overflows
+     horizontally. */
+  background-position: 50% 23%;
   background-color: #ddd;
 }
 
@@ -681,10 +686,17 @@ ul.plain .sub {
     column-gap: 72px;
   }
 
+  /* Drop the rules inside the wrapper. A column break can land right after
+     one, leaving a stray rule floating at the top of the second column with
+     no content above it. The h2 headings plus the gap below carry the
+     separation on their own. */
   .wide-columns > hr {
-    break-inside: avoid;
-    break-after: avoid;
-    margin: 20px 0;
+    display: none;
+  }
+
+  .wide-columns > section,
+  .wide-columns > .two-col {
+    margin-bottom: 34px;
   }
 
   /* Avoid a 2x2 nested grid: let Education/Awards and Patents/Languages
