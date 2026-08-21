@@ -20,11 +20,14 @@ body {
 
 .hero {
   width: 100%;
-  height: 30vh;
-  min-height: 180px;
-  max-height: 280px;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Height tracks viewport width (not height) and is capped, so the box's
+     aspect ratio stays bounded on any screen: unbounded vw would otherwise
+     shrink a vh-based height into a sliver too thin to hold a face. */
+  height: clamp(180px, 26vw, 300px);
   background-size: cover;
-  background-position: 32% 15%;
+  background-position: 32% 33%;
   background-color: #ddd;
 }
 
@@ -561,11 +564,6 @@ ul.plain .sub {
 
 /* Phones */
 @media (max-width: 560px) {
-  .hero {
-    height: 22vh;
-    min-height: 130px;
-  }
-
   hr {
     margin: 22px 0;
   }
