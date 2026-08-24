@@ -2,6 +2,7 @@ const PROJECTS = {
   publications: [
     {
       id: "khc2026-imu",
+      impact: "First-author oral presentation, accepted paper",
       kind: "publication",
       name: "IMU-Based Real-Time Body-Part Classification for Adaptive On-Body Haptic Feedback",
       cover: null,
@@ -94,6 +95,7 @@ const PROJECTS = {
   team: [
     {
       id: "ilsang",
+      impact: "Live on the App Store",
       name: "Ilsang (일상)",
       cover: "assets/proj-ilsang.png",
       created: "June 13, 2024",
@@ -124,6 +126,7 @@ const PROJECTS = {
     },
     {
       id: "postkit",
+      impact: "Live on the App Store",
       name: "PostKit",
       cover: "assets/proj-postkit.png",
       created: "September 4, 2023",
@@ -167,6 +170,7 @@ const PROJECTS = {
     },
     {
       id: "matq",
+      impact: "Launched and operated in the Seoul market before being discontinued",
       name: "MatQ (맛Q)",
       cover: "assets/proj-matq.png",
       created: "July 11, 2023",
@@ -197,6 +201,7 @@ const PROJECTS = {
     },
     {
       id: "dots",
+      impact: "Shipped to the App Store",
       name: "Dots",
       cover: "assets/proj-dots.png",
       created: "June 19 to August 3, 2023",
@@ -322,6 +327,7 @@ const PROJECTS = {
     },
     {
       id: "healthkeeper",
+      impact: "Grand Prize, in-house Java competition",
       name: "Health Keeper",
       cover: "assets/proj-healthkeeper.png",
       created: "July 6 to December 21, 2020",

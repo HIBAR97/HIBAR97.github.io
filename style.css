@@ -53,6 +53,34 @@ body {
   border-radius: 12px;
 }
 
+.role-line {
+  font-size: 16px;
+  color: var(--text-light);
+  font-weight: 500;
+  margin: 0 0 16px;
+}
+
+/* Needs .icon-link in the selector: the base .icon-link rule sets a fixed
+   38px width later in this file, so a bare .resume-link would lose the
+   cascade and clip the label out of the box. */
+.icon-link.resume-link {
+  width: auto;
+  gap: 6px;
+  padding: 0 12px;
+}
+
+.icon-link.resume-link svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.resume-label {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 .link-row {
   display: flex;
   gap: 10px;
@@ -69,6 +97,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--text);
+  text-decoration: none;
   transition: background 0.15s ease, border-color 0.15s ease;
 }
 
@@ -165,6 +194,23 @@ body {
   gap: 24px;
 }
 
+/* Research and Development sit side by side, but only once each side gets a
+   readable measure. These two carry the densest prose on the page, so they
+   stay stacked below 1100px rather than squeezing into ~365px columns on a
+   tablet in portrait. */
+.research-dev {
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (min-width: 1100px) {
+  .research-dev {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+}
+
 .hint {
   font-size: 13px;
   color: var(--text-light);
@@ -213,6 +259,30 @@ section {
 }
 
 .intro p {
+  margin-bottom: 12px;
+}
+
+.more-story {
+  margin-bottom: 12px;
+}
+
+.more-story summary {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-light);
+  padding: 4px 0;
+}
+
+.more-story summary:hover {
+  color: var(--text);
+}
+
+.more-story[open] summary {
+  margin-bottom: 8px;
+}
+
+.more-story p {
   margin-bottom: 12px;
 }
 
@@ -450,6 +520,18 @@ ul.plain .sub {
   border-radius: 4px;
   padding: 2px 8px;
   font-size: 12px;
+}
+
+.impact-badge {
+  display: inline-block;
+  background: #eaf3ea;
+  color: #2e6b35;
+  border: 1px solid #cfe4cf;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 16px;
 }
 
 .app-blurb {

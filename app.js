@@ -53,10 +53,13 @@ function openPublicationModal(p) {
   if (p.role) metaRows.push(`<div class="meta-row"><span class="meta-label">🤚🏻 Role</span><span>${p.role}</span></div>`);
   if (p.doi) metaRows.push(`<div class="meta-row"><span class="meta-label">🔗 DOI</span><span>${p.doi.href ? `<a href="${p.doi.href}" target="_blank" rel="noopener">${p.doi.label}</a>` : p.doi.label}</span></div>`);
 
+  const impact = p.impact ? `<div class="impact-badge">✅ ${p.impact}</div>` : "";
+
   const html = `
     <div class="modal-cover" style="${p.cover ? `background-image:url('${p.cover}')` : ""}"></div>
     <div class="modal-body">
       <h2>${p.name}</h2>
+      ${impact}
       <div class="meta-block">${metaRows.join("")}</div>
       ${section("📝 Abstract", p.abstract ? `<p>${p.abstract}</p>` : "")}
       ${section("⭐️ Contributions", list(p.keyPoints))}
@@ -96,10 +99,13 @@ function openModal(id) {
       <div class="app-blurb-body">${p.appBlurb.body}</div>
     </div>` : "";
 
+  const impact = p.impact ? `<div class="impact-badge">✅ ${p.impact}</div>` : "";
+
   const html = `
     <div class="modal-cover" style="${p.cover ? `background-image:url('${p.cover}')` : ""}"></div>
     <div class="modal-body">
       <h2>${p.name}</h2>
+      ${impact}
       <div class="meta-block">${metaRows.join("")}</div>
       ${appBlurb}
       ${section("💡 Topic", list(p.topic))}
