@@ -129,7 +129,7 @@ const KO_STATIC = {
   "personal-h": "개인 프로젝트",
   "personal-hint": "카드를 클릭하면 자세히 볼 수 있습니다.",
 
-  "resume-label": "이력서"
+  "resume-label": "CV"
 };
 
 function tf(obj, field) {
