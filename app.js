@@ -338,11 +338,14 @@ renderCards(PROJECTS.personal, "personal-projects");
 
 // Experimental: a light haptic tick while scrolling, on browsers that support
 // it. iOS Safari has never implemented the Vibration API, so this is a no-op
-// there; Android Chrome may also ignore it since scrolling isn't a user
-// activation gesture. Throttled so it can't spam vibrate() on every frame.
+// there. Bound to touchmove rather than scroll: Chrome requires a live user
+// gesture to allow vibrate(), and a bare `scroll` event (especially during
+// inertial/momentum scrolling) usually fires after that gesture context is
+// already gone, so vibrate() silently no-ops. touchmove fires while the
+// finger is still on the glass, which keeps the gesture "live".
 if ("vibrate" in navigator) {
   let lastScrollVibrate = 0;
-  window.addEventListener("scroll", () => {
+  window.addEventListener("touchmove", () => {
     const now = Date.now();
     if (now - lastScrollVibrate > 150) {
       navigator.vibrate(8);
