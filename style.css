@@ -14,7 +14,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, "Segoe UI", "Apple SD Gothic Neo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Pretendard", -apple-system, "Segoe UI", "Apple SD Gothic Neo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.6;
 }
 
@@ -58,6 +58,90 @@ body {
   color: var(--text-light);
   font-weight: 500;
   margin: 0 0 16px;
+}
+
+.name-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.name-row h1 {
+  margin: 0 0 16px;
+}
+
+.lang-switch {
+  position: relative;
+  display: inline-block;
+  width: 68px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.lang-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* "Regular Glass" per liquid-glass.ybouane.com: near-transparent, minimal
+   blur (light bends through it rather than frosting it opaque), a bright
+   thin rim doing the edge-highlight work, and a soft cast shadow for depth
+   — rather than the milkier frosted-glass look this had before. */
+.lang-switch-track {
+  position: absolute;
+  inset: 0;
+  background: #d8d6d0;
+  border-radius: 999px;
+  transition: background 0.2s ease;
+}
+
+.lang-switch input:checked ~ .lang-switch-track {
+  background: #0071e3;
+}
+
+.lang-switch-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.lang-switch input:checked ~ .lang-switch-track .lang-switch-thumb {
+  transform: translateX(38px);
+}
+
+.lang-switch-word {
+  position: absolute;
+  top: 50%;
+  right: 9px;
+  transform: translateY(-50%);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-light);
+  transition: color 0.2s ease;
+}
+
+.lang-switch input:checked ~ .lang-switch-track .lang-switch-word {
+  right: auto;
+  left: 9px;
+  color: #fff;
+}
+
+.lang-switch input:focus-visible ~ .lang-switch-track {
+  outline: 2px solid #0071e3;
+  outline-offset: 2px;
 }
 
 /* Needs .icon-link in the selector: the base .icon-link rule sets a fixed
@@ -139,13 +223,18 @@ body {
 
 .kw-tag {
   display: inline-block;
-  background: #fce8e6;
-  color: #9b3428;
-  border-radius: 5px;
-  padding: 5px 11px;
+  background: #0071e3;
+  color: #fff;
+  border-radius: 980px;
+  padding: 5px 14px;
   font-size: 13px;
   font-weight: 500;
   line-height: 1.3;
+  transition: background 0.15s ease;
+}
+
+.kw-tag:hover {
+  background: #0077ed;
 }
 
 /* Stat row: the "by the numbers" strip right under the code block */
@@ -315,20 +404,66 @@ section {
   margin-bottom: 12px;
 }
 
-.more-story summary {
+/* The generic hr rule's 28px top margin otherwise wins the collapse against
+   this button's 12px bottom margin, leaving more space below the button
+   than above it. Pin this specific hr to match. */
+.intro + hr {
+  margin-top: 12px;
+}
+
+.more-story-toggle-row {
+  display: flex;
+  justify-content: center;
+}
+
+.more-story-toggle {
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-light);
-  padding: 4px 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0071e3;
+  padding: 5px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #b9d9f8;
+  border-radius: 999px;
+  background: var(--bg);
+  font-family: inherit;
+  transition: background 0.15s ease, border-color 0.15s ease;
 }
 
-.more-story summary:hover {
-  color: var(--text);
+.more-story-toggle:hover {
+  background: #eaf3fd;
+  border-color: #8fc0f0;
 }
 
-.more-story[open] summary {
-  margin-bottom: 8px;
+.more-story-toggle::before {
+  content: "↓";
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+.more-story.open .more-story-toggle::before {
+  transform: rotate(180deg);
+}
+
+/* Height is set to an explicit pixel value in JS (toggleMoreStory), measured
+   from the content's scrollHeight, so it can transition smoothly. A grid-rows
+   0fr/1fr trick was tried first but Chromium collapses an auto-sized flex
+   track's content contribution to near-zero as soon as any descendant in the
+   chain has overflow:hidden, which this element needs for the closed-state
+   clip; measuring and animating height directly sidesteps that. */
+.more-story-panel {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+
+.more-story-body {
+  padding-top: 12px;
+  text-align: center;
 }
 
 .more-story p {
@@ -572,8 +707,8 @@ ul.plain .sub {
 }
 
 .tag {
-  background: #fce8e6;
-  color: #9b3428;
+  background: #e8f2fd;
+  color: #0071e3;
   border-radius: 4px;
   padding: 2px 8px;
   font-size: 12px;

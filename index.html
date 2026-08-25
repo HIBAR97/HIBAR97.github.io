@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Junghyeon Kim (Andy) Portfolio</title>
-<link rel="stylesheet" href="style.css?v=20">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="style.css?v=44">
 </head>
 <body>
 
@@ -13,8 +14,17 @@
   <main class="page">
 
     <div class="icon">📱</div>
-    <h1>Junghyeon Kim (Andy)</h1>
-    <p class="role-line">iOS &amp; XR Developer · Haptics Researcher</p>
+    <div class="name-row">
+      <h1 data-i18n="name-h1">Junghyeon Kim (Andy)</h1>
+      <label class="lang-switch" aria-label="Switch language" title="Switch language">
+        <input type="checkbox" id="lang-toggle" onchange="toggleLang()">
+        <span class="lang-switch-track">
+          <span class="lang-switch-thumb"></span>
+          <span class="lang-switch-word" id="lang-switch-word">EN</span>
+        </span>
+      </label>
+    </div>
+    <p class="role-line" data-i18n="role-line">iOS &amp; XR Developer · Haptics Researcher</p>
 
     <div class="link-row">
       <a class="icon-link" href="mailto:andykimiosdev@gmail.com" aria-label="Email" title="Email">
@@ -28,58 +38,66 @@
       </a>
       <a class="icon-link resume-link" href="assets/Junghyeon_Kim_Resume.pdf" target="_blank" rel="noopener" aria-label="Resume" title="Resume (PDF)">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8.5 1.5V8H19l-4.5-4.5ZM7 12h10v1.5H7V12Zm0 3.5h10V17H7v-1.5ZM7 8.5h5V10H7V8.5Z"/></svg>
-        <span class="resume-label">Resume</span>
+        <span class="resume-label" data-i18n="resume-label">Resume</span>
       </a>
     </div>
 
     <section class="intro">
-      <p class="lede">👋🏻 Hi, I'm Junghyeon Kim (Andy). I'm an iOS and XR developer turned haptics researcher, working on interfaces you can feel and not just look at.</p>
+      <p class="lede" data-i18n="lede">👋🏻 Hi, I'm Junghyeon Kim (Andy). I'm an iOS and XR developer turned haptics researcher, working on interfaces you can feel and not just look at.</p>
 
       <pre class="code-block"><span class="kw">var</span> jungHyeon = IosDeveloper(
     nickname: <span class="str">"Andy"</span>,
-    mbti: <span class="str">"ENFJ"</span>,
-    emailAddress: <span class="str">"andykimiosdev@gmail.com"</span>
+    emailAddress: <span class="str">"andykimiosdev@gmail.com"</span>,
+    phoneNumber: <span class="str">"+8210-9914-6470"</span>
 )</pre>
 
-      <p>I started as an app developer, shipping iOS and XR apps through the Apple Developer Academy and beyond. Building spatial apps that could be seen and heard but never felt pulled me into haptics research, where I now build the wearable sensors and haptic feedback systems myself, and ship the software behind them too.</p>
+      <p data-i18n="intro-p1">I started as an app developer, shipping iOS and XR apps through the Apple Developer Academy and beyond. Building spatial apps that could be seen and heard but never felt pulled me into haptics research, where I now build the wearable sensors and haptic feedback systems myself, and ship the software behind them too.</p>
 
-      <details class="more-story">
-        <summary>More about how I got here</summary>
-        <p>Through CBL (Challenge Based Learning), I learned to look at one problem from many different angles instead of jumping straight to a feature list. Discussing the same problem with people who see it differently, designers, planners, and engineers, consistently led to more effective solutions than working it out alone, and I shipped several apps to the App Store this way.</p>
-        <p>From there I moved toward XR. I built visionOS and ARKit projects, put objects into space, and made them respond to hands. But the more spatial apps I made, the more one gap stood out. Everything I built could be seen and heard, and almost nothing could be <em>felt</em>. A virtual object you can pick up but not feel is still a picture. That gap pulled me into HCI, because if I wanted interfaces that genuinely connect with people, I had to understand how people perceive and not only how devices render.</p>
-        <p>So I went to study it properly. My research is on on-body haptic interfaces: instrumenting sensors and calibrating them into real physical units, collecting and analyzing the signals, classifying them in real time, and rendering the result back as touch. Recently that meant using IMU data to work out where on the body a device is worn so it can adapt its feedback, and building wearable actuators that can nudge how heavy a virtual object feels.</p>
-        <p>I like working in both directions at once. Research keeps me honest about whether an interaction actually works for a person, and development means I can build the apparatus, ship the thing, and measure it myself instead of stopping at a diagram. My strength is sticking with a problem, through the calibration curve that doesn't fit and the prototype that needs rebuilding, until it holds up.</p>
-      </details>
+      <div class="more-story" id="more-story">
+        <div class="more-story-toggle-row">
+          <button class="more-story-toggle" type="button" aria-expanded="false" aria-controls="more-story-panel" onclick="toggleMoreStory()">
+            <span data-i18n="more-summary">More about how I got here</span>
+          </button>
+        </div>
+        <div class="more-story-panel" id="more-story-panel">
+          <div class="more-story-body">
+            <p data-i18n="story-p1">Through CBL (Challenge Based Learning), I learned to look at one problem from many different angles instead of jumping straight to a feature list. Discussing the same problem with people who see it differently, designers, planners, and engineers, consistently led to more effective solutions than working it out alone, and I shipped several apps to the App Store this way.</p>
+            <p data-i18n="story-p2">From there I moved toward XR. I built visionOS and ARKit projects, put objects into space, and made them respond to hands. But the more spatial apps I made, the more one gap stood out. Everything I built could be seen and heard, and almost nothing could be <em>felt</em>. A virtual object you can pick up but not feel is still a picture. That gap pulled me into HCI, because if I wanted interfaces that genuinely connect with people, I had to understand how people perceive and not only how devices render.</p>
+            <p data-i18n="story-p3">So I went to study it properly. My research is on on-body haptic interfaces: instrumenting sensors and calibrating them into real physical units, collecting and analyzing the signals, classifying them in real time, and rendering the result back as touch. Recently that meant using IMU data to work out where on the body a device is worn so it can adapt its feedback, and building wearable actuators that can nudge how heavy a virtual object feels.</p>
+            <p data-i18n="story-p4">I like working in both directions at once. Research keeps me honest about whether an interaction actually works for a person, and development means I can build the apparatus, ship the thing, and measure it myself instead of stopping at a diagram. My strength is sticking with a problem, through the calibration curve that doesn't fit and the prototype that needs rebuilding, until it holds up.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <hr>
 
     <section class="keyword-block">
-      <h3 class="kw-heading">Research Interests</h3>
+      <h3 class="kw-heading" data-i18n="kw-research-h">Research Interests</h3>
       <div class="kw-tags">
-        <span class="kw-tag">Haptics</span>
-        <span class="kw-tag">On-Body Haptic Interfaces</span>
-        <span class="kw-tag">Wearable Haptic Devices</span>
-        <span class="kw-tag">Tactile Perception</span>
-        <span class="kw-tag">Virtual &amp; Extended Reality</span>
-        <span class="kw-tag">Multimodal Interaction</span>
-        <span class="kw-tag">Human-Computer Interaction</span>
+        <span class="kw-tag" data-i18n="kwr-1">Haptics</span>
+        <span class="kw-tag" data-i18n="kwr-2">On-Body Haptic Interfaces</span>
+        <span class="kw-tag" data-i18n="kwr-3">Wearable Haptic Devices</span>
+        <span class="kw-tag" data-i18n="kwr-4">Tactile Perception</span>
+        <span class="kw-tag" data-i18n="kwr-5">Virtual &amp; Extended Reality</span>
+        <span class="kw-tag" data-i18n="kwr-6">Multimodal Interaction</span>
+        <span class="kw-tag" data-i18n="kwr-7">Human-Computer Interaction</span>
       </div>
 
-      <h3 class="kw-heading">Expertise</h3>
+      <h3 class="kw-heading" data-i18n="kw-expertise-h">Expertise</h3>
       <div class="kw-tags">
-        <span class="kw-tag">Haptic Hardware Fabrication</span>
-        <span class="kw-tag">Actuator Control (ERM, LRA, SMA, Pneumatic)</span>
-        <span class="kw-tag">Silicone Molding &amp; Casting</span>
-        <span class="kw-tag">Haptic Rendering</span>
-        <span class="kw-tag">Sensor Instrumentation &amp; Calibration</span>
-        <span class="kw-tag">Multi-Sensor Data Collection &amp; DAQ</span>
-        <span class="kw-tag">Real-Time Signal Classification</span>
-        <span class="kw-tag">Embedded Prototyping (Arduino, Teensy)</span>
-        <span class="kw-tag">On-Device Machine Learning</span>
-        <span class="kw-tag">iOS Application Development</span>
-        <span class="kw-tag">AR/VR/XR Development (Unity)</span>
-        <span class="kw-tag">Rapid Prototyping &amp; 3D Printing</span>
+        <span class="kw-tag" data-i18n="kwe-1">Haptic Hardware Fabrication</span>
+        <span class="kw-tag" data-i18n="kwe-2">Actuator Control (ERM, LRA, SMA, Pneumatic)</span>
+        <span class="kw-tag" data-i18n="kwe-3">Silicone Molding &amp; Casting</span>
+        <span class="kw-tag" data-i18n="kwe-4">Haptic Rendering</span>
+        <span class="kw-tag" data-i18n="kwe-5">Sensor Instrumentation &amp; Calibration</span>
+        <span class="kw-tag" data-i18n="kwe-6">Multi-Sensor Data Collection &amp; DAQ</span>
+        <span class="kw-tag" data-i18n="kwe-7">Real-Time Signal Classification</span>
+        <span class="kw-tag" data-i18n="kwe-8">Embedded Prototyping (Arduino, Teensy)</span>
+        <span class="kw-tag" data-i18n="kwe-9">On-Device Machine Learning</span>
+        <span class="kw-tag" data-i18n="kwe-10">iOS Application Development</span>
+        <span class="kw-tag" data-i18n="kwe-11">AR/VR/XR Development (Unity)</span>
+        <span class="kw-tag" data-i18n="kwe-12">Rapid Prototyping &amp; 3D Printing</span>
       </div>
     </section>
 
@@ -88,12 +106,12 @@
     <div class="wide-columns">
 
     <section>
-      <h2>News</h2>
+      <h2 data-i18n="news-h">News</h2>
       <ul class="news-list">
         <li>
           <span class="news-icon">🎤</span>
           <span class="news-date">AUG 2026</span>
-          <span class="news-body">
+          <span class="news-body" data-i18n="news-1">
             <strong>Oral presentation at the 4th Korea Haptics Conference</strong>
             Presented “IMU-Based Real-Time Body-Part Classification for Adaptive On-Body Haptic Feedback” as first author. Seoul, Korea
           </span>
@@ -101,7 +119,7 @@
         <li>
           <span class="news-icon">📜</span>
           <span class="news-date">FEB 2026</span>
-          <span class="news-body">
+          <span class="news-body" data-i18n="news-2">
             <strong>Patent application filed</strong>
             Escape-room content in a CAVE-based multi-projection XR environment (KR 10-2026-0024399)
           </span>
@@ -109,7 +127,7 @@
         <li>
           <span class="news-icon">🏆</span>
           <span class="news-date">JUN 2025</span>
-          <span class="news-body">
+          <span class="news-body" data-i18n="news-3">
             <strong>3rd Place, Student Innovation Challenge, IEEE World Haptics Conference 2025</strong>
             “Haptic Latch: Enhancing Passenger Safety with Haptic Feedback in Vehicle Door Mechanisms”
           </span>
@@ -117,7 +135,7 @@
         <li>
           <span class="news-icon">🎓</span>
           <span class="news-date">MAR 2025</span>
-          <span class="news-body">
+          <span class="news-body" data-i18n="news-4">
             <strong>Started M.S. in XR-AI Convergence at Kyung Hee University</strong>
             Joined the Haptics and VR Lab under Prof. Seokhee Jeon
           </span>
@@ -125,7 +143,7 @@
         <li>
           <span class="news-icon">🎓</span>
           <span class="news-date">DEC 2023</span>
-          <span class="news-body">
+          <span class="news-body" data-i18n="news-5">
             <strong>Completed the Apple Developer Academy</strong>
             Nine-month Challenge Based Learning program; shipped several apps to the App Store
           </span>
@@ -137,32 +155,32 @@
 
     <div class="two-col">
       <section>
-        <h2>✏️ Education</h2>
+        <h2 data-i18n="edu-h">✏️ Education</h2>
         <ul class="timeline">
           <li>
-            <span class="title">Kyung Hee University, M.S. in XR-AI Convergence</span>
+            <span class="title" data-i18n="edu-1">Kyung Hee University, M.S. in XR-AI Convergence</span>
             <span class="date">2025.03 ~</span>
           </li>
           <li>
-            <span class="title">Apple Developer Academy, Completed</span>
+            <span class="title" data-i18n="edu-2">Apple Developer Academy, Completed</span>
             <span class="date">2023.03 ~ 2023.12</span>
           </li>
           <li>
-            <span class="title">Sungkyul University, B.S. in Computer Engineering</span>
+            <span class="title" data-i18n="edu-3">Sungkyul University, B.S. in Computer Engineering</span>
             <span class="date">2017.03 ~ 2025.02</span>
           </li>
           <li>
-            <span class="title">Seoul Gangseo High School, Graduated</span>
+            <span class="title" data-i18n="edu-4">Seoul Gangseo High School, Graduated</span>
             <span class="date">2014.03 ~ 2017.02</span>
           </li>
         </ul>
       </section>
 
       <section>
-        <h2>🏆 Awards</h2>
+        <h2 data-i18n="awards-h">🏆 Awards</h2>
         <ul class="plain">
-          <li>3rd Place, IEEE World Haptics Conference 2025 Student Innovation Challenge, “Haptic Latch: Enhancing Passenger Safety with Haptic Feedback in Vehicle Door Mechanisms”</li>
-          <li>Grand Prize, In-house (JAVA) Competition, Health Keeper</li>
+          <li data-i18n="awd-1">3rd Place, IEEE World Haptics Conference 2025 Student Innovation Challenge, “Haptic Latch: Enhancing Passenger Safety with Haptic Feedback in Vehicle Door Mechanisms”</li>
+          <li data-i18n="awd-2">Grand Prize, In-house (JAVA) Competition, Health Keeper</li>
         </ul>
       </section>
     </div>
@@ -173,82 +191,82 @@
 
     <div class="two-col research-dev">
       <section>
-      <h2>🔬 Research: Haptics &amp; Tactile Interfaces</h2>
-      <p class="section-lead">My graduate work is on on-body haptic interfaces: building the hardware, collecting the signals, working out what they mean, and rendering the result as touch.</p>
+      <h2 data-i18n="research-h2">🔬 Research: Haptics &amp; Tactile Interfaces</h2>
+      <p class="section-lead" data-i18n="research-lead">My graduate work is on on-body haptic interfaces: building the hardware, collecting the signals, working out what they mean, and rendering the result as touch.</p>
 
       <div class="stack-item">
-        <div class="stack-head"><span class="stack-icon">🔌</span><h3>Sensing hardware &amp; prototyping</h3></div>
-        <p>Sensing prototypes on Arduino Uno and Teensy 4.1: FSR, IMU, and capacitive/optical proximity sensors, with the analog front end and component selection driven by manufacturer application notes, not spec-sheet headlines.</p>
+        <div class="stack-head"><span class="stack-icon">🔌</span><h3 data-i18n="stk-sensing-h">Sensing hardware &amp; prototyping</h3></div>
+        <p data-i18n="stk-sensing-p">Sensing prototypes on Arduino Uno and Teensy 4.1: FSR, IMU, and capacitive/optical proximity sensors, with the analog front end and component selection driven by manufacturer application notes, not spec-sheet headlines.</p>
       </div>
 
       <div class="stack-item">
-        <div class="stack-head"><span class="stack-icon">⚙️</span><h3>Haptic hardware fabrication &amp; actuator control</h3></div>
-        <p>I build the haptic hardware itself, not just the software that drives it. Hands-on with a range of actuators and materials: vibration motors (ERM, LRA, and similar), shape memory alloy (SMA) actuators, pneumatic actuation, and cast silicone including making my own molds, along with the driver circuits and control logic each one needs.</p>
+        <div class="stack-head"><span class="stack-icon">⚙️</span><h3 data-i18n="stk-actuator-h">Haptic hardware fabrication &amp; actuator control</h3></div>
+        <p data-i18n="stk-actuator-p">I build the haptic hardware itself, not just the software that drives it. Hands-on with a range of actuators and materials: vibration motors (ERM, LRA, and similar), shape memory alloy (SMA) actuators, pneumatic actuation, and cast silicone including making my own molds, along with the driver circuits and control logic each one needs.</p>
       </div>
 
       <div class="stack-item">
-        <div class="stack-head"><span class="stack-icon">📊</span><h3>Data collection &amp; analysis</h3></div>
-        <p>End-to-end measurement pipelines: instrument the sensor, log the raw stream, then calibrate it into physical units instead of trusting the vendor's example code. Collect from a range of sensors, accelerometers, IMUs, and pressure/FSR sensors among them, using both microcontrollers and dedicated DAQ hardware depending on the sampling rate and channel count the measurement needs. Recovered an FSR's resistance-to-force curve via log-log regression, cross-validated across three load resistors.</p>
+        <div class="stack-head"><span class="stack-icon">📊</span><h3 data-i18n="stk-data-h">Data collection &amp; analysis</h3></div>
+        <p data-i18n="stk-data-p">End-to-end measurement pipelines: instrument the sensor, log the raw stream, then calibrate it into physical units instead of trusting the vendor's example code. Collect from a range of sensors, accelerometers, IMUs, and pressure/FSR sensors among them, using both microcontrollers and dedicated DAQ hardware depending on the sampling rate and channel count the measurement needs. Recovered an FSR's resistance-to-force curve via log-log regression, cross-validated across three load resistors.</p>
       </div>
 
       <div class="stack-item">
-        <div class="stack-head"><span class="stack-icon">🧮</span><h3>Algorithms &amp; modeling</h3></div>
-        <p>Real-time classification of sensor streams, most recently IMU-based body-part classification so an on-body device can adapt its feedback to where it's worn. First-author oral paper, 4th Korea Haptics Conference (2026).</p>
+        <div class="stack-head"><span class="stack-icon">🧮</span><h3 data-i18n="stk-algo-h">Algorithms &amp; modeling</h3></div>
+        <p data-i18n="stk-algo-p">Real-time classification of sensor streams, most recently IMU-based body-part classification so an on-body device can adapt its feedback to where it's worn. First-author oral paper, 4th Korea Haptics Conference (2026).</p>
       </div>
 
       <div class="stack-item">
-        <div class="stack-head"><span class="stack-icon">🎛️</span><h3>Haptic rendering &amp; implementation</h3></div>
-        <p>Haptic waveforms and event trains in Core Haptics, procedural surface textures, and actuators driven from live input so intensity and sharpness track the user in real time, including measured round-trip latency across paired devices.</p>
+        <div class="stack-head"><span class="stack-icon">🎛️</span><h3 data-i18n="stk-render-h">Haptic rendering &amp; implementation</h3></div>
+        <p data-i18n="stk-render-p">Haptic waveforms and event trains in Core Haptics, procedural surface textures, and actuators driven from live input so intensity and sharpness track the user in real time, including measured round-trip latency across paired devices.</p>
       </div>
 
       <div class="stack-item">
-        <div class="stack-head"><span class="stack-icon">🖨️</span><h3>Fabrication</h3></div>
-        <p>3D printing and prototype fabrication for enclosures, sensor mounts, and wearable form factors, small and light enough to actually be worn.</p>
+        <div class="stack-head"><span class="stack-icon">🖨️</span><h3 data-i18n="stk-fab-h">Fabrication</h3></div>
+        <p data-i18n="stk-fab-p">3D printing and prototype fabrication for enclosures, sensor mounts, and wearable form factors, small and light enough to actually be worn.</p>
       </div>
 
       <div class="stack-item">
-        <div class="stack-head"><span class="stack-icon">🥽</span><h3>XR</h3></div>
-        <p>Multi-projection XR environments and spatial interaction, including LiDAR- and tracker-based sensor fusion for a room-scale CAVE setup. Subject of a filed patent application.</p>
+        <div class="stack-head"><span class="stack-icon">🥽</span><h3 data-i18n="stk-xr-h">XR</h3></div>
+        <p data-i18n="stk-xr-p">Multi-projection XR environments and spatial interaction, including LiDAR- and tracker-based sensor fusion for a room-scale CAVE setup. Subject of a filed patent application.</p>
       </div>
     </section>
 
       <section>
-      <h2>💻 Development</h2>
-      <p class="section-lead">Shipping the software side: apps in the App Store, on-device ML, and the tooling around them.</p>
+      <h2 data-i18n="dev-h2">💻 Development</h2>
+      <p class="section-lead" data-i18n="dev-lead">Shipping the software side: apps in the App Store, on-device ML, and the tooling around them.</p>
 
       <div class="stack-item">
-        <div class="stack-head"><span class="stack-icon">📱</span><h3>iOS (SwiftUI, UIKit)</h3></div>
-        <p>My main platform: shipped and maintained live App Store services with Swift Concurrency and Alamofire, plus Core Haptics, Core Bluetooth, Core Motion, and WatchKit for hardware-facing features.</p>
+        <div class="stack-head"><span class="stack-icon">📱</span><h3 data-i18n="dev-ios-h">iOS (SwiftUI, UIKit)</h3></div>
+        <p data-i18n="dev-ios-p">My main platform: shipped and maintained live App Store services with Swift Concurrency and Alamofire, plus Core Haptics, Core Bluetooth, Core Motion, and WatchKit for hardware-facing features.</p>
       </div>
 
       <div class="stack-item">
-        <div class="stack-head"><span class="stack-icon">🧠</span><h3>On-device machine learning</h3></div>
-        <p>Core ML and Vision for fully on-device inference. Converted PyTorch models to Core ML with Core ML Tools, comparing candidate architectures before committing to one.</p>
+        <div class="stack-head"><span class="stack-icon">🧠</span><h3 data-i18n="dev-ml-h">On-device machine learning</h3></div>
+        <p data-i18n="dev-ml-p">Core ML and Vision for fully on-device inference. Converted PyTorch models to Core ML with Core ML Tools, comparing candidate architectures before committing to one.</p>
       </div>
 
       <div class="stack-item">
-        <div class="stack-head"><span class="stack-icon">🥽</span><h3>AR / VR / XR (RealityKit, ARKit, visionOS, Unity)</h3></div>
-        <p>Spatial apps and interaction: objects in space, anchors, hand tracking, and Reality Composer Pro, plus AR features tested on-device with the camera and LiDAR scanner. Also build in Unity, developing components to spec, spatial mapping, and recognizing objects in the scene.</p>
+        <div class="stack-head"><span class="stack-icon">🥽</span><h3 data-i18n="dev-arvr-h">AR / VR / XR (RealityKit, ARKit, visionOS, Unity)</h3></div>
+        <p data-i18n="dev-arvr-p">Spatial apps and interaction: objects in space, anchors, hand tracking, and Reality Composer Pro, plus AR features tested on-device with the camera and LiDAR scanner. Also build in Unity, developing components to spec, spatial mapping, and recognizing objects in the scene.</p>
       </div>
 
       <div class="stack-item">
-        <div class="stack-head"><span class="stack-icon">🐍</span><h3>Python</h3></div>
-        <p>Sensor data processing, regression and calibration, PyTorch, and model conversion pipelines.</p>
+        <div class="stack-head"><span class="stack-icon">🐍</span><h3 data-i18n="dev-python-h">Python</h3></div>
+        <p data-i18n="dev-python-p">Sensor data processing, regression and calibration, PyTorch, and model conversion pipelines.</p>
       </div>
 
       <div class="stack-item">
-        <div class="stack-head"><span class="stack-icon">🤖</span><h3>Android (Kotlin, Java)</h3></div>
-        <p>Shipped apps backed by MySQL and Firebase before moving to iOS.</p>
+        <div class="stack-head"><span class="stack-icon">🤖</span><h3 data-i18n="dev-android-h">Android (Kotlin, Java)</h3></div>
+        <p data-i18n="dev-android-p">Shipped apps backed by MySQL and Firebase before moving to iOS.</p>
       </div>
 
       <div class="stack-item">
-        <div class="stack-head"><span class="stack-icon">⚡</span><h3>C / C++</h3></div>
-        <p>Embedded firmware for microcontrollers, and algorithm work close to the hardware, including techniques to cut microcontroller delay for more responsive real-time control.</p>
+        <div class="stack-head"><span class="stack-icon">⚡</span><h3 data-i18n="dev-c-h">C / C++</h3></div>
+        <p data-i18n="dev-c-p">Embedded firmware for microcontrollers, and algorithm work close to the hardware, including techniques to cut microcontroller delay for more responsive real-time control.</p>
       </div>
 
       <div class="stack-item">
-        <div class="stack-head"><span class="stack-icon">🌐</span><h3>Web</h3></div>
-        <p>HTML, CSS, and JavaScript: my research lab's website, and a Safari Web Extension that analyzes page images in the browser.</p>
+        <div class="stack-head"><span class="stack-icon">🌐</span><h3 data-i18n="dev-web-h">Web</h3></div>
+        <p data-i18n="dev-web-p">HTML, CSS, and JavaScript: my research lab's website, and a Safari Web Extension that analyzes page images in the browser.</p>
       </div>
       </section>
     </div>
@@ -259,21 +277,21 @@
 
     <div class="two-col">
       <section>
-        <h2>📜 Patents</h2>
+        <h2 data-i18n="patents-h">📜 Patents</h2>
         <ul class="plain">
           <li>
-            Method and apparatus for providing escape-room content in a CAVE-based multi-projection XR environment
-            <span class="sub">Korean Patent Application No. 10-2026-0024399</span>
+            <span data-i18n="pat-1">Method and apparatus for providing escape-room content in a CAVE-based multi-projection XR environment</span>
+            <span class="sub" data-i18n="pat-1-sub">Korean Patent Application No. 10-2026-0024399</span>
           </li>
         </ul>
       </section>
 
       <section>
-        <h2>🌐 Languages</h2>
+        <h2 data-i18n="lang-h">🌐 Languages</h2>
         <ul class="plain">
-          <li>Korean: Native</li>
-          <li>English: Professional working proficiency</li>
-          <li>Japanese: Limited working proficiency</li>
+          <li data-i18n="lang-1">Korean: Native</li>
+          <li data-i18n="lang-2">English: Professional working proficiency</li>
+          <li data-i18n="lang-3">Japanese: Limited working proficiency</li>
         </ul>
       </section>
     </div>
@@ -281,18 +299,18 @@
     <hr>
 
     <section>
-      <h2>🤝 Volunteer Experience</h2>
+      <h2 data-i18n="vol-h">🤝 Volunteer Experience</h2>
       <ul class="timeline">
         <li>
-          <span class="title">Coding Mentor, SW Creative Camp Student Volunteer Corps, CJ UNIT 6th (CJ OliveNetworks)</span>
+          <span class="title" data-i18n="vol-1">Coding Mentor, SW Creative Camp Student Volunteer Corps, CJ UNIT 6th (CJ OliveNetworks)</span>
           <span class="date">2022</span>
         </li>
         <li>
-          <span class="title">Coding Mentor, “Be a Coding Hero”, Microsoft</span>
+          <span class="title" data-i18n="vol-2">Coding Mentor, “Be a Coding Hero”, Microsoft</span>
           <span class="date">2017 &amp; 2018</span>
         </li>
         <li>
-          <span class="title">Museum Volunteer, “Google Museum on the Go”, Google &amp; National Museum of Korea</span>
+          <span class="title" data-i18n="vol-3">Museum Volunteer, “Google Museum on the Go”, Google &amp; National Museum of Korea</span>
           <span class="date">2017</span>
         </li>
       </ul>
@@ -303,24 +321,24 @@
     <hr>
 
     <section>
-      <h2>Publications &amp; Presentations</h2>
-      <p class="hint">Click a card for details.</p>
+      <h2 data-i18n="pubs-h">Publications &amp; Presentations</h2>
+      <p class="hint" data-i18n="pubs-hint">Click a card for details.</p>
       <div class="project-grid" id="publications"></div>
     </section>
 
     <hr>
 
     <section>
-      <h2>Team Projects</h2>
-      <p class="hint">Click a card for details.</p>
+      <h2 data-i18n="team-h">Team Projects</h2>
+      <p class="hint" data-i18n="team-hint">Click a card for details.</p>
       <div class="project-grid" id="team-projects"></div>
     </section>
 
     <hr>
 
     <section>
-      <h2>Personal Projects</h2>
-      <p class="hint">Click a card for details.</p>
+      <h2 data-i18n="personal-h">Personal Projects</h2>
+      <p class="hint" data-i18n="personal-hint">Click a card for details.</p>
       <div class="project-grid" id="personal-projects"></div>
     </section>
 
@@ -333,7 +351,7 @@
     </div>
   </div>
 
-  <script src="projects.js?v=8"></script>
-  <script src="app.js?v=8"></script>
+  <script src="projects.js?v=9"></script>
+  <script src="app.js?v=17"></script>
 </body>
 </html>
