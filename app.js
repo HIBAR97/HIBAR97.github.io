@@ -335,3 +335,18 @@ applyStaticLang();
 renderCards(PROJECTS.publications || [], "publications");
 renderCards(PROJECTS.team, "team-projects");
 renderCards(PROJECTS.personal, "personal-projects");
+
+// Experimental: a light haptic tick while scrolling, on browsers that support
+// it. iOS Safari has never implemented the Vibration API, so this is a no-op
+// there; Android Chrome may also ignore it since scrolling isn't a user
+// activation gesture. Throttled so it can't spam vibrate() on every frame.
+if ("vibrate" in navigator) {
+  let lastScrollVibrate = 0;
+  window.addEventListener("scroll", () => {
+    const now = Date.now();
+    if (now - lastScrollVibrate > 150) {
+      navigator.vibrate(8);
+      lastScrollVibrate = now;
+    }
+  }, { passive: true });
+}
