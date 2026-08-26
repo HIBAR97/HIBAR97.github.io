@@ -154,13 +154,13 @@ body {
 }
 
 .icon-link.resume-link svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
 }
 
 .resume-label {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -176,8 +176,8 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--text);
@@ -191,8 +191,8 @@ body {
 }
 
 .icon-link svg {
-  width: 19px;
-  height: 19px;
+  width: 21px;
+  height: 21px;
   fill: currentColor;
   display: block;
 }
@@ -370,7 +370,7 @@ h2 {
 }
 
 .lede {
-  font-size: clamp(16px, 2.1vw, 18px);
+  font-size: clamp(19px, 2.4vw, 21px);
   line-height: 1.65;
 }
 
