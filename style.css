@@ -449,29 +449,51 @@ section {
   transform: rotate(180deg);
 }
 
-/* Height is set to an explicit pixel value in JS (toggleMoreStory), measured
-   from the content's scrollHeight, so it can transition smoothly. A grid-rows
-   0fr/1fr trick was tried first but Chromium collapses an auto-sized flex
-   track's content contribution to near-zero as soon as any descendant in the
-   chain has overflow:hidden, which this element needs for the closed-state
-   clip; measuring and animating height directly sidesteps that. */
+/* Animating grid-template-rows from 0fr to 1fr expands to exactly the
+   content's own height, so the open panel re-measures itself on every
+   reflow. That matters because the height used to be a pixel value snapshot
+   taken by JS at click time: rotating a phone or unfolding a Fold changed
+   how the prose wrapped, but the frozen number stayed, clipping ~1000px of
+   text or leaving an equally large blank gap. Nothing here is in pixels, so
+   there is no snapshot to go stale. */
 .more-story-panel {
-  height: 0;
-  overflow: hidden;
-  transition: height 0.35s ease;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.more-story.open .more-story-panel {
+  grid-template-rows: 1fr;
 }
 
 .more-story-body {
-  padding-top: 12px;
+  /* Required for the 0fr row to clip the content instead of overflowing it.
+     Note there is deliberately no padding here: padding sits outside what
+     overflow:hidden clips, so it would floor the collapsed 0fr row at the
+     padding's height and leave a sliver showing when closed. The gap above
+     the text is a margin on the first paragraph instead, which is content
+     and therefore clips to nothing. */
+  overflow: hidden;
   text-align: center;
-  max-width: 80%;
+  /* Keeps the 80% measure on tablets and up, but lets a phone use the full
+     column: at 80% a 390px screen squeezed prose into ~275px (about 18
+     characters per line). The max() floor flips to full width below a
+     ~600px container on its own, so no media query is involved. */
+  max-width: min(100%, max(80%, 30rem));
   margin-left: auto;
   margin-right: auto;
 }
 
 .more-story p {
   margin-bottom: 12px;
-  font-size: 21px;
+  /* Fluid type instead of a flat 21px: on a phone the surrounding body copy
+     drops to 14.5px, so a fixed 21px here rendered the story 45% larger than
+     the paragraph directly above it. Scales 17px to 21px with the viewport. */
+  font-size: clamp(1.0625rem, 0.9rem + 0.7vw, 1.3125rem);
+}
+
+.more-story-body p:first-child {
+  margin-top: 12px;
 }
 
 .timeline {

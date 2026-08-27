@@ -162,22 +162,13 @@ function applyStaticLang() {
   if (checkbox) checkbox.checked = currentLang === "ko";
   const word = document.getElementById("lang-switch-word");
   if (word) word.textContent = currentLang === "en" ? "EN" : "KO";
-
-  const storyContainer = document.getElementById("more-story");
-  if (storyContainer && storyContainer.classList.contains("open")) {
-    const panel = document.getElementById("more-story-panel");
-    panel.style.height = panel.querySelector(".more-story-body").scrollHeight + "px";
-  }
 }
 
 function toggleMoreStory() {
   const container = document.getElementById("more-story");
-  const panel = document.getElementById("more-story-panel");
-  const body = panel.querySelector(".more-story-body");
   const opening = !container.classList.contains("open");
   container.classList.toggle("open", opening);
   container.querySelector(".more-story-toggle").setAttribute("aria-expanded", String(opening));
-  panel.style.height = opening ? body.scrollHeight + "px" : "0px";
 }
 
 function toggleLang() {
