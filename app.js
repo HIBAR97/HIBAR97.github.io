@@ -10,6 +10,7 @@ const LABELS = {
     team: "🧑🏻‍💻 Team", part: "🤚🏻 My Role", learned: "🤔 Learned", screenshots: "📷 Screenshots",
     abstract: "📝 Abstract", contributions: "⭐️ Contributions", method: "🔧 Method", findings: "📊 Findings",
     keywords: "🏷 Keywords", figures: "📷 Figures", links: "🔗 Links",
+    filingDate: "📅 Filing Date", applicationNumber: "🔢 Application No.", applicant: "🏫 Applicant", inventors: "🧑🏻‍💻 Inventors",
     private: "Private", appLinkPrefix: "🔗 "
   },
   ko: {
@@ -20,6 +21,7 @@ const LABELS = {
     team: "🧑🏻‍💻 팀 구성", part: "🤚🏻 담당 역할", learned: "🤔 배운 점", screenshots: "📷 스크린샷",
     abstract: "📝 초록", contributions: "⭐️ 기여", method: "🔧 방법", findings: "📊 결과",
     keywords: "🏷 키워드", figures: "📷 그림", links: "🔗 링크",
+    filingDate: "📅 출원일", applicationNumber: "🔢 출원번호", applicant: "🏫 출원인", inventors: "🧑🏻‍💻 발명자",
     private: "비공개", appLinkPrefix: "🔗 "
   }
 };
@@ -124,6 +126,8 @@ const KO_STATIC = {
 
   "pubs-h": "논문 및 발표",
   "pubs-hint": "카드를 클릭하면 자세히 볼 수 있습니다.",
+  "patents-card-h": "특허",
+  "patents-card-hint": "카드를 클릭하면 자세히 볼 수 있습니다.",
   "team-h": "팀 프로젝트",
   "team-hint": "카드를 클릭하면 자세히 볼 수 있습니다.",
   "personal-h": "개인 프로젝트",
@@ -176,6 +180,7 @@ function toggleLang() {
   localStorage.setItem("lang", currentLang);
   applyStaticLang();
   renderCards(PROJECTS.publications || [], "publications");
+  renderCards(PROJECTS.patents || [], "patents");
   renderCards(PROJECTS.team, "team-projects");
   renderCards(PROJECTS.personal, "personal-projects");
   if (currentModalId) openModal(currentModalId);
@@ -199,6 +204,7 @@ function renderCards(list, containerId) {
 
 function findProject(id) {
   return (PROJECTS.publications || []).find(p => p.id === id)
+    || (PROJECTS.patents || []).find(p => p.id === id)
     || PROJECTS.team.find(p => p.id === id)
     || PROJECTS.personal.find(p => p.id === id);
 }
@@ -241,7 +247,7 @@ function openPublicationModal(p) {
   const html = `
     <div class="modal-cover" style="${p.cover ? `background-image:url('${p.cover}')` : ""}"></div>
     <div class="modal-body">
-      <h2>${p.name}</h2>
+      <h2>${tf(p, "name")}</h2>
       ${impact}
       <div class="meta-block">${metaRows.join("")}</div>
       ${section(L("abstract"), p.abstract ? `<p>${tf(p, "abstract")}</p>` : "")}
@@ -261,6 +267,34 @@ function openPublicationModal(p) {
   document.body.style.overflow = "hidden";
 }
 
+function openPatentModal(p) {
+  const metaRows = [];
+  if (p.filingDate) metaRows.push(`<div class="meta-row"><span class="meta-label">${L("filingDate")}</span><span>${tf(p, "filingDate")}</span></div>`);
+  if (p.applicationNumber) metaRows.push(`<div class="meta-row"><span class="meta-label">${L("applicationNumber")}</span><span>${p.applicationNumber}</span></div>`);
+  if (p.status) metaRows.push(`<div class="meta-row"><span class="meta-label">${L("status")}</span><span class="status-pill">${tf(p, "status")}</span></div>`);
+  if (p.inventors && p.inventors.length) metaRows.push(`<div class="meta-row"><span class="meta-label">${L("inventors")}</span><span>${p.inventors.join(", ")}</span></div>`);
+  if (p.applicant) metaRows.push(`<div class="meta-row"><span class="meta-label">${L("applicant")}</span><span>${tf(p, "applicant")}</span></div>`);
+  if (p.role) metaRows.push(`<div class="meta-row"><span class="meta-label">${L("role")}</span><span>${tf(p, "role")}</span></div>`);
+
+  const impact = p.impact ? `<div class="impact-badge">✅ ${tf(p, "impact")}</div>` : "";
+
+  const html = `
+    <div class="modal-cover" style="${p.cover ? `background-image:url('${p.cover}')` : ""}"></div>
+    <div class="modal-body">
+      <h2>${tf(p, "name")}</h2>
+      ${impact}
+      <div class="meta-block">${metaRows.join("")}</div>
+      ${section(L("abstract"), p.abstract ? `<p>${tf(p, "abstract")}</p>` : "")}
+      ${section(L("figures"), screenshots(p.screenshotFiles))}
+      ${p.note ? `<div class="pub-note">ℹ️ ${tf(p, "note")}</div>` : ""}
+    </div>
+  `;
+
+  document.getElementById("modal-inner").innerHTML = html;
+  document.getElementById("modal-overlay").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
 function openModal(id) {
   const p = findProject(id);
   if (!p) return;
@@ -268,6 +302,10 @@ function openModal(id) {
 
   if (p.kind === "publication") {
     openPublicationModal(p);
+    return;
+  }
+  if (p.kind === "patent") {
+    openPatentModal(p);
     return;
   }
 
@@ -289,7 +327,7 @@ function openModal(id) {
   const html = `
     <div class="modal-cover" style="${p.cover ? `background-image:url('${p.cover}')` : ""}"></div>
     <div class="modal-body">
-      <h2>${p.name}</h2>
+      <h2>${tf(p, "name")}</h2>
       ${impact}
       <div class="meta-block">${metaRows.join("")}</div>
       ${appBlurbHtml}
@@ -324,5 +362,6 @@ document.addEventListener("keydown", (e) => {
 
 applyStaticLang();
 renderCards(PROJECTS.publications || [], "publications");
+renderCards(PROJECTS.patents || [], "patents");
 renderCards(PROJECTS.team, "team-projects");
 renderCards(PROJECTS.personal, "personal-projects");

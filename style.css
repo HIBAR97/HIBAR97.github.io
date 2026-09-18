@@ -624,8 +624,13 @@ ul.plain .sub {
 
 .project-cover {
   height: 110px;
-  background-size: cover;
-  background-position: top center;
+  /* contain, not cover: covers range from square app icons to tall phone
+     screenshots (as narrow as ~0.47 aspect). Cropping a portrait screenshot
+     to fill this wide box showed only a thin slice of blank status bar;
+     containing it shows the whole image, letterboxed, on every project. */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-color: #f1f0ee;
   display: flex;
   align-items: center;
@@ -691,8 +696,9 @@ ul.plain .sub {
 
 .modal-cover {
   height: 200px;
-  background-size: cover;
-  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-color: #f1f0ee;
   margin-top: -32px;
 }

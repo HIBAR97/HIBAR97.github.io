@@ -1,6 +1,167 @@
 const PROJECTS = {
   publications: [
     {
+      id: "asiahaptics2026-bodypart",
+      impact: "First-author paper, accepted",
+      kind: "publication",
+      name: "Real-Time Body-Part Classification from a Single IMU for Adaptive On-Body Haptic Feedback",
+      cover: "assets/pub-asiahaptics-bodypart.png",
+      status: "Accepted",
+      date: "November 2026",
+      venueLine: "AsiaHaptics 2026 (Manuscript 59)",
+      authors: ["Junghyeon Kim", "Mohammad Shadman Hashem", "Mudassir Ibrahim Awan", "Seokhee Jeon"],
+      affiliation: "Kyung Hee University",
+      role: "First author",
+      abstract: "Wearable vibrotactile devices usually provide uniform sensation regardless of the body-worn location. However, tactile sensitivity varies by more than an order of magnitude across the body, as described by the haptic homunculus. Consequently, identical vibration stimuli can produce substantially different perceptual experiences at different body locations. We propose a deep learning framework that identifies the specific body part in real time using data from a single inertial measurement unit (IMU) to enable location-aware vibrotactile stimuli. The architecture consists of two asymmetric branches that process complementary IMU signals: a Temporal Convolutional Network (TCN) extracts temporal features from acceleration signals, while a two-dimensional CNN learns frequency-domain features from Short-Time Fourier Transform (STFT) spectrograms of gyroscope signals. The model achieves 90.53% test accuracy and a 90.28% macro-F1 score. Despite having only about 2 million parameters, it recognizes the worn body part within approximately 20ms, enabling adaptive vibrotactile feedback tailored to different body locations.",
+      keyPoints: [
+        "Asymmetric dual-branch deep learning architecture, a TCN on acceleration plus a 2D CNN on gyroscope STFT spectrograms, that classifies the worn body part from a single IMU in real time",
+        "90.53% test accuracy and 90.28% macro-F1 across 8 body locations, evaluated on data from 15 participants performing unconstrained daily activities",
+        "About 2 million parameters and roughly 20ms inference latency, small enough for on-device deployment"
+      ],
+      findings: [
+        "Removing the gravity component before classification cut the train-test accuracy gap from 49.6% to 20.8%, improving cross-subject generalization",
+        "Most misclassifications occurred between anatomically adjacent locations (e.g., forearm/upper arm, waist/chest) whose everyday movement patterns naturally resemble each other"
+      ],
+      keywords: ["Body-part classification", "On-body haptic feedback", "Adaptive haptic feedback", "Haptic interface", "IMU sensor"],
+      note: "Manuscript 59, submitted to the 2026 AsiaHaptics Conference (received July 24, 2026). Confirmed as accepted in the official research-record form (연구실적목록) submitted for graduate admissions; AsiaHaptics 2026 has not yet published its program.",
+      screenshotFiles: [],
+      ko: {
+        impact: "제1저자 논문, 게재 확정",
+        status: "게재 확정",
+        date: "2026년 11월",
+        venueLine: "AsiaHaptics 2026 (Manuscript 59)",
+        affiliation: "경희대학교",
+        role: "제1저자",
+        abstract: "웨어러블 진동 촉각 시스템은 일반적으로 착용된 신체 위치에 관계없이 균일한 피드백을 제공한다. 그러나 햅틱 호문클루스(haptic homunculus)에 의해 설명된 바와 같이, 촉각 민감도는 신체 전체에 걸쳐 10배 이상 다양하다. 결과적으로 동일한 진동 자극이 다른 신체 위치에서 상당히 다른 지각적 경험을 생성할 수 있다. 위치 인식 진동 촉각 렌더링을 가능하게 하기 위해, 단일 관성 측정 장치(IMU)의 데이터를 사용하여 실시간으로 착용된 신체 부위를 식별하는 딥러닝 프레임워크를 제안한다. 제안된 아키텍처는 상호 보완적인 IMU 신호를 처리하는 두 개의 비대칭 분기로 구성된다. 시간 합성곱 신경망(TCN)은 가속도 신호에서 시간적 특징을 추출하는 반면, 2차원 합성곱 신경망(2D CNN)은 자이로스코프 신호의 단시간 푸리에 변환(STFT) 스펙트로그램에서 주파수 영역 특징을 학습한다. 이 모델은 90.53%의 테스트 정확도와 90.28%의 매크로-F1 점수를 달성한다. 단 205만 개의 매개변수만으로도, 이 모델은 일상적인 움직임의 짧은 구간(window) 안에서 약 20ms 만에 착용된 신체 부위를 예측하며, 향후 온디바이스(on-device) 배포를 위한 잠재력을 시사한다.",
+        keyPoints: [
+          "가속도 신호는 TCN으로, 자이로스코프 STFT 스펙트로그램은 2D CNN으로 각각 처리하는 비대칭 이중 분기 구조로 단일 IMU만으로 실시간 신체 부위 분류",
+          "8개 신체 위치, 참가자 15명의 일상 활동 데이터 기준 테스트 정확도 90.53%, 매크로-F1 90.28% 달성",
+          "약 205만 개 파라미터, 약 20ms 추론 지연으로 온디바이스 배포에 적합한 경량 모델"
+        ],
+        findings: [
+          "중력 성분을 제거하자 훈련-테스트 정확도 격차가 49.6%에서 20.8%로 줄어들어 피험자 간 일반화 성능이 향상됨",
+          "오분류는 대부분 전완-상완, 허리-가슴처럼 해부학적으로 인접해 움직임 패턴이 비슷한 부위 사이에서 발생"
+        ],
+        keywords: ["신체 부위 분류", "온바디 햅틱 피드백", "적응형 햅틱 피드백", "햅틱 인터페이스", "IMU"],
+        note: "2026 AsiaHaptics Conference에 제출된 Manuscript 59 (2026년 7월 24일 접수). 대학원 입시용으로 제출한 공식 연구실적목록에 게재로 확인되어 있으며, AsiaHaptics 2026은 아직 프로그램을 공개하지 않았습니다."
+      }
+    },
+    {
+      id: "asiahaptics2026-pneumatic",
+      impact: "Co-authored paper, accepted",
+      kind: "publication",
+      name: "Soft Pneumatic Actuator for AR, VR, and Feel-Through Sensation",
+      cover: "assets/pub-asiahaptics-pneumatic.png",
+      status: "Accepted",
+      date: "November 2026",
+      venueLine: "AsiaHaptics 2026 (Manuscript 32)",
+      authors: ["Mohammad Shadman Hashem", "Ahsan Raza", "Junghyeon Kim", "Seokhee Jeon"],
+      affiliation: "Kyung Hee University",
+      role: "Co-author",
+      abstract: "Realistic haptic interaction in augmented reality (AR) and virtual reality (VR) requires both the perception of real textures and the rendering of virtual tactile feedback. This paper presents a silicone-based soft pneumatic fingertip actuator that enables physical-texture perception, tactile augmentation, and multi-modal pneumatic haptic rendering within a single wearable device. The actuator incorporates a central 3×3 passive pin array that transmits real surface textures to the fingertip during physical exploration, while a surrounding pneumatic chamber selectively modulates fingertip–pin coupling to attenuate real texture perception. The same pneumatic chamber also provides controllable pressure, vibrotactile feedback at different frequencies, and impact sensations for VR interactions, combining passive texture transmission with active pneumatic feedback so virtual tactile cues can be superimposed on naturally perceived textures.",
+      keyPoints: [
+        "Silicone-based soft fingertip actuator combining a passive 3×3 pin array with a surrounding pneumatic chamber in a single wearable device",
+        "The pin array mechanically transmits real surface textures to the fingertip; the same pneumatic chamber can attenuate that real-texture perception by changing fingertip-pin contact",
+        "That chamber also renders controllable pressure, multi-frequency vibrotactile feedback, and impact sensations for virtual (VR) interactions, layering virtual cues on top of naturally perceived textures"
+      ],
+      keywords: ["Wearable haptic interface", "Soft pneumatic actuator", "Pin array", "Real texture perception", "Multi-modal haptic feedback"],
+      note: "Manuscript 32, submitted to the 2026 AsiaHaptics Conference (received July 23, 2026). Confirmed as accepted in the official research-record form (연구실적목록) submitted for graduate admissions; AsiaHaptics 2026 has not yet published its program.",
+      screenshotFiles: [],
+      ko: {
+        impact: "공동저자 논문, 게재 확정",
+        status: "게재 확정",
+        date: "2026년 11월",
+        venueLine: "AsiaHaptics 2026 (Manuscript 32)",
+        affiliation: "경희대학교",
+        role: "공동저자",
+        abstract: "증강현실(AR)과 가상현실(VR)에서 사실적인 햅틱 상호작용을 위해서는 실제 질감의 지각과 가상 촉각 피드백의 렌더링이 모두 필요하다. 본 논문은 하나의 웨어러블 기기 안에서 실제 질감 지각, 촉각 증강, 다중 모달 공압 햅틱 렌더링을 가능하게 하는 실리콘 기반 소프트 공압 손끝 액추에이터를 제시한다. 이 액추에이터는 중앙의 3×3 수동 핀 배열을 통해 실제 표면 질감을 손끝에 물리적으로 전달하며, 이를 둘러싼 공압 챔버는 손끝-핀 간 접촉을 조절해 실제 질감 지각을 약화시킬 수도 있다. 같은 공압 챔버는 조절 가능한 압력, 다양한 주파수의 진동 촉각 피드백, VR 상호작용을 위한 충격감도 제공하며, 수동적인 질감 전달과 능동적인 공압 피드백을 결합해 실제로 지각되는 질감 위에 가상 촉각 단서를 겹쳐 표현할 수 있다.",
+        keyPoints: [
+          "수동 3×3 핀 배열과 그것을 둘러싼 공압 챔버를 하나의 웨어러블 기기에 결합한 실리콘 기반 소프트 손끝 액추에이터",
+          "핀 배열이 실제 표면 질감을 손끝에 기계적으로 전달하며, 같은 공압 챔버가 손끝-핀 접촉을 바꿔 그 실제 질감 지각을 약화시킬 수 있음",
+          "같은 챔버가 조절 가능한 압력, 다중 주파수 진동, 충격감까지 렌더링해 실제로 느껴지는 질감 위에 가상 촉각 단서를 겹쳐 표현"
+        ],
+        keywords: ["웨어러블 햅틱 인터페이스", "소프트 공압 액추에이터", "핀 배열", "실제 질감 지각", "다중 모달 햅틱 피드백"],
+        note: "2026 AsiaHaptics Conference에 제출된 Manuscript 32 (2026년 7월 23일 접수). 대학원 입시용으로 제출한 공식 연구실적목록에 게재로 확인되어 있으며, AsiaHaptics 2026은 아직 프로그램을 공개하지 않았습니다."
+      }
+    },
+    {
+      id: "asiahaptics2026-cardoor",
+      impact: "Co-authored paper, accepted",
+      kind: "publication",
+      name: "Push-Latch-Inspired Vibrotactile Feedback for Handleless Car Doors: Markov Analysis of First-Time Interaction",
+      cover: "assets/pub-asiahaptics-cardoor.png",
+      status: "Accepted",
+      date: "November 2026",
+      venueLine: "AsiaHaptics 2026 (Manuscript 31)",
+      authors: ["Tatyana Ogay", "Arsen Abdulali", "Mohammad Shadman Hashem", "Junghyeon Kim", "Ling Cai", "Seokhee Jeon"],
+      affiliation: "Kyung Hee University",
+      role: "Co-author",
+      abstract: "Handleless car doors enable flush exterior designs that can reduce aerodynamic drag and energy consumption, thereby extending vehicle range. However, integrating a door-opening interface into a flush surface requires complex mechanisms while preserving intuitive interaction. We present an approach that eliminates the need to mechanically reproduce a push-latch mechanism: force-dependent temporal vibrotactile patterns create an apparent sense of compliant motion on the rigid door surface, while a brief vibration confirms unlocking. An experiment compared first-time interaction with and without vibration (21 participants per condition). First-order Markov analysis of video-coded actions showed that vibration increased successful opening from 33.3% to 71.4% (p=.029), reduced the median sequence length from 40 to 16 transitions (p<.001), and lowered transition entropy from 2.61 to 1.99 bits. The strong-press-to-opening probability increased from 0.17 to 0.56, showing that vibrotactile cues improve discoverability and produce more direct interaction paths toward activation.",
+      keyPoints: [
+        "Simulates the feel of a mechanical push-latch on a flush, handleless car door using force-dependent vibrotactile patterns instead of an actual moving mechanism",
+        "Compared first-time users opening the door with vs. without the vibrotactile cue (21 participants per condition) and modeled their action sequences with a first-order Markov chain",
+        "Vibration raised successful first-time opening from 33.3% to 71.4%, cut the median number of actions needed from 40 to 16, and nearly tripled the immediate strong-press-to-opening rate (0.17 to 0.56)"
+      ],
+      keywords: ["Automotive haptics", "Handleless car door", "Vibrotactile feedback", "Push-latch-inspired interaction", "Markov chain"],
+      note: "Manuscript 31, submitted to the 2026 AsiaHaptics Conference (received July 23, 2026). Confirmed as accepted in the official research-record form (연구실적목록) submitted for graduate admissions; AsiaHaptics 2026 has not yet published its program.",
+      screenshotFiles: [],
+      ko: {
+        impact: "공동저자 논문, 게재 확정",
+        status: "게재 확정",
+        date: "2026년 11월",
+        venueLine: "AsiaHaptics 2026 (Manuscript 31)",
+        affiliation: "경희대학교",
+        role: "공동저자",
+        abstract: "핸들이 없는 플러시(flush) 형태의 자동차 문은 공기 저항과 에너지 소비를 줄여 주행거리를 늘릴 수 있는 외장 디자인을 가능하게 한다. 그러나 평평한 표면에 문 개방 인터페이스를 통합하려면 직관적인 조작감을 유지하면서도 복잡한 기계 구조가 필요하다. 본 연구는 실제 푸시-래치(push-latch) 기구를 기계적으로 재현할 필요 없이, 힘에 따라 달라지는 시간적 진동 촉각 패턴으로 단단한 문 표면 위에서도 유연한 움직임처럼 느껴지는 촉각 착시를 만들고, 짧은 진동으로 잠금 해제를 확인해 주는 방법을 제안한다. 진동 유무에 따른 첫 상호작용을 비교한 실험(조건별 21명)에서, 영상 기반 행동 코딩에 대한 1차 마르코프 분석 결과 진동이 있을 때 개방 성공률이 33.3%에서 71.4%로 증가했고(p=.029), 중앙값 행동 시퀀스 길이가 40회에서 16회로 줄었으며(p<.001), 전이 엔트로피는 2.61비트에서 1.99비트로 감소했다. 강하게 누른 뒤 바로 열리는 확률도 0.17에서 0.56으로 증가해, 진동 촉각 단서가 발견 용이성을 높이고 더 직접적인 상호작용 경로를 만든다는 것을 보여주었다.",
+        keyPoints: [
+          "실제로 움직이는 기계 장치 대신, 힘에 따라 달라지는 진동 촉각 패턴만으로 핸들 없는 플러시 자동차 문에서 푸시-래치의 느낌을 재현",
+          "진동 유무에 따른 첫 상호작용을 비교(조건별 21명)하고 행동 시퀀스를 1차 마르코프 체인으로 모델링",
+          "진동이 있을 때 첫 개방 성공률이 33.3%에서 71.4%로, 필요한 행동 수 중앙값이 40회에서 16회로 감소, 즉시 개방으로 이어지는 강한 누름 비율은 0.17에서 0.56으로 상승"
+        ],
+        keywords: ["자동차 햅틱", "핸들 없는 자동차 문", "진동 촉각 피드백", "푸시-래치 기반 상호작용", "마르코프 체인"],
+        note: "2026 AsiaHaptics Conference에 제출된 Manuscript 31 (2026년 7월 23일 접수). 대학원 입시용으로 제출한 공식 연구실적목록에 게재로 확인되어 있으며, AsiaHaptics 2026은 아직 프로그램을 공개하지 않았습니다."
+      }
+    },
+    {
+      id: "keis2026-kpop-haptic",
+      impact: "Co-authored paper, published",
+      kind: "publication",
+      name: "Effects of K-POP Musical Element-Based Audio-to-Haptic Feedback on Haptic Experience in K-POP Virtual Reality Concerts",
+      cover: "assets/pub-keis-kpop.png",
+      status: "Published",
+      date: "February 28, 2026",
+      venueLine: "Journal of the Korea Entertainment Industry Association (JKEIA), Vol. 19, No. 1, pp. 1–12",
+      authors: ["Gyo-Ryeong Kim", "Harok Jang", "Jung-Hyeon Kim", "Tack Woo"],
+      affiliation: "Kyung Hee University",
+      role: "Co-author",
+      doi: { label: "10.21184/jkeia.2026.2.20.1.x", href: "https://doi.org/10.21184/jkeia.2026.2.20.1.x" },
+      abstract: "The purpose of this study was to examine the effects of musical element-based Audio-to-Haptic input conditions (rhythm, melody, and harmony) on haptic experience (HX) in a K-POP virtual reality (VR) concert environment. Twenty-four adults completed a 3 (songs) × 3 (musical elements) within-subjects repeated measures experiment, experiencing all nine conditions through a wearable haptic suit under identical visual and auditory stimuli. HX was evaluated using five sub-dimensions of a standardized HX model. A two-way repeated measures ANOVA revealed significant main effects of song (F(2,46)=8.022, p=.001, ηp²=.259) and musical element (F(2,46)=5.745, p=.006, ηp²=.200), and a significant song × musical element interaction with the largest effect size (F(4,92)=12.920, p<.001, ηp²=.360), consistently confirmed across all five sub-dimensions. No single musical element or song was uniformly superior across all conditions, indicating that Audio-to-Haptic design for K-POP VR concerts needs song-specific adaptation rather than one fixed rule.",
+      keyPoints: [
+        "24 adults experienced 9 conditions (3 K-POP songs × 3 musical elements: rhythm/melody/harmony converted to Audio-to-Haptic feedback) through a wearable haptic suit in VR",
+        "Song and musical-element condition each had significant main effects on haptic experience, but their interaction was the largest effect (ηp² = .360) and held across all 5 HX sub-dimensions",
+        "No single musical element or song was uniformly best, showing that Audio-to-Haptic design for K-POP VR concerts should be tailored per song rather than following one fixed rule"
+      ],
+      keywords: ["Audio-to-Haptic", "Haptic Experience", "K-POP", "Musical Element", "Virtual Reality Concert"],
+      note: "Received January 10, 2026; revised February 14, 2026; accepted February 14, 2026; published February 28, 2026. Junghyeon Kim is the third author (Jung-Hyeon Kim), M.S. student, Department of XR-AI Convergence, Kyung Hee University.",
+      screenshotFiles: [],
+      ko: {
+        impact: "공동저자 논문, 게재 완료",
+        status: "게재 완료",
+        date: "2026년 2월 28일",
+        venueLine: "한국엔터테인먼트산업학회논문지(JKEIA), 제19권 제1호, 1–12쪽",
+        affiliation: "경희대학교",
+        role: "공동저자",
+        abstract: "본 연구는 K-POP VR 콘서트 환경에서 음악 구성요소 기반 Audio-to-Haptic 입력 조건(리듬, 멜로디, 화음)이 햅틱 경험(HX)에 미치는 영향을 검토하였다. 성인 24명을 대상으로 3(곡) × 3(음악 구성요소) 반복측정 실험을 실시하였으며, 모든 참가자가 동일한 시청각 자극 아래 웨어러블 햅틱 수트를 통해 9개 조건을 모두 경험하였다. HX는 표준화된 모델의 5개 하위차원으로 평가하였다. 2요인 반복측정 분산분석 결과, 곡의 주효과(ηp²=.259)와 음악 구성요소의 주효과(ηp²=.200)가 모두 유의하였고, 곡과 음악 구성요소 간 상호작용 효과가 가장 큰 효과크기(ηp²=.360)로 유의하게 나타났으며 이는 5개 하위차원 모두에서 일관되게 확인되었다. 특정 음악 구성요소나 특정 곡이 모든 조건에서 일관되게 우수하지는 않아, K-POP VR 콘서트의 Audio-to-Haptic 설계에는 하나의 고정된 규칙보다 곡별 맞춤형 접근이 필요함을 시사한다.",
+        keyPoints: [
+          "성인 24명이 VR 환경에서 웨어러블 햅틱 수트를 통해 9개 조건(K-POP 3곡 × 음악 구성요소 3종: 리듬/멜로디/화음을 Audio-to-Haptic으로 변환)을 모두 경험",
+          "곡과 음악 구성요소 조건 각각의 주효과가 유의했지만, 곡×음악 구성요소 상호작용이 가장 큰 효과(ηp²=.360)였고 5개 HX 하위차원 모두에서 일관되게 나타남",
+          "특정 음악 구성요소나 곡이 모든 조건에서 일관되게 우수하지 않아, K-POP VR 콘서트의 Audio-to-Haptic 설계는 곡별로 맞춤화할 필요가 있음을 시사"
+        ],
+        keywords: ["오디오-햅틱 변환", "햅틱 경험", "K-POP", "음악 구성요소", "가상현실 콘서트"],
+        note: "2026년 1월 10일 투고, 2월 14일 수정, 2월 14일 게재확정, 2월 28일 게재. 김정현(Jung-Hyeon Kim)은 제3저자로, 경희대학교 대학원 실감AX융합학과 석사과정입니다."
+      }
+    },
+    {
       id: "khc2026-imu",
       impact: "First-author oral presentation, accepted paper",
       kind: "publication",
@@ -101,6 +262,32 @@ const PROJECTS = {
     }
     */
   ],
+  patents: [
+    {
+      id: "cave-escape-room-patent",
+      kind: "patent",
+      name: "Method and apparatus for providing escape-room content in a CAVE-based multi-projection XR environment",
+      cover: null,
+      impact: "Co-inventor, filed",
+      status: "Filed",
+      filingDate: "February 6, 2026",
+      applicationNumber: "10-2026-0024399",
+      inventors: ["우탁", "최효범", "안지현", "김정현", "남준우", "류귀동", "최리원", "김정훈", "장은비"],
+      applicant: "Kyung Hee University Industry-Academic Cooperation Foundation",
+      role: "Co-inventor",
+      note: "Filed via the Korean Intellectual Property Office (KIPO); confirmed by the official application-number notification (출원번호통지서). Inventor names are listed in Korean, matching the filing.",
+      screenshotFiles: [],
+      ko: {
+        impact: "공동발명자, 출원",
+        name: "CAVE 기반 다면 프로젝션 XR 환경에서의 방탈출 콘텐츠 제공 방법 및 장치",
+        status: "출원",
+        filingDate: "2026년 2월 6일",
+        applicant: "경희대학교 산학협력단",
+        role: "공동발명자",
+        note: "특허청(KIPO)에 출원되었으며, 공식 출원번호통지서로 확인되었습니다."
+      }
+    }
+  ],
   team: [
     {
       id: "ilsang",
@@ -131,7 +318,6 @@ const PROJECTS = {
         "Judging business viability and shaping a business model around it",
         "Fixing usability issues and bugs found through QA"
       ],
-      screenshots: 3,
       ko: {
         impact: "App Store 출시 중",
         status: "서비스 중",
@@ -198,7 +384,6 @@ const PROJECTS = {
         "Improved features and design based on user feedback",
         "Applied a design system"
       ],
-      screenshots: 5,
       ko: {
         impact: "App Store 출시 중",
         status: "서비스 중",
@@ -265,7 +450,6 @@ const PROJECTS = {
         "Fixing usability issues and bugs via QA",
         "Took part in large-scale team development"
       ],
-      screenshots: 3,
       ko: {
         impact: "서울 지역에서 출시 및 운영 후 서비스 종료",
         status: "서비스 종료",
@@ -325,7 +509,7 @@ const PROJECTS = {
         "Set up an environment that properly follows the MVVM architecture",
         "Gained experience shipping to the App Store and managing versions"
       ],
-      screenshots: 3,
+      screenshotFiles: ["assets/proj-dots.png"],
       ko: {
         impact: "App Store 출시",
         status: "서비스 종료",
@@ -382,7 +566,6 @@ const PROJECTS = {
         "Learned to define and solve problems from the user's point of view",
         "Became comfortable developing directly from official documentation"
       ],
-      screenshots: 0,
       ko: {
         status: "서비스 종료",
         topic: [
@@ -434,7 +617,7 @@ const PROJECTS = {
         "Studied building features using various libraries and external APIs",
         "Studied implementing features via screen overlay/override techniques"
       ],
-      screenshots: 1,
+      screenshotFiles: ["assets/proj-whoyak.png"],
       ko: {
         status: "서비스 종료",
         topic: [
@@ -487,7 +670,7 @@ const PROJECTS = {
         "Learned how to modify server data from an Android app",
         "Learned that it pays to add a core feature the market doesn't already have"
       ],
-      screenshots: 0,
+      screenshotFiles: ["assets/proj-dumchoe.png"],
       ko: {
         status: "서비스 종료",
         topic: [
@@ -540,7 +723,7 @@ const PROJECTS = {
         "Learned how to use MySQL from JAVA code",
         "Learned how to design a usable DB structure with MySQL"
       ],
-      screenshots: 0,
+      screenshotFiles: ["assets/proj-healthkeeper.png"],
       ko: {
         impact: "사내 Java 경진대회 대상",
         status: "서비스 종료",
@@ -567,6 +750,80 @@ const PROJECTS = {
     }
   ],
   personal: [
+    {
+      id: "cuckoowallclock",
+      name: "CuckooWallClock",
+      cover: "assets/proj-cuckoowallclock.png",
+      created: "May 5 to May 9, 2026",
+      tags: ["ARKit", "RealityKit", "visionOS", "SwiftUI", "WidgetKit", "AVAudioEngine"],
+      status: "Prototype",
+      url: { label: "GitHub", href: "https://github.com/HIBAR97" },
+      topic: [
+        "A media studies course project exploring whether a purely digital object, a cuckoo clock, can be anchored convincingly into physical space and read as real through AR.",
+        "Built as an ARKit/RealityKit iPhone app with a parallel visionOS build, to compare wall-anchored AR across a handheld screen and a spatial headset."
+      ],
+      summary: "Detects a vertical wall through the iPhone camera, lets the user tap a point on it, and anchors a 3D cuckoo clock there with correct orientation, live clock hands, a swinging pendulum, and an hourly door-opening cuckoo animation with a synthesized two-tone call. The placement persists across app relaunches via ARWorldMap, and the same wall-anchoring interaction is reimplemented natively for visionOS.",
+      keyFunction: [
+        "Vertical wall detection via ARKit plane detection, with an AR coaching overlay guiding the scan",
+        "Tap-to-place anchor whose orientation is corrected from the wall normal and camera position so the clock always faces the user",
+        "ARWorldMap save/restore so a previously placed clock reappears in the same spot after relaunching the app",
+        "Real-time hour/minute/second hands, a swinging pendulum, and an on-the-hour door-open, bird, cuckoo-sound sequence",
+        "Cuckoo call synthesized at runtime with AVAudioEngine and AVAudioPCMBuffer rather than a recorded sample",
+        "Lock, mute, and reposition controls, plus haptic feedback on successful placement",
+        "Screen auto-lock disabled only while the AR camera is active, restored afterward",
+        "visionOS build using PlaneDetectionProvider to anchor the same clock to a real wall in a mixed immersive space",
+        "Home Screen WidgetKit clock widget"
+      ],
+      techStack: "ARKit, RealityKit, SwiftUI, WidgetKit, AVAudioEngine, visionOS, PlaneDetectionProvider",
+      part: [
+        "Whole project: iPhone AR app, visionOS app, and the WidgetKit extension",
+        "Wrote the wall-anchoring math that keeps the clock face oriented toward the user from the wall normal and camera position",
+        "Built the ARWorldMap save/restore flow for persisting placement across relaunches",
+        "Synthesized the cuckoo call at runtime instead of using a recorded or licensed sound",
+        "Generated the procedural CuckooClock USD model and app icon programmatically instead of using external assets"
+      ],
+      learned: [
+        "Getting an anchor to consistently face the user requires deriving orientation from both the wall's normal and the camera position, not just the wall normal alone",
+        "ARWorldMap persistence is fragile in practice, restoring a previous placement only works if the user rescans a similar view of the same wall area",
+        "Synthesizing a convincing two-note cuckoo call with AVAudioEngine came down to getting the attack/decay envelope right, not just the two pitches",
+        "visionOS's PlaneDetectionProvider and ARKit's vertical plane detection solve the same problem with meaningfully different APIs, which made porting the placement logic harder than expected",
+        "Building without any external assets, no recorded sound, no downloaded 3D model or texture, forced procedural solutions that ended up simpler to maintain than an asset pipeline"
+      ],
+      screenshotFiles: [],
+      ko: {
+        status: "프로토타입",
+        topic: [
+          "미디어연구 수업 프로젝트로, 순수하게 디지털인 사물(뻐꾸기 시계)이 AR을 통해 실제 공간에 설득력 있게 고정되어 \"현실처럼\" 읽힐 수 있는지를 탐구.",
+          "ARKit/RealityKit 기반 iPhone 앱과 visionOS 버전을 병행 제작해, 손에 든 화면과 공간 헤드셋에서 벽 고정 AR이 어떻게 다른지 비교."
+        ],
+        summary: "iPhone 카메라로 수직 벽을 인식하고, 사용자가 탭한 지점에 3D 뻐꾸기 시계를 정확한 방향으로 고정합니다. 실시간으로 움직이는 시침·분침·초침, 흔들리는 추, 정각마다 문이 열리며 새가 나오고 합성된 두 음의 울음소리가 재생됩니다. 배치 위치는 ARWorldMap으로 저장되어 앱을 재실행해도 유지되며, 동일한 벽 고정 상호작용을 visionOS에서도 네이티브로 구현했습니다.",
+        keyFunction: [
+          "ARKit 평면 인식 기반 수직 벽 감지, AR coaching overlay로 스캔 안내",
+          "벽 법선과 카메라 위치를 함께 반영해 시계가 항상 사용자를 향하도록 방향을 보정하는 탭-배치 앵커",
+          "ARWorldMap 저장/복원으로 앱을 재실행해도 이전 배치 위치가 그대로 복구됨",
+          "실시간 시·분·초침, 흔들리는 추, 정각마다 문 열림-새 등장-뻐꾸기 소리로 이어지는 시퀀스",
+          "녹음 파일이 아니라 AVAudioEngine/AVAudioPCMBuffer로 런타임에 직접 합성한 뻐꾸기 울음소리",
+          "잠금, 음소거, 재배치 컨트롤과 배치 성공 시 haptic 피드백",
+          "AR 카메라가 켜져 있는 동안만 화면 자동 잠금을 해제하고, 종료 후 원래 상태로 복원",
+          "PlaneDetectionProvider를 사용해 동일한 시계를 mixed immersive space의 실제 벽에 고정하는 visionOS 버전",
+          "홈 화면용 WidgetKit 시계 위젯"
+        ],
+        part: [
+          "iPhone AR 앱, visionOS 앱, WidgetKit 익스텐션까지 프로젝트 전체",
+          "벽 법선과 카메라 위치로부터 시계 앞면이 항상 사용자를 향하도록 하는 방향 보정 로직 작성",
+          "재실행 후에도 배치 위치가 유지되는 ARWorldMap 저장/복원 플로우 구축",
+          "녹음/라이선스 음원 대신 런타임에 뻐꾸기 울음소리를 직접 합성",
+          "외부 에셋 없이 절차적으로 CuckooClock USD 모델과 앱 아이콘을 생성"
+        ],
+        learned: [
+          "앵커가 항상 사용자를 향하게 하려면 벽 법선뿐 아니라 카메라 위치까지 함께 반영해서 방향을 계산해야 함",
+          "ARWorldMap 지속성은 실제로는 꽤 불안정해서, 이전과 비슷한 각도로 같은 벽 주변을 다시 비춰야만 복원이 됨",
+          "설득력 있는 두 음 뻐꾸기 소리를 합성하는 건 음높이 두 개보다 어택/디케이 엔벌로프를 맞추는 게 더 중요했음",
+          "visionOS의 PlaneDetectionProvider와 ARKit의 수직 평면 감지는 같은 문제를 상당히 다른 API로 풀어서, 배치 로직을 이식하는 게 예상보다 까다로웠음",
+          "녹음 사운드도, 다운로드한 3D 모델·텍스처도 전혀 쓰지 않고 만들다 보니 절차적으로 해결하게 됐고, 결과적으로 에셋 파이프라인보다 유지보수가 더 간단해짐"
+        ]
+      }
+    },
     {
       id: "wwdc2026",
       name: "Feel the Place (WWDC 2026)",
@@ -790,7 +1047,7 @@ const PROJECTS = {
         "How anchors work, and hand tracking",
         "Understood how spatial apps work and where they're useful"
       ],
-      screenshots: 0,
+      screenshotFiles: ["assets/proj-dalttajo.png"],
       ko: {
         topic: ["ARKit과 RealityKit을 활용해 사용자가 가상 콘텐츠와 상호작용하는 방법을 만드는 프로젝트."],
         summary: "ARKit과 RealityKit을 사용해 가상 콘텐츠와 상호작용하는 다양한 방법을 구현합니다.",
@@ -825,7 +1082,7 @@ const PROJECTS = {
         "How anchors work",
         "Understood how spatial apps work and where they're useful"
       ],
-      screenshots: 0,
+      screenshotFiles: ["assets/proj-visionos.png"],
       ko: {
         topic: ["visionOS에서 동작하는 앱을 만들고 성능을 점검하는 프로젝트."],
         summary: "Reality Composer Pro와 ARKit을 사용해 visionOS 프로젝트를 만들고 성능을 점검합니다.",
@@ -853,7 +1110,7 @@ const PROJECTS = {
       keyFunction: ["Float numbers in virtual space and implement a button feature"],
       techStack: "SwiftUI, RealityKit, Reality Composer, SceneKit",
       learned: ["Adding objects to a virtual space", "Designing virtual objects"],
-      screenshots: 0,
+      screenshotFiles: ["assets/proj-realitykit.jpeg"],
       ko: {
         topic: ["RealityKit으로 iOS 기기에서 AR/VR 기능을 테스트."],
         summary: "RealityKit, Reality Composer, SceneKit 등을 활용해 visionOS 스타일 도구를 테스트하고, 카메라와 LiDAR 스캐너를 사용했습니다.",
@@ -886,7 +1143,7 @@ const PROJECTS = {
         "Learned how to use Firebase from Kotlin code",
         "Learned how to design a usable DB structure with Firebase"
       ],
-      screenshots: 0,
+      screenshotFiles: ["assets/proj-instagramclone.png"],
       ko: {
         topic: [
           "Kotlin에 익숙해지기 위해 시작, 언어 문법 학습과 데이터베이스 구축이 목표.",
@@ -929,7 +1186,6 @@ const PROJECTS = {
         "Very few apps actually support assistive use",
         "Most either have overly simple UI or no meaningful difference from a regular app's UI"
       ],
-      screenshots: 0,
       ko: {
         topic: [
           "앱스토어에 있는 보조 기능 앱들의 UI가 어떻게 구성되고, 어떻게 도움을 주며, 어떻게 활성화되는지 분석.",
