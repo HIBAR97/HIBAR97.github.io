@@ -318,6 +318,7 @@ const PROJECTS = {
         "Judging business viability and shaping a business model around it",
         "Fixing usability issues and bugs found through QA"
       ],
+      screenshotFiles: ["assets/shot-ilsang-1.png", "assets/shot-ilsang-2.png", "assets/shot-ilsang-3.png", "assets/shot-ilsang-4.png"],
       ko: {
         impact: "App Store 출시 중",
         status: "서비스 중",
@@ -384,6 +385,7 @@ const PROJECTS = {
         "Improved features and design based on user feedback",
         "Applied a design system"
       ],
+      screenshotFiles: ["assets/shot-postkit-1.jpg", "assets/shot-postkit-2.jpg", "assets/shot-postkit-3.jpg", "assets/shot-postkit-4.jpg", "assets/shot-postkit-5.jpg"],
       ko: {
         impact: "App Store 출시 중",
         status: "서비스 중",
@@ -450,6 +452,7 @@ const PROJECTS = {
         "Fixing usability issues and bugs via QA",
         "Took part in large-scale team development"
       ],
+      screenshotFiles: ["assets/shot-matq-1.jpg", "assets/shot-matq-2.png", "assets/shot-matq-3.png", "assets/shot-matq-4.png", "assets/shot-matq-5.png"],
       ko: {
         impact: "서울 지역에서 출시 및 운영 후 서비스 종료",
         status: "서비스 종료",
@@ -509,7 +512,7 @@ const PROJECTS = {
         "Set up an environment that properly follows the MVVM architecture",
         "Gained experience shipping to the App Store and managing versions"
       ],
-      screenshotFiles: ["assets/proj-dots.png"],
+      screenshotFiles: ["assets/shot-dots-1.png", "assets/shot-dots-2.png", "assets/shot-dots-3.png", "assets/shot-dots-4.png", "assets/shot-dots-5.png"],
       ko: {
         impact: "App Store 출시",
         status: "서비스 종료",
@@ -617,7 +620,7 @@ const PROJECTS = {
         "Studied building features using various libraries and external APIs",
         "Studied implementing features via screen overlay/override techniques"
       ],
-      screenshotFiles: ["assets/proj-whoyak.png"],
+      screenshotFiles: ["assets/proj-whoyak.png", "assets/shot-whoyak-1.png", "assets/shot-whoyak-2.png", "assets/shot-whoyak-3.png", "assets/shot-whoyak-4.png", "assets/shot-whoyak-5.png", "assets/shot-whoyak-6.png", "assets/shot-whoyak-7.png", "assets/shot-whoyak-8.png", "assets/shot-whoyak-9.png", "assets/shot-whoyak-10.png", "assets/shot-whoyak-11.png", "assets/shot-whoyak-12.png", "assets/shot-whoyak-13.png", "assets/shot-whoyak-14.png", "assets/shot-whoyak-15.png", "assets/shot-whoyak-16.png", "assets/shot-whoyak-17.png", "assets/shot-whoyak-18.png"],
       ko: {
         status: "서비스 종료",
         topic: [
@@ -670,7 +673,7 @@ const PROJECTS = {
         "Learned how to modify server data from an Android app",
         "Learned that it pays to add a core feature the market doesn't already have"
       ],
-      screenshotFiles: ["assets/proj-dumchoe.png"],
+      screenshotFiles: ["assets/proj-dumchoe.png", "assets/shot-dumchoe-1.png", "assets/shot-dumchoe-2.png", "assets/shot-dumchoe-3.png", "assets/shot-dumchoe-4.png", "assets/shot-dumchoe-5.png"],
       ko: {
         status: "서비스 종료",
         topic: [
@@ -723,7 +726,7 @@ const PROJECTS = {
         "Learned how to use MySQL from JAVA code",
         "Learned how to design a usable DB structure with MySQL"
       ],
-      screenshotFiles: ["assets/proj-healthkeeper.png"],
+      screenshotFiles: ["assets/proj-healthkeeper.png", "assets/shot-healthkeeper-1.png", "assets/shot-healthkeeper-2.png", "assets/shot-healthkeeper-3.png", "assets/shot-healthkeeper-4.png", "assets/shot-healthkeeper-5.png", "assets/shot-healthkeeper-6.png", "assets/shot-healthkeeper-7.png"],
       ko: {
         impact: "사내 Java 경진대회 대상",
         status: "서비스 종료",
@@ -1047,7 +1050,7 @@ const PROJECTS = {
         "How anchors work, and hand tracking",
         "Understood how spatial apps work and where they're useful"
       ],
-      screenshotFiles: ["assets/proj-dalttajo.png"],
+      screenshotFiles: ["assets/proj-dalttajo.png", "assets/shot-dalttajo-2.jpg"],
       ko: {
         topic: ["ARKit과 RealityKit을 활용해 사용자가 가상 콘텐츠와 상호작용하는 방법을 만드는 프로젝트."],
         summary: "ARKit과 RealityKit을 사용해 가상 콘텐츠와 상호작용하는 다양한 방법을 구현합니다.",
@@ -1082,7 +1085,7 @@ const PROJECTS = {
         "How anchors work",
         "Understood how spatial apps work and where they're useful"
       ],
-      screenshotFiles: ["assets/proj-visionos.png"],
+      screenshotFiles: ["assets/proj-visionos.png", "assets/shot-visionos-2.jpg", "assets/shot-visionos-3.jpg"],
       ko: {
         topic: ["visionOS에서 동작하는 앱을 만들고 성능을 점검하는 프로젝트."],
         summary: "Reality Composer Pro와 ARKit을 사용해 visionOS 프로젝트를 만들고 성능을 점검합니다.",
@@ -1110,7 +1113,7 @@ const PROJECTS = {
       keyFunction: ["Float numbers in virtual space and implement a button feature"],
       techStack: "SwiftUI, RealityKit, Reality Composer, SceneKit",
       learned: ["Adding objects to a virtual space", "Designing virtual objects"],
-      screenshotFiles: ["assets/proj-realitykit.jpeg"],
+      screenshotFiles: ["assets/proj-realitykit.jpeg", "assets/shot-realitykit-2.jpg"],
       ko: {
         topic: ["RealityKit으로 iOS 기기에서 AR/VR 기능을 테스트."],
         summary: "RealityKit, Reality Composer, SceneKit 등을 활용해 visionOS 스타일 도구를 테스트하고, 카메라와 LiDAR 스캐너를 사용했습니다.",
@@ -1143,7 +1146,7 @@ const PROJECTS = {
         "Learned how to use Firebase from Kotlin code",
         "Learned how to design a usable DB structure with Firebase"
       ],
-      screenshotFiles: ["assets/proj-instagramclone.png"],
+      screenshotFiles: ["assets/proj-instagramclone.png", "assets/shot-instagramclone-1.png", "assets/shot-instagramclone-2.png", "assets/shot-instagramclone-3.png", "assets/shot-instagramclone-4.png"],
       ko: {
         topic: [
           "Kotlin에 익숙해지기 위해 시작, 언어 문법 학습과 데이터베이스 구축이 목표.",
