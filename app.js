@@ -1,5 +1,21 @@
 let currentLang = localStorage.getItem("lang") || "en";
 let currentModalId = null;
+let modalOpenedAt = null;
+
+function bucketSeconds(s) {
+  if (s < 10) return "0-10s";
+  if (s < 30) return "10-30s";
+  if (s < 60) return "30-60s";
+  if (s < 180) return "1-3m";
+  if (s < 600) return "3-10m";
+  return "10m+";
+}
+
+function logEvent(path, title) {
+  if (window.goatcounter && window.goatcounter.count) {
+    window.goatcounter.count({ path, title, event: true });
+  }
+}
 
 const LABELS = {
   en: {
@@ -232,6 +248,12 @@ function screenshots(files) {
   return `<div class="shot-row">${files.map(f => `<img class="shot" src="${f}" alt="App screenshot" loading="lazy">`).join("")}</div>`;
 }
 
+function renderDetail(html) {
+  document.getElementById("modal-inner").innerHTML = html;
+  document.getElementById("modal-overlay").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
 function openPublicationModal(p) {
   const metaRows = [];
   if (p.date) metaRows.push(`<div class="meta-row"><span class="meta-label">${L("date")}</span><span>${tf(p, "date")}</span></div>`);
@@ -262,9 +284,7 @@ function openPublicationModal(p) {
     </div>
   `;
 
-  document.getElementById("modal-inner").innerHTML = html;
-  document.getElementById("modal-overlay").classList.add("open");
-  document.body.style.overflow = "hidden";
+  renderDetail(html);
 }
 
 function openPatentModal(p) {
@@ -290,15 +310,14 @@ function openPatentModal(p) {
     </div>
   `;
 
-  document.getElementById("modal-inner").innerHTML = html;
-  document.getElementById("modal-overlay").classList.add("open");
-  document.body.style.overflow = "hidden";
+  renderDetail(html);
 }
 
 function openModal(id) {
   const p = findProject(id);
   if (!p) return;
   currentModalId = id;
+  modalOpenedAt = Date.now();
 
   if (p.kind === "publication") {
     openPublicationModal(p);
@@ -342,15 +361,18 @@ function openModal(id) {
     </div>
   `;
 
-  document.getElementById("modal-inner").innerHTML = html;
-  document.getElementById("modal-overlay").classList.add("open");
-  document.body.style.overflow = "hidden";
+  renderDetail(html);
 }
 
 function closeModal() {
+  if (modalOpenedAt && currentModalId) {
+    const seconds = (Date.now() - modalOpenedAt) / 1000;
+    logEvent(`viewtime/${currentModalId}/${bucketSeconds(seconds)}`, `${currentModalId}: ${seconds.toFixed(1)}s`);
+  }
   document.getElementById("modal-overlay").classList.remove("open");
   document.body.style.overflow = "";
   currentModalId = null;
+  modalOpenedAt = null;
 }
 
 document.getElementById("modal-overlay").addEventListener("click", (e) => {
@@ -359,6 +381,19 @@ document.getElementById("modal-overlay").addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeModal();
 });
+
+let pageEnteredAt = Date.now();
+
+function logPageTime() {
+  const seconds = (Date.now() - pageEnteredAt) / 1000;
+  logEvent(`pagetime/${bucketSeconds(seconds)}`, `Time on site: ${seconds.toFixed(1)}s`);
+  pageEnteredAt = Date.now();
+}
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden") logPageTime();
+});
+window.addEventListener("pagehide", logPageTime);
 
 applyStaticLang();
 renderCards(PROJECTS.publications || [], "publications");
