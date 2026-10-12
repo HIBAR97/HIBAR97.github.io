@@ -754,6 +754,92 @@ const PROJECTS = {
   ],
   personal: [
     {
+      id: "touchstone",
+      name: "Touchstone (시금석)",
+      cover: "assets/proj-touchstone.jpg",
+      created: "Late Sept 2026 to present",
+      tags: ["SwiftUI", "Core Haptics", "Swift", "TypeScript", "WebSocket", "Chrome / Safari Extension", "macOS", "iOS"],
+      status: "Website live, store release pending",
+      url: { label: "Website", href: "https://hibar97.github.io/touchstone/" },
+      topic: [
+        "A fact-checker you can feel: an iPhone that works as a black trackpad for a Mac and buzzes when the cursor rests on false information in a web page.",
+        "Explores whether a haptic channel can deliver a verdict (correct, unsure, wrong) without pulling the reader's eyes away from the text."
+      ],
+      summary: "Touchstone turns an iPhone into a Mac trackpad over an encrypted link, and pairs it with a browser extension that checks the claims on a page. When the cursor rests on a sentence judged false, the iPhone buzzes with a distinct pattern for correct, unsure, and wrong, and a card on the page shows the correct answer with sources. Everything is free, there is no server and no analytics, and the AI used for checking is the user's own choice: a ChatGPT sign-in, their own API key, or a local model.",
+      keyFunction: [
+        "iPhone as a Mac trackpad: tap to click, two-finger scroll with momentum, hold to drag, pinch, three- and four-finger system gestures that follow the Mac's own trackpad settings",
+        "QR pairing with an authenticated, AES-GCM encrypted channel over Wi-Fi, with a USB link through usbmuxd that takes over while the cable is plugged in",
+        "Core Haptics click and verdict patterns, plus a haptic lab to feel the buzzes without a Mac",
+        "Claim extraction, web-grounded verification and correction engine in TypeScript, where a source only counts if its URL appeared in the search evidence, so invented citations are dropped",
+        "DOI check against Crossref, so a real DOI paired with an invented title is caught by comparison",
+        "Browser extension for Chrome and Safari with a page scan, wavy underlines on flagged claims, and a hover card with the correction and sources, in English and Korean",
+        "Choice of AI: Sign in with ChatGPT through a Mac-side relay, Claude / GPT / Gemini API keys, or a local model such as LM Studio or Ollama",
+        "Parametric 3D-printable iPhone holders with a Magic Trackpad footprint, wired and MagSafe variants, one STL per iPhone model",
+        "Bilingual static website (home with a how-to video, support, privacy policy, holder downloads) deployed on GitHub Pages"
+      ],
+      techStack: "SwiftUI (MVVM), Core Haptics, Network / WebSocket, CryptoKit (AES-GCM), usbmuxd, TypeScript, Chrome MV3 and Safari Web Extension, XcodeGen, Python (parametric STL generation)",
+      part: [
+        "Whole project: iPhone app, Mac menu-bar app, browser extension, verification engine, hardware holders, and website",
+        "Designed the pairing and secure-channel flow, including reconnect rules that keep a pairing when the Mac is asleep and forget it only when the secret is rejected",
+        "Wrote a gesture engine that recognizes trackpad gestures from raw touches instead of stacked UIKit recognizers, so staggered fingers still scroll and swipe",
+        "Built the verification guardrails: unverifiable never becomes an error, corrections are kept only for contradicted claims, and error text is redacted for keys and tokens",
+        "Produced the how-to video as code, rendered from a scene file for each language",
+        "Wrote the privacy policy and the support pages, and released the site as a standalone repository without publishing the app source"
+      ],
+      learned: [
+        "A haptic verdict is only usable if a false alarm is rarer than a true detection, so the strong buzz is reserved for high-confidence contradictions that have sources",
+        "Feeling like a real trackpad is mostly timing: how long finger counts must settle, and how momentum and gesture phases reach the Mac, decide whether scrolling feels native",
+        "Privacy by construction is easier than privacy by policy: with no server of my own, the question of what leaves which device reduces to a short table",
+        "Engine accuracy has not been measured yet, so the project is described as working end to end rather than as accurate"
+      ],
+      video: {
+        src: { en: "assets/touchstone-howto-en.mp4", ko: "assets/touchstone-howto-ko.mp4" },
+        poster: { en: "assets/touchstone-howto-en.jpg", ko: "assets/touchstone-howto-ko.jpg" }
+      },
+      screenshotFiles: [
+        "assets/shot-touchstone-1.jpg",
+        "assets/shot-touchstone-2.jpg",
+        "assets/shot-touchstone-3.jpg",
+        "assets/shot-touchstone-4.jpg",
+        "assets/shot-touchstone-5.jpg",
+        "assets/shot-touchstone-6.jpg"
+      ],
+      ko: {
+        status: "웹사이트 공개, 스토어 출시 준비 중",
+        url: { label: "웹사이트" },
+        topic: [
+          "느낄 수 있는 팩트체커: iPhone이 Mac의 까만 트랙패드가 되고, 웹페이지에서 커서가 틀린 정보 위에 멈추면 진동으로 알려줍니다.",
+          "독자의 시선을 글에서 떼지 않고도 햅틱 채널로 판정(맞음·불확실·틀림)을 전달할 수 있는지 탐구."
+        ],
+        summary: "Touchstone은 암호화된 연결로 iPhone을 Mac 트랙패드로 바꾸고, 페이지의 주장을 검사하는 브라우저 확장 프로그램과 함께 동작합니다. 커서가 틀린 것으로 판정된 문장 위에 멈추면 iPhone이 맞음·불확실·틀림에 따라 서로 다른 패턴으로 진동하고, 페이지 위 카드에는 정답과 출처가 표시됩니다. 모두 무료이고 서버와 분석 도구가 없으며, 검사에 쓰는 AI는 사용자가 직접 고릅니다. ChatGPT 로그인, 본인의 API 키, 또는 로컬 모델 중에서 선택합니다.",
+        keyFunction: [
+          "iPhone을 Mac 트랙패드로: 탭 클릭, 관성 있는 두 손가락 스크롤, 길게 눌러 드래그, 핀치, Mac의 트랙패드 설정을 그대로 따르는 세·네 손가락 시스템 제스처",
+          "QR로 페어링하고 Wi-Fi 위에서 인증·AES-GCM 암호화된 채널을 사용하며, 케이블을 꽂으면 usbmuxd를 통한 USB 연결이 우선",
+          "Core Haptics 클릭·판정 패턴, 그리고 Mac 없이 진동을 미리 느껴보는 햅틱 체험",
+          "TypeScript로 만든 주장 추출·웹 근거 검증·정정 엔진. 검색 근거에 나온 URL만 출처로 인정하므로 지어낸 인용은 걸러짐",
+          "Crossref로 DOI를 확인해 실제 DOI에 지어낸 제목이 붙은 인용을 비교로 포착",
+          "Chrome과 Safari용 확장 프로그램: 페이지 검사, 틀린 주장의 물결 밑줄, 정정과 출처가 담긴 호버 카드, 영어·한국어 지원",
+          "AI 선택: Mac 릴레이를 통한 ChatGPT 로그인, Claude / GPT / Gemini API 키, LM Studio나 Ollama 같은 로컬 모델",
+          "Magic Trackpad 크기의 받침과 경사를 갖춘 파라메트릭 3D 프린팅 iPhone 거치대. 유선·MagSafe 버전, iPhone 모델별 STL 제공",
+          "사용법 영상, 지원, 개인정보 처리방침, 거치대 다운로드를 담은 한국어·영어 정적 웹사이트를 GitHub Pages로 배포"
+        ],
+        part: [
+          "iPhone 앱, Mac 메뉴 막대 앱, 브라우저 확장, 검증 엔진, 하드웨어 거치대, 웹사이트까지 프로젝트 전체",
+          "Mac이 잠든 동안에는 페어링을 유지하고 비밀값이 거절됐을 때만 잊도록 한 재연결 규칙을 포함해 페어링과 보안 채널 흐름 설계",
+          "겹쳐 쌓은 UIKit 제스처 인식기 대신 원시 터치로 트랙패드 제스처를 인식하는 제스처 엔진 작성. 손가락이 시차를 두고 닿아도 스크롤과 스와이프가 동작",
+          "검증 안전장치 구현: 확인 불가가 오류로 바뀌지 않고, 정정은 틀린 것으로 판정된 주장에만 남기며, 오류 문구에서는 키와 토큰을 가림",
+          "장면 파일에서 언어별로 렌더링하는 방식으로 사용법 영상을 코드로 제작",
+          "개인정보 처리방침과 지원 페이지를 작성하고, 앱 소스는 공개하지 않은 채 사이트만 별도 저장소로 공개"
+        ],
+        learned: [
+          "햅틱 판정은 오탐이 정탐보다 드물어야 쓸 수 있으므로, 강한 진동은 출처가 있는 높은 신뢰도의 반박에만 쓰도록 제한",
+          "진짜 트랙패드 같은 느낌은 대부분 타이밍의 문제: 손가락 수가 안정되기까지의 시간과 관성·제스처 단계가 Mac에 전달되는 방식이 스크롤의 자연스러움을 좌우",
+          "정책보다 구조로 지키는 개인정보가 더 쉬움: 자체 서버가 없으니 어떤 데이터가 어느 기기를 떠나는지가 짧은 표 하나로 정리됨",
+          "엔진 정확도는 아직 측정하지 않았으므로, 정확하다고 말하지 않고 처음부터 끝까지 동작한다고만 설명"
+        ]
+      },
+    },
+    {
       id: "cuckoowallclock",
       name: "CuckooWallClock",
       cover: "assets/proj-cuckoowallclock.png",

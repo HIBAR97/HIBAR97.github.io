@@ -23,7 +23,7 @@ const LABELS = {
     date: "📅 Date", venue: "🏛 Venue", authors: "🧑🏻‍💻 Authors", affiliation: "🏫 Affiliation",
     role: "🤚🏻 Role", doi: "🔗 DOI",
     topic: "💡 Topic", summary: "📝 Summary", keyFunction: "⭐️ Key Function", techStack: "🛠 Tech Stack",
-    team: "🧑🏻‍💻 Team", part: "🤚🏻 My Role", learned: "🤔 Learned", screenshots: "📷 Screenshots",
+    team: "🧑🏻‍💻 Team", part: "🤚🏻 My Role", learned: "🤔 Learned", screenshots: "📷 Screenshots", video: "🎬 How-to Video",
     abstract: "📝 Abstract", contributions: "⭐️ Contributions", method: "🔧 Method", findings: "📊 Findings",
     keywords: "🏷 Keywords", figures: "📷 Figures", links: "🔗 Links",
     filingDate: "📅 Filing Date", applicationNumber: "🔢 Application No.", applicant: "🏫 Applicant", inventors: "🧑🏻‍💻 Inventors",
@@ -34,7 +34,7 @@ const LABELS = {
     date: "📅 날짜", venue: "🏛 발표 학회", authors: "🧑🏻‍💻 저자", affiliation: "🏫 소속",
     role: "🤚🏻 역할", doi: "🔗 DOI",
     topic: "💡 주제", summary: "📝 요약", keyFunction: "⭐️ 주요 기능", techStack: "🛠 기술 스택",
-    team: "🧑🏻‍💻 팀 구성", part: "🤚🏻 담당 역할", learned: "🤔 배운 점", screenshots: "📷 스크린샷",
+    team: "🧑🏻‍💻 팀 구성", part: "🤚🏻 담당 역할", learned: "🤔 배운 점", screenshots: "📷 스크린샷", video: "🎬 사용법 영상",
     abstract: "📝 초록", contributions: "⭐️ 기여", method: "🔧 방법", findings: "📊 결과",
     keywords: "🏷 키워드", figures: "📷 그림", links: "🔗 링크",
     filingDate: "📅 출원일", applicationNumber: "🔢 출원번호", applicant: "🏫 출원인", inventors: "🧑🏻‍💻 발명자",
@@ -230,6 +230,11 @@ function section(title, contentHtml) {
   return `<div class="modal-section"><h3>${title}</h3>${contentHtml}</div>`;
 }
 
+function videoBlock(v) {
+  if (!v) return "";
+  return `<video class="pj-video" controls playsinline preload="metadata" poster="${v.poster[currentLang]}" src="${v.src[currentLang]}"></video>`;
+}
+
 function list(items) {
   if (!items || !items.length) return "";
   return `<ul>${items.map(i => `<li>${i}</li>`).join("")}</ul>`;
@@ -357,6 +362,7 @@ function openModal(id) {
       ${section(L("team"), list(tf(p, "team")))}
       ${section(L("part"), list(tf(p, "part")))}
       ${section(L("learned"), list(tf(p, "learned")))}
+      ${section(L("video"), videoBlock(p.video))}
       ${section(L("screenshots"), screenshots(p.screenshotFiles))}
     </div>
   `;

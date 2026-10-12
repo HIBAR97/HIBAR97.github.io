@@ -820,6 +820,14 @@ ul.plain .sub {
   margin-top: 4px;
 }
 
+.pj-video {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #000;
+}
+
 .shot-row {
   display: flex;
   gap: 12px;
