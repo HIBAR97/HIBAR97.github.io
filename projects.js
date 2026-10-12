@@ -759,13 +759,13 @@ const PROJECTS = {
       cover: "assets/proj-touchstone.jpg",
       created: "Late Sept 2026 to present",
       tags: ["SwiftUI", "Core Haptics", "Swift", "TypeScript", "WebSocket", "Chrome / Safari Extension", "macOS", "iOS"],
-      status: "Website live, store release pending",
+      status: "Submitted to the App Store on Oct 8, 2026 (in review)",
       url: { label: "Website", href: "https://hibar97.github.io/touchstone/" },
       topic: [
         "A fact-checker you can feel: an iPhone that works as a black trackpad for a Mac and buzzes when the cursor rests on false information in a web page.",
         "Explores whether a haptic channel can deliver a verdict (correct, unsure, wrong) without pulling the reader's eyes away from the text."
       ],
-      summary: "Touchstone turns an iPhone into a Mac trackpad over an encrypted link, and pairs it with a browser extension that checks the claims on a page. When the cursor rests on a sentence judged false, the iPhone buzzes with a distinct pattern for correct, unsure, and wrong, and a card on the page shows the correct answer with sources. Everything is free, there is no server and no analytics, and the AI used for checking is the user's own choice: a ChatGPT sign-in, their own API key, or a local model.",
+      summary: "I think we already have very good haptic actuators, but most of them get ignored or used far below their potential. To show more people what haptics can do, I wanted an example that is easy to understand, so I built an app that turns an iPhone into a trackpad for the Mac. It also opens a path to give users more information through touch. The first example is fact-checking: a browser extension checks the claims on a page, and when the cursor rests on a sentence, the iPhone buzzes with a different pattern for correct, unsure, or wrong, while a card on the page shows the answer with sources. It is free, has no server or analytics, and you pick the AI that does the checking.",
       keyFunction: [
         "iPhone as a Mac trackpad: tap to click, two-finger scroll with momentum, hold to drag, pinch, three- and four-finger system gestures that follow the Mac's own trackpad settings",
         "QR pairing with an authenticated, AES-GCM encrypted channel over Wi-Fi, with a USB link through usbmuxd that takes over while the cable is plugged in",
@@ -805,13 +805,13 @@ const PROJECTS = {
         "assets/shot-touchstone-6.jpg"
       ],
       ko: {
-        status: "웹사이트 공개, 스토어 출시 준비 중",
+        status: "2026년 10월 8일 App Store 제출 (심사 중)",
         url: { label: "웹사이트" },
         topic: [
           "느낄 수 있는 팩트체커: iPhone이 Mac의 까만 트랙패드가 되고, 웹페이지에서 커서가 틀린 정보 위에 멈추면 진동으로 알려줍니다.",
           "독자의 시선을 글에서 떼지 않고도 햅틱 채널로 판정(맞음·불확실·틀림)을 전달할 수 있는지 탐구."
         ],
-        summary: "Touchstone은 암호화된 연결로 iPhone을 Mac 트랙패드로 바꾸고, 페이지의 주장을 검사하는 브라우저 확장 프로그램과 함께 동작합니다. 커서가 틀린 것으로 판정된 문장 위에 멈추면 iPhone이 맞음·불확실·틀림에 따라 서로 다른 패턴으로 진동하고, 페이지 위 카드에는 정답과 출처가 표시됩니다. 모두 무료이고 서버와 분석 도구가 없으며, 검사에 쓰는 AI는 사용자가 직접 고릅니다. ChatGPT 로그인, 본인의 API 키, 또는 로컬 모델 중에서 선택합니다.",
+        summary: "좋은 햅틱 액추에이터는 이미 우리 주변에 많은데, 대부분 그냥 버려지거나 제 성능만큼 쓰이지 못한다고 생각했어요. 햅틱을 더 많은 사람에게 알리려면 누구나 바로 이해할 수 있는 예시가 필요했고, 그래서 iPhone을 Mac 트랙패드로 쓰는 앱을 혼자 만들었어요. 이 방식이면 촉각으로 사용자에게 더 많은 정보를 전달할 길도 열 수 있어요. 그 첫 예시가 팩트체크예요. 브라우저 확장이 페이지의 문장을 검사하고, 커서가 문장 위에 멈추면 맞는지, 애매한지, 틀렸는지에 따라 iPhone이 다르게 진동해요. 페이지 위 카드에는 정답과 출처가 떠요. 앱은 모두 무료이고, 서버도 분석 도구도 없고, 검사에 쓸 AI는 직접 고르면 돼요.",
         keyFunction: [
           "iPhone을 Mac 트랙패드로: 탭 클릭, 관성 있는 두 손가락 스크롤, 길게 눌러 드래그, 핀치, Mac의 트랙패드 설정을 그대로 따르는 세·네 손가락 시스템 제스처",
           "QR로 페어링하고 Wi-Fi 위에서 인증·AES-GCM 암호화된 채널을 사용하며, 케이블을 꽂으면 usbmuxd를 통한 USB 연결이 우선",
