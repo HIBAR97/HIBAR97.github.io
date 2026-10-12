@@ -760,7 +760,7 @@ const PROJECTS = {
       created: "Late Sept 2026 to present",
       tags: ["SwiftUI", "Core Haptics", "Swift", "TypeScript", "WebSocket", "Chrome / Safari Extension", "macOS", "iOS"],
       status: "Submitted to the App Store on Oct 8, 2026 (in review)",
-      url: { label: "Website", href: "https://hibar97.github.io/touchstone/" },
+      url: { label: "Touchstone Web", href: "https://hibar97.github.io/touchstone/" },
       topic: [
         "A fact-checker you can feel: an iPhone that works as a black trackpad for a Mac and buzzes when the cursor rests on false information in a web page.",
         "Explores whether a haptic channel can deliver a verdict (correct, unsure, wrong) without pulling the reader's eyes away from the text."
@@ -806,7 +806,6 @@ const PROJECTS = {
       ],
       ko: {
         status: "2026년 10월 8일 App Store 제출 (심사 중)",
-        url: { label: "웹사이트" },
         topic: [
           "느낄 수 있는 팩트체커: iPhone이 Mac의 까만 트랙패드가 되고, 웹페이지에서 커서가 틀린 정보 위에 멈추면 진동으로 알려줍니다.",
           "독자의 시선을 글에서 떼지 않고도 햅틱 채널로 판정(맞음·불확실·틀림)을 전달할 수 있는지 탐구."
