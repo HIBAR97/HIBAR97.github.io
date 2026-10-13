@@ -27,7 +27,7 @@ const LABELS = {
     abstract: "📝 Abstract", contributions: "⭐️ Contributions", method: "🔧 Method", findings: "📊 Findings",
     keywords: "🏷 Keywords", figures: "📷 Figures", links: "🔗 Links",
     filingDate: "📅 Filing Date", applicationNumber: "🔢 Application No.", applicant: "🏫 Applicant", inventors: "🧑🏻‍💻 Inventors",
-    private: "Private", appLinkPrefix: "🔗 "
+    private: "Private", appLinkPrefix: "🔗 ", appStore: "📱 App Store"
   },
   ko: {
     created: "📅 제작일", stack: "📋 스택", status: "⚙️ 상태", url: "🔗 URL",
@@ -38,7 +38,7 @@ const LABELS = {
     abstract: "📝 초록", contributions: "⭐️ 기여", method: "🔧 방법", findings: "📊 결과",
     keywords: "🏷 키워드", figures: "📷 그림", links: "🔗 링크",
     filingDate: "📅 출원일", applicationNumber: "🔢 출원번호", applicant: "🏫 출원인", inventors: "🧑🏻‍💻 발명자",
-    private: "비공개", appLinkPrefix: "🔗 "
+    private: "비공개", appLinkPrefix: "🔗 ", appStore: "📱 App Store"
   }
 };
 
@@ -338,6 +338,11 @@ function openModal(id) {
   if (p.tags && p.tags.length) metaRows.push(`<div class="meta-row"><span class="meta-label">${L("stack")}</span><span class="tag-list">${p.tags.map(t => `<span class="tag">${t}</span>`).join("")}</span></div>`);
   if (p.status) metaRows.push(`<div class="meta-row"><span class="meta-label">${L("status")}</span><span class="status-pill">${tf(p, "status")}</span></div>`);
   if (p.url) metaRows.push(`<div class="meta-row"><span class="meta-label">${L("url")}</span><span>${p.url.href ? `<a href="${p.url.href}" target="_blank" rel="noopener">${tUrlLabel(p)}</a>` : (tUrlLabel(p) || L("private"))}</span></div>`);
+
+  if (p.appStore) {
+    const asLabel = (currentLang === "ko" && p.ko && p.ko.appStore && p.ko.appStore.label) || p.appStore.label;
+    metaRows.push(`<div class="meta-row"><span class="meta-label">${L("appStore")}</span><span><a href="${p.appStore.href}" target="_blank" rel="noopener">${asLabel}</a></span></div>`);
+  }
 
   const blurb = tAppBlurb(p);
   const appBlurbHtml = blurb ? `
