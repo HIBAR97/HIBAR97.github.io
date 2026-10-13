@@ -759,7 +759,7 @@ const PROJECTS = {
       cover: "assets/proj-touchstone.jpg",
       created: "Late Sept 2026 to present",
       tags: ["SwiftUI", "Core Haptics", "Swift", "TypeScript", "WebSocket", "Chrome / Safari Extension", "macOS", "iOS"],
-      status: "Submitted to the App Store on Oct 8, 2026 (in review)",
+      status: "Released on the App Store (Oct 8, 2026)",
       url: { label: "Touchstone Web", href: "https://hibar97.github.io/touchstone/" },
       appStore: { label: "Touchstone for iPhone", href: "https://apps.apple.com/us/app/touchstone/id6819723660" },
       topic: [
@@ -806,7 +806,7 @@ const PROJECTS = {
         "assets/shot-touchstone-6.jpg"
       ],
       ko: {
-        status: "2026년 10월 8일 App Store 제출 (심사 중)",
+        status: "2026년 10월 8일 App Store 출시",
         appStore: { label: "iPhone용 Touchstone" },
         topic: [
           "느낄 수 있는 팩트체커: iPhone이 Mac의 까만 트랙패드가 되고, 웹페이지에서 커서가 틀린 정보 위에 멈추면 진동으로 알려줍니다.",
