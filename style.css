@@ -820,12 +820,42 @@ ul.plain .sub {
   margin-top: 4px;
 }
 
+.pj-video-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.pj-video-item {
+  margin: 0;
+  flex: 1 1 100%;
+}
+
+.pj-video-item.portrait {
+  flex: 0 0 auto;
+  max-width: 100%;
+}
+
 .pj-video {
   display: block;
   width: 100%;
   border-radius: 10px;
   border: 1px solid var(--border);
   background: #000;
+}
+
+.pj-video-item.portrait .pj-video {
+  width: auto;
+  max-width: 100%;
+  height: min(520px, 70vh);
+  object-fit: contain;
+}
+
+.pj-video-item figcaption {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-top: 6px;
 }
 
 .shot-row {

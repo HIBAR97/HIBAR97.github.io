@@ -232,7 +232,12 @@ function section(title, contentHtml) {
 
 function videoBlock(v) {
   if (!v) return "";
-  return `<video class="pj-video" controls playsinline preload="metadata" poster="${v.poster[currentLang]}" src="${v.src[currentLang]}"></video>`;
+  const pick = x => (x && typeof x === "object") ? (x[currentLang] || x.en) : x;
+  const items = Array.isArray(v) ? v : [v];
+  return `<div class="pj-video-row">${items.map(it => {
+    const cap = pick(it.label);
+    return `<figure class="pj-video-item${it.portrait ? " portrait" : ""}"><video class="pj-video" controls playsinline preload="metadata" poster="${pick(it.poster)}" src="${pick(it.src)}"></video>${cap ? `<figcaption>${cap}</figcaption>` : ""}</figure>`;
+  }).join("")}</div>`;
 }
 
 function list(items) {

@@ -754,6 +754,109 @@ const PROJECTS = {
   ],
   personal: [
     {
+      id: "iooi",
+      name: "IOOI",
+      cover: "assets/proj-iooi.jpg",
+      created: "Oct to Nov 2026",
+      tags: ["SwiftUI", "MVVM", "iPhone Duo", "Apple Pencil", "iMessage Stickers", "App Groups", "XcodeGen"],
+      status: "Released on the App Store (Nov 10, 2026)",
+      url: { label: "IOOI Web", href: "https://hibar97.github.io/iooi-site/" },
+      appStore: { label: "IOOI on the App Store", href: "https://apps.apple.com/us/app/iooi/id6832396718" },
+      topic: [
+        "A decalcomania (mirror print) app made for the foldable iPhone Duo: paint on the paper inside, fold the phone, rub the back of the paper on the outer display, and unfold to find the rubbed spots printed in mirror image on the other half.",
+        "The name is a palindrome on purpose. Folded in half, IO | OI mirrors itself, and it looks like a butterfly's wings and body."
+      ],
+      summary: "I wanted a toy that uses the fold itself, so I gave the two displays two different jobs. The inner display is the opened paper you paint on, and the outer display is the plain back of that paper, which you can only press. Fold the phone, rub the back where you want a print, and unfold: only the spots you pressed show up on the opposite half, mirrored around the fold. Paint added after a press is not copied until you press again. Sheets are kept in folders that fold and unfold like folders in a file browser, they save automatically, and they export as a transparent sticker, an iMessage sticker, a photo, or a PDF. There is no server, no ads and no account, and drawings stay on the device.",
+      keyFunction: [
+        "Inner display as paper: paint across both halves with a finger or Apple Pencil, and a stroke stays on the half where it started",
+        "Outer display as the back of the paper: rub to press with a small, medium, or wide press, plus an eraser that only removes the current fold's marks",
+        "Mirror print on unfold: a press copies only the paint that was on the paper at that moment, onto the opposite half, in both directions",
+        "Closing and opening the phone ends a fold: the pressed marks reset while the printed copy stays on the paper",
+        "Paper fills the screen edge to edge, and every tool lives in standard side-button menus so nothing covers the drawing",
+        "Library of sheets in folders that fold open and shut, with rename, move, and delete from a long press, and autosave as you draw",
+        "Export from the inner display as a transparent sticker PNG, a PDF, a photo saved to Photos, or a shared image",
+        "iMessage sticker extension inside the same app: add a drawing to the drawer and drag it onto any conversation",
+        "Apple Pencil support where line width follows tilt and palm touches are ignored while the Pencil is in use",
+        "Korean and English, with a layout for each of the two displays"
+      ],
+      techStack: "SwiftUI (MVVM, Observation), CoreGraphics, ImageIO, Photos, Messages framework (iMessage sticker extension), App Groups, Apple Pencil input with SpatialEventGesture, String Catalogs (ko / en), XcodeGen",
+      part: [
+        "Whole project: concept, interaction design, the SwiftUI app, the iMessage sticker extension, the app icons, the App Store art, and the release",
+        "Designed the interaction so the inner display is only for painting and the outer display is only for pressing the back of the paper",
+        "Wrote the print logic that numbers paint strokes and presses on one counter, so a press copies exactly what was on the paper at that moment",
+        "Drew the app icon and the iMessage icon in code instead of in a design tool",
+        "Built the Apple Pencil input with tilt-based line width and palm rejection",
+        "Made the App Store screenshots and preview video with Apple's Duo device frames and the app's own rendering engine"
+      ],
+      learned: [
+        "The fold only works if a press copies exactly what was on the paper at that moment. My first version kept copying everything drawn so far, which is not how pressing a folded paper behaves",
+        "Standard toolbar menus worked better than custom floating palettes, because the system put custom toolbar views at the bottom center instead of beside the paper",
+        "App Store Connect rejected my first upload for missing iMessage app icon sizes (120x90 and 180x135). The fix was to add the iPhone sizes to the sticker icon set without a platform key",
+        "For the name I wanted a left-right palindrome that looks like a butterfly, with no particular meaning, and it had to avoid an existing app called OIIO"
+      ],
+      video: [
+        {
+          src: "assets/iooi-fold-flow.mp4",
+          poster: "assets/iooi-fold-flow.jpg",
+          label: { en: "How it works: paint half, fold and press, unfold", ko: "작동 방식: 반만 그리고, 접어서 누르고, 펼치기" },
+          portrait: true
+        },
+        {
+          src: "assets/iooi-preview.mp4",
+          poster: "assets/iooi-preview.jpg",
+          label: { en: "App Store preview", ko: "App Store 미리보기" },
+          portrait: true
+        }
+      ],
+      screenshotFiles: [
+        "assets/shot-iooi-1.jpg",
+        "assets/shot-iooi-2.jpg",
+        "assets/shot-iooi-3.jpg",
+        "assets/shot-iooi-4.jpg",
+        "assets/shot-iooi-5.jpg",
+        "assets/shot-iooi-6.jpg",
+        "assets/shot-iooi-7.jpg",
+        "assets/shot-iooi-8.jpg",
+        "assets/shot-iooi-9.jpg",
+        "assets/shot-iooi-10.jpg"
+      ],
+      ko: {
+        status: "2026년 11월 10일 App Store 출시",
+        appStore: { label: "App Store에서 IOOI 보기" },
+        topic: [
+          "접히는 iPhone Duo를 위해 만든 데칼코마니 앱이에요. 펼친 안쪽 화면의 종이에 그리고, 접어서 바깥 화면의 종이 뒷면을 문지른 다음, 다시 펼치면 문지른 자리만 반대쪽 종이에 거울처럼 찍혀 있어요.",
+          "이름은 일부러 앞뒤가 같은 말로 지었어요. 반으로 접으면 IO | OI가 서로 거울처럼 겹치고, 나비의 날개와 몸통처럼 보여요."
+        ],
+        summary: "접는 동작 자체를 놀이로 쓰고 싶어서, 두 화면에 서로 다른 역할을 줬어요. 펼친 안쪽 화면은 그림을 그리는 종이이고, 바깥 화면은 그 종이의 뒷면이라 누르기만 할 수 있어요. 접어서 찍고 싶은 자리를 문지른 뒤 펼치면, 누른 자리만 반대쪽 종이에 접힌 선을 기준으로 거울처럼 나타나요. 누른 뒤에 새로 그린 그림은 다시 눌러야 복사돼요. 종이는 파일 탐색기의 폴더처럼 접었다 펼 수 있는 폴더에 정리되고, 자동으로 저장되고, 투명 스티커, iMessage 스티커, 사진, PDF로 내보낼 수 있어요. 서버도 광고도 계정도 없고, 그림은 기기 안에만 저장돼요.",
+        keyFunction: [
+          "안쪽 화면은 종이: 양쪽 종이에 손가락이나 Apple Pencil로 그리고, 한 획은 시작한 쪽 종이에만 그려져요",
+          "바깥 화면은 종이의 뒷면: 작게, 보통, 넓게 문질러 누를 수 있고, 이번에 누른 자국만 지우는 지우개도 있어요",
+          "펼치면 거울처럼 찍혀요: 누른 순간 종이에 그려져 있던 그림만 반대쪽 종이에, 양방향으로 복사돼요",
+          "폰을 닫았다 열면 한 번 접은 것으로 끝나요: 누른 자국은 초기화되고 찍힌 그림은 종이에 남아요",
+          "종이가 화면 가장자리까지 꽉 차고, 도구는 모두 옆 버튼 메뉴에 있어서 그림을 가리지 않아요",
+          "접었다 펼 수 있는 폴더에 종이를 정리하고, 길게 눌러 이름 바꾸기·옮기기·지우기를 하고, 그리는 대로 자동 저장돼요",
+          "펼친 화면에서 투명 스티커 PNG, PDF, 사진 저장, 이미지 공유로 내보내요",
+          "같은 앱 안에 iMessage 스티커 확장이 들어 있어서, 그림을 서랍에 넣고 대화에 끌어다 붙일 수 있어요",
+          "Apple Pencil을 기울이면 선이 굵어지고, 쓰는 동안 손바닥 터치는 무시해요",
+          "한국어와 영어를 지원하고, 두 화면에 맞는 레이아웃이 따로 있어요"
+        ],
+        part: [
+          "콘셉트, 인터랙션 설계, SwiftUI 앱, iMessage 스티커 확장, 앱 아이콘, App Store 이미지, 출시까지 프로젝트 전체",
+          "안쪽 화면은 그리기만, 바깥 화면은 종이 뒷면 누르기만 하도록 인터랙션 설계",
+          "그린 획과 누르기를 하나의 순서 번호로 매겨서, 누른 순간 종이에 있던 그림만 정확히 복사되도록 찍기 로직 작성",
+          "앱 아이콘과 iMessage 아이콘을 디자인 툴 대신 코드로 그리기",
+          "기울기로 선 굵기가 바뀌고 손바닥 터치는 무시하는 Apple Pencil 입력 구현",
+          "Apple의 Duo 기기 프레임과 앱의 렌더링 엔진으로 App Store 스크린샷과 미리보기 영상 제작"
+        ],
+        learned: [
+          "누른 순간 종이에 있던 그림만 복사돼야 접은 종이처럼 동작해요. 처음 버전은 지금까지 그린 걸 계속 전부 복사했는데, 실제로 접은 종이를 누르면 그렇게 되지 않잖아요",
+          "직접 만든 떠다니는 팔레트보다 기본 툴바 메뉴가 나았어요. 시스템이 커스텀 툴바 뷰를 종이 옆이 아니라 아래 가운데에 놓았거든요",
+          "첫 업로드가 iMessage 앱 아이콘 크기(120x90, 180x135)가 없다고 App Store Connect에서 반려됐어요. 스티커 아이콘 세트에 platform 키 없이 iPhone 크기를 추가해서 해결했어요",
+          "이름은 뜻이 없어도 좋으니 좌우가 같고 나비처럼 보이는 말로 짓고 싶었어요. 이미 있는 OIIO라는 앱과도 겹치지 않아야 했고요"
+        ]
+      },
+    },
+    {
       id: "touchstone",
       name: "Touchstone (시금석)",
       cover: "assets/proj-touchstone.jpg",
