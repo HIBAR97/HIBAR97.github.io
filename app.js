@@ -182,6 +182,8 @@ function applyStaticLang() {
   if (checkbox) checkbox.checked = currentLang === "ko";
   const word = document.getElementById("lang-switch-word");
   if (word) word.textContent = currentLang === "en" ? "EN" : "KO";
+  const cv = document.querySelector(".resume-link");
+  if (cv) cv.setAttribute("href", currentLang === "ko" ? "assets/Junghyeon_Kim_Resume_KO.pdf" : "assets/Junghyeon_Kim_Resume.pdf");
 }
 
 function toggleMoreStory() {
