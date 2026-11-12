@@ -291,7 +291,7 @@ function openPublicationModal(p) {
       ${section(L("learned"), list(tf(p, "learned")))}
       ${section(L("keywords"), p.keywords && p.keywords.length ? `<p>${p.keywords.join(" · ")}</p>` : "")}
       ${section(L("figures"), screenshots(p.screenshotFiles))}
-      ${section(L("links"), pubLinks(p.links))}
+      ${section(L("links"), pubLinks(tf(p, "links")))}
       ${p.note ? `<div class="pub-note">ℹ️ ${tf(p, "note")}</div>` : ""}
     </div>
   `;

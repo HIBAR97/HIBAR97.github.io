@@ -126,15 +126,16 @@ const PROJECTS = {
       id: "keis2026-kpop-haptic",
       impact: "Co-authored paper, published",
       kind: "publication",
-      name: "Effects of K-POP Musical Element-Based Audio-to-Haptic Feedback on Haptic Experience in K-POP Virtual Reality Concerts",
+      name: "Effects of Musical Element-Based Audio-to-Haptic Feedback on Haptic Experience in K-POP Virtual Reality Concerts",
       cover: "assets/pub-keis-kpop.png",
       status: "Published",
-      date: "February 28, 2026",
-      venueLine: "Journal of the Korea Entertainment Industry Association (JKEIA), Vol. 19, No. 1, pp. 1–12",
-      authors: ["Gyo-Ryeong Kim", "Harok Jang", "Jung-Hyeon Kim", "Tack Woo"],
+      date: "October 2026",
+      venueLine: "Journal of the Korea Entertainment Industry Association (JKEIA), Vol. 20, No. 6, pp. 777–788",
+      authors: ["Gyo-Ryeong Kim", "Ha-Rok Jang", "Jung-Hyeon Kim", "Tack Woo"],
       affiliation: "Kyung Hee University",
       role: "Co-author",
-      doi: { label: "10.21184/jkeia.2026.2.20.1.x", href: "https://doi.org/10.21184/jkeia.2026.2.20.1.x" },
+      doi: { label: "10.21184/jkeia.2026.10.20.6.777", href: "https://doi.org/10.21184/jkeia.2026.10.20.6.777" },
+      links: [{ label: "Read the paper (DOI)", href: "https://doi.org/10.21184/jkeia.2026.10.20.6.777" }],
       abstract: "The purpose of this study was to examine the effects of musical element-based Audio-to-Haptic input conditions (rhythm, melody, and harmony) on haptic experience (HX) in a K-POP virtual reality (VR) concert environment. Twenty-four adults completed a 3 (songs) × 3 (musical elements) within-subjects repeated measures experiment, experiencing all nine conditions through a wearable haptic suit under identical visual and auditory stimuli. HX was evaluated using five sub-dimensions of a standardized HX model. A two-way repeated measures ANOVA revealed significant main effects of song (F(2,46)=8.022, p=.001, ηp²=.259) and musical element (F(2,46)=5.745, p=.006, ηp²=.200), and a significant song × musical element interaction with the largest effect size (F(4,92)=12.920, p<.001, ηp²=.360), consistently confirmed across all five sub-dimensions. No single musical element or song was uniformly superior across all conditions, indicating that Audio-to-Haptic design for K-POP VR concerts needs song-specific adaptation rather than one fixed rule.",
       keyPoints: [
         "24 adults experienced 9 conditions (3 K-POP songs × 3 musical elements: rhythm/melody/harmony converted to Audio-to-Haptic feedback) through a wearable haptic suit in VR",
@@ -142,13 +143,14 @@ const PROJECTS = {
         "No single musical element or song was uniformly best, showing that Audio-to-Haptic design for K-POP VR concerts should be tailored per song rather than following one fixed rule"
       ],
       keywords: ["Audio-to-Haptic", "Haptic Experience", "K-POP", "Musical Element", "Virtual Reality Concert"],
-      note: "Received January 10, 2026; revised February 14, 2026; accepted February 14, 2026; published February 28, 2026. Junghyeon Kim is the third author (Jung-Hyeon Kim), M.S. student, Department of XR-AI Convergence, Kyung Hee University.",
+      note: "Received January 10, 2026; revised February 14, 2026; accepted February 14, 2026; published October 2026 (Vol. 20, No. 6). Junghyeon Kim is the third author (Jung-Hyeon Kim), M.S. student, Department of XR-AI Convergence, Kyung Hee University.",
       screenshotFiles: [],
       ko: {
         impact: "공동저자 논문, 게재 완료",
         status: "게재 완료",
-        date: "2026년 2월 28일",
-        venueLine: "한국엔터테인먼트산업학회논문지(JKEIA), 제19권 제1호, 1–12쪽",
+        date: "2026년 10월",
+        venueLine: "한국엔터테인먼트산업학회논문지(JKEIA), 제20권 제6호, 777–788쪽",
+        links: [{ label: "논문 보기 (DOI)", href: "https://doi.org/10.21184/jkeia.2026.10.20.6.777" }],
         affiliation: "경희대학교",
         role: "공동저자",
         abstract: "본 연구는 K-POP VR 콘서트 환경에서 음악 구성요소 기반 Audio-to-Haptic 입력 조건(리듬, 멜로디, 화음)이 햅틱 경험(HX)에 미치는 영향을 검토하였다. 성인 24명을 대상으로 3(곡) × 3(음악 구성요소) 반복측정 실험을 실시하였으며, 모든 참가자가 동일한 시청각 자극 아래 웨어러블 햅틱 수트를 통해 9개 조건을 모두 경험하였다. HX는 표준화된 모델의 5개 하위차원으로 평가하였다. 2요인 반복측정 분산분석 결과, 곡의 주효과(ηp²=.259)와 음악 구성요소의 주효과(ηp²=.200)가 모두 유의하였고, 곡과 음악 구성요소 간 상호작용 효과가 가장 큰 효과크기(ηp²=.360)로 유의하게 나타났으며 이는 5개 하위차원 모두에서 일관되게 확인되었다. 특정 음악 구성요소나 특정 곡이 모든 조건에서 일관되게 우수하지는 않아, K-POP VR 콘서트의 Audio-to-Haptic 설계에는 하나의 고정된 규칙보다 곡별 맞춤형 접근이 필요함을 시사한다.",
@@ -158,7 +160,7 @@ const PROJECTS = {
           "특정 음악 구성요소나 곡이 모든 조건에서 일관되게 우수하지 않아, K-POP VR 콘서트의 Audio-to-Haptic 설계는 곡별로 맞춤화할 필요가 있음을 시사"
         ],
         keywords: ["오디오-햅틱 변환", "햅틱 경험", "K-POP", "음악 구성요소", "가상현실 콘서트"],
-        note: "2026년 1월 10일 투고, 2월 14일 수정, 2월 14일 게재확정, 2월 28일 게재. 김정현(Jung-Hyeon Kim)은 제3저자로, 경희대학교 대학원 실감AX융합학과 석사과정입니다."
+        note: "2026년 1월 10일 투고, 2월 14일 수정, 2월 14일 게재확정, 2026년 10월 게재(제20권 제6호). 김정현(Jung-Hyeon Kim)은 제3저자로, 경희대학교 대학원 실감AX융합학과 석사과정입니다."
       }
     },
     {
